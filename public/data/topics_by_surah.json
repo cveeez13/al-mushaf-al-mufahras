@@ -1,0 +1,1984 @@
+{
+  "metadata": {
+    "generated": "2026-03-31",
+    "total_surahs": 114
+  },
+  "surahs": [
+    {
+      "surah": 1,
+      "name_ar": "الفاتحة",
+      "verse_count": 7,
+      "topic_distribution": {
+        "blue": 6,
+        "orange": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 85.7,
+        "orange": 14.3
+      }
+    },
+    {
+      "surah": 2,
+      "name_ar": "البقرة",
+      "verse_count": 286,
+      "topic_distribution": {
+        "green": 36,
+        "red": 17,
+        "blue": 34,
+        "purple": 1,
+        "brown": 73,
+        "yellow": 115,
+        "orange": 10
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "green": 12.6,
+        "red": 5.9,
+        "blue": 11.9,
+        "purple": 0.3,
+        "brown": 25.5,
+        "yellow": 40.2,
+        "orange": 3.5
+      }
+    },
+    {
+      "surah": 3,
+      "name_ar": "آل عمران",
+      "verse_count": 200,
+      "topic_distribution": {
+        "blue": 20,
+        "red": 23,
+        "yellow": 65,
+        "purple": 2,
+        "green": 66,
+        "brown": 3,
+        "orange": 21
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "blue": 10,
+        "red": 11.5,
+        "yellow": 32.5,
+        "purple": 1,
+        "green": 33,
+        "brown": 1.5,
+        "orange": 10.5
+      }
+    },
+    {
+      "surah": 4,
+      "name_ar": "النساء",
+      "verse_count": 176,
+      "topic_distribution": {
+        "blue": 8,
+        "brown": 104,
+        "red": 29,
+        "green": 10,
+        "yellow": 15,
+        "orange": 10
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "blue": 4.5,
+        "brown": 59.1,
+        "red": 16.5,
+        "green": 5.7,
+        "yellow": 8.5,
+        "orange": 5.7
+      }
+    },
+    {
+      "surah": 5,
+      "name_ar": "المائدة",
+      "verse_count": 120,
+      "topic_distribution": {
+        "brown": 60,
+        "green": 9,
+        "red": 5,
+        "orange": 4,
+        "blue": 3,
+        "yellow": 39
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 50,
+        "green": 7.5,
+        "red": 4.2,
+        "orange": 3.3,
+        "blue": 2.5,
+        "yellow": 32.5
+      }
+    },
+    {
+      "surah": 6,
+      "name_ar": "الأنعام",
+      "verse_count": 165,
+      "topic_distribution": {
+        "blue": 139,
+        "yellow": 16,
+        "orange": 4,
+        "green": 2,
+        "purple": 1,
+        "brown": 3
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 84.2,
+        "yellow": 9.7,
+        "orange": 2.4,
+        "green": 1.2,
+        "purple": 0.6,
+        "brown": 1.8
+      }
+    },
+    {
+      "surah": 7,
+      "name_ar": "الأعراف",
+      "verse_count": 206,
+      "topic_distribution": {
+        "green": 34,
+        "yellow": 104,
+        "orange": 21,
+        "red": 11,
+        "blue": 36
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "green": 16.5,
+        "yellow": 50.5,
+        "orange": 10.2,
+        "red": 5.3,
+        "blue": 17.5
+      }
+    },
+    {
+      "surah": 8,
+      "name_ar": "الأنفال",
+      "verse_count": 75,
+      "topic_distribution": {
+        "brown": 44,
+        "green": 9,
+        "blue": 4,
+        "red": 10,
+        "yellow": 8
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 58.7,
+        "green": 12,
+        "blue": 5.3,
+        "red": 13.3,
+        "yellow": 10.7
+      }
+    },
+    {
+      "surah": 9,
+      "name_ar": "التوبة",
+      "verse_count": 129,
+      "topic_distribution": {
+        "brown": 28,
+        "green": 39,
+        "blue": 27,
+        "red": 30,
+        "yellow": 5
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "brown": 21.7,
+        "green": 30.2,
+        "blue": 20.9,
+        "red": 23.3,
+        "yellow": 3.9
+      }
+    },
+    {
+      "surah": 10,
+      "name_ar": "يونس",
+      "verse_count": 109,
+      "topic_distribution": {
+        "blue": 10,
+        "green": 31,
+        "yellow": 35,
+        "red": 1,
+        "purple": 22,
+        "orange": 10
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "blue": 9.2,
+        "green": 28.4,
+        "yellow": 32.1,
+        "red": 0.9,
+        "purple": 20.2,
+        "orange": 9.2
+      }
+    },
+    {
+      "surah": 11,
+      "name_ar": "هود",
+      "verse_count": 123,
+      "topic_distribution": {
+        "yellow": 99,
+        "blue": 6,
+        "green": 9,
+        "purple": 1,
+        "red": 2,
+        "orange": 6
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 80.5,
+        "blue": 4.9,
+        "green": 7.3,
+        "purple": 0.8,
+        "red": 1.6,
+        "orange": 4.9
+      }
+    },
+    {
+      "surah": 12,
+      "name_ar": "يوسف",
+      "verse_count": 111,
+      "topic_distribution": {
+        "yellow": 101,
+        "red": 2,
+        "blue": 7,
+        "orange": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 91,
+        "red": 1.8,
+        "blue": 6.3,
+        "orange": 0.9
+      }
+    },
+    {
+      "surah": 13,
+      "name_ar": "الرعد",
+      "verse_count": 43,
+      "topic_distribution": {
+        "blue": 29,
+        "red": 2,
+        "green": 8,
+        "yellow": 1,
+        "purple": 1,
+        "orange": 2
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 67.4,
+        "red": 4.7,
+        "green": 18.6,
+        "yellow": 2.3,
+        "purple": 2.3,
+        "orange": 4.7
+      }
+    },
+    {
+      "surah": 14,
+      "name_ar": "إبراهيم",
+      "verse_count": 52,
+      "topic_distribution": {
+        "purple": 1,
+        "red": 2,
+        "yellow": 27,
+        "blue": 16,
+        "green": 4,
+        "orange": 2
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "purple": 1.9,
+        "red": 3.8,
+        "yellow": 51.9,
+        "blue": 30.8,
+        "green": 7.7,
+        "orange": 3.8
+      }
+    },
+    {
+      "surah": 15,
+      "name_ar": "الحجر",
+      "verse_count": 99,
+      "topic_distribution": {
+        "red": 28,
+        "yellow": 44,
+        "blue": 3,
+        "orange": 22,
+        "green": 1,
+        "brown": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "red": 28.3,
+        "yellow": 44.4,
+        "blue": 3,
+        "orange": 22.2,
+        "green": 1,
+        "brown": 1
+      }
+    },
+    {
+      "surah": 16,
+      "name_ar": "النحل",
+      "verse_count": 128,
+      "topic_distribution": {
+        "blue": 93,
+        "orange": 18,
+        "green": 7,
+        "yellow": 3,
+        "red": 2,
+        "brown": 5
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 72.7,
+        "orange": 14.1,
+        "green": 5.5,
+        "yellow": 2.3,
+        "red": 1.6,
+        "brown": 3.9
+      }
+    },
+    {
+      "surah": 17,
+      "name_ar": "الإسراء",
+      "verse_count": 111,
+      "topic_distribution": {
+        "yellow": 17,
+        "red": 30,
+        "orange": 41,
+        "blue": 22,
+        "purple": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "yellow": 15.3,
+        "red": 27,
+        "orange": 36.9,
+        "blue": 19.8,
+        "purple": 0.9
+      }
+    },
+    {
+      "surah": 18,
+      "name_ar": "الكهف",
+      "verse_count": 110,
+      "topic_distribution": {
+        "yellow": 87,
+        "green": 7,
+        "blue": 5,
+        "purple": 2,
+        "orange": 4,
+        "red": 5
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 79.1,
+        "green": 6.4,
+        "blue": 4.5,
+        "purple": 1.8,
+        "orange": 3.6,
+        "red": 4.5
+      }
+    },
+    {
+      "surah": 19,
+      "name_ar": "مريم",
+      "verse_count": 98,
+      "topic_distribution": {
+        "yellow": 76,
+        "blue": 16,
+        "brown": 1,
+        "green": 3,
+        "red": 1,
+        "orange": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 77.6,
+        "blue": 16.3,
+        "brown": 1,
+        "green": 3.1,
+        "red": 1,
+        "orange": 1
+      }
+    },
+    {
+      "surah": 20,
+      "name_ar": "طه",
+      "verse_count": 135,
+      "topic_distribution": {
+        "yellow": 114,
+        "blue": 6,
+        "orange": 15
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 84.4,
+        "blue": 4.4,
+        "orange": 11.1
+      }
+    },
+    {
+      "surah": 21,
+      "name_ar": "الأنبياء",
+      "verse_count": 112,
+      "topic_distribution": {
+        "yellow": 83,
+        "blue": 20,
+        "red": 3,
+        "orange": 5,
+        "green": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 74.1,
+        "blue": 17.9,
+        "red": 2.7,
+        "orange": 4.5,
+        "green": 0.9
+      }
+    },
+    {
+      "surah": 22,
+      "name_ar": "الحج",
+      "verse_count": 78,
+      "topic_distribution": {
+        "orange": 19,
+        "red": 5,
+        "green": 21,
+        "blue": 6,
+        "yellow": 13,
+        "brown": 14
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "orange": 24.4,
+        "red": 6.4,
+        "green": 26.9,
+        "blue": 7.7,
+        "yellow": 16.7,
+        "brown": 17.9
+      }
+    },
+    {
+      "surah": 23,
+      "name_ar": "المؤمنون",
+      "verse_count": 118,
+      "topic_distribution": {
+        "green": 85,
+        "yellow": 15,
+        "blue": 9,
+        "orange": 7,
+        "red": 2
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 72,
+        "yellow": 12.7,
+        "blue": 7.6,
+        "orange": 5.9,
+        "red": 1.7
+      }
+    },
+    {
+      "surah": 24,
+      "name_ar": "النور",
+      "verse_count": 64,
+      "topic_distribution": {
+        "brown": 35,
+        "green": 11,
+        "red": 1,
+        "blue": 17
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 54.7,
+        "green": 17.2,
+        "red": 1.6,
+        "blue": 26.6
+      }
+    },
+    {
+      "surah": 25,
+      "name_ar": "الفرقان",
+      "verse_count": 77,
+      "topic_distribution": {
+        "blue": 16,
+        "purple": 41,
+        "green": 2,
+        "red": 4,
+        "yellow": 7,
+        "orange": 7
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "blue": 20.8,
+        "purple": 53.2,
+        "green": 2.6,
+        "red": 5.2,
+        "yellow": 9.1,
+        "orange": 9.1
+      }
+    },
+    {
+      "surah": 26,
+      "name_ar": "الشعراء",
+      "verse_count": 227,
+      "topic_distribution": {
+        "yellow": 196,
+        "blue": 13,
+        "orange": 11,
+        "green": 4,
+        "red": 2,
+        "purple": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 86.3,
+        "blue": 5.7,
+        "orange": 4.8,
+        "green": 1.8,
+        "red": 0.9,
+        "purple": 0.4
+      }
+    },
+    {
+      "surah": 27,
+      "name_ar": "النمل",
+      "verse_count": 93,
+      "topic_distribution": {
+        "yellow": 47,
+        "brown": 1,
+        "blue": 33,
+        "red": 1,
+        "purple": 1,
+        "orange": 10
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 50.5,
+        "brown": 1.1,
+        "blue": 35.5,
+        "red": 1.1,
+        "purple": 1.1,
+        "orange": 10.8
+      }
+    },
+    {
+      "surah": 28,
+      "name_ar": "القصص",
+      "verse_count": 88,
+      "topic_distribution": {
+        "yellow": 56,
+        "orange": 26,
+        "green": 1,
+        "blue": 4,
+        "red": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 63.6,
+        "orange": 29.5,
+        "green": 1.1,
+        "blue": 4.5,
+        "red": 1.1
+      }
+    },
+    {
+      "surah": 29,
+      "name_ar": "العنكبوت",
+      "verse_count": 69,
+      "topic_distribution": {
+        "green": 15,
+        "orange": 5,
+        "red": 4,
+        "yellow": 35,
+        "blue": 10
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "green": 21.7,
+        "orange": 7.2,
+        "red": 5.8,
+        "yellow": 50.7,
+        "blue": 14.5
+      }
+    },
+    {
+      "surah": 30,
+      "name_ar": "الروم",
+      "verse_count": 60,
+      "topic_distribution": {
+        "blue": 42,
+        "orange": 14,
+        "brown": 1,
+        "green": 3
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 70,
+        "orange": 23.3,
+        "brown": 1.7,
+        "green": 5
+      }
+    },
+    {
+      "surah": 31,
+      "name_ar": "لقمان",
+      "verse_count": 34,
+      "topic_distribution": {
+        "yellow": 13,
+        "brown": 1,
+        "green": 4,
+        "blue": 14,
+        "red": 1,
+        "orange": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "yellow": 38.2,
+        "brown": 2.9,
+        "green": 11.8,
+        "blue": 41.2,
+        "red": 2.9,
+        "orange": 2.9
+      }
+    },
+    {
+      "surah": 32,
+      "name_ar": "السجدة",
+      "verse_count": 30,
+      "topic_distribution": {
+        "blue": 6,
+        "purple": 1,
+        "orange": 17,
+        "red": 2,
+        "green": 1,
+        "yellow": 3
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "blue": 20,
+        "purple": 3.3,
+        "orange": 56.7,
+        "red": 6.7,
+        "green": 3.3,
+        "yellow": 10
+      }
+    },
+    {
+      "surah": 33,
+      "name_ar": "الأحزاب",
+      "verse_count": 73,
+      "topic_distribution": {
+        "red": 3,
+        "brown": 28,
+        "yellow": 9,
+        "green": 30,
+        "blue": 2,
+        "orange": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "red": 4.1,
+        "brown": 38.4,
+        "yellow": 12.3,
+        "green": 41.1,
+        "blue": 2.7,
+        "orange": 1.4
+      }
+    },
+    {
+      "surah": 34,
+      "name_ar": "سبأ",
+      "verse_count": 54,
+      "topic_distribution": {
+        "purple": 3,
+        "green": 1,
+        "red": 44,
+        "yellow": 3,
+        "blue": 3
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "purple": 5.6,
+        "green": 1.9,
+        "red": 81.5,
+        "yellow": 5.6,
+        "blue": 5.6
+      }
+    },
+    {
+      "surah": 35,
+      "name_ar": "فاطر",
+      "verse_count": 45,
+      "topic_distribution": {
+        "blue": 30,
+        "red": 6,
+        "green": 2,
+        "orange": 7
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 66.7,
+        "red": 13.3,
+        "green": 4.4,
+        "orange": 15.6
+      }
+    },
+    {
+      "surah": 36,
+      "name_ar": "يس",
+      "verse_count": 83,
+      "topic_distribution": {
+        "blue": 75,
+        "yellow": 4,
+        "green": 2,
+        "orange": 1,
+        "red": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 90.4,
+        "yellow": 4.8,
+        "green": 2.4,
+        "orange": 1.2,
+        "red": 1.2
+      }
+    },
+    {
+      "surah": 37,
+      "name_ar": "الصافات",
+      "verse_count": 182,
+      "topic_distribution": {
+        "blue": 25,
+        "red": 52,
+        "orange": 2,
+        "green": 7,
+        "yellow": 96
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "blue": 13.7,
+        "red": 28.6,
+        "orange": 1.1,
+        "green": 3.8,
+        "yellow": 52.7
+      }
+    },
+    {
+      "surah": 38,
+      "name_ar": "ص",
+      "verse_count": 88,
+      "topic_distribution": {
+        "yellow": 44,
+        "green": 5,
+        "blue": 2,
+        "red": 22,
+        "purple": 1,
+        "brown": 1,
+        "orange": 13
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 50,
+        "green": 5.7,
+        "blue": 2.3,
+        "red": 25,
+        "purple": 1.1,
+        "brown": 1.1,
+        "orange": 14.8
+      }
+    },
+    {
+      "surah": 39,
+      "name_ar": "الزمر",
+      "verse_count": 75,
+      "topic_distribution": {
+        "purple": 1,
+        "blue": 25,
+        "red": 4,
+        "orange": 40,
+        "yellow": 1,
+        "green": 4
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "purple": 1.3,
+        "blue": 33.3,
+        "red": 5.3,
+        "orange": 53.3,
+        "yellow": 1.3,
+        "green": 5.3
+      }
+    },
+    {
+      "surah": 40,
+      "name_ar": "غافر",
+      "verse_count": 85,
+      "topic_distribution": {
+        "purple": 3,
+        "blue": 15,
+        "red": 27,
+        "yellow": 31,
+        "green": 3,
+        "orange": 6
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "purple": 3.5,
+        "blue": 17.6,
+        "red": 31.8,
+        "yellow": 36.5,
+        "green": 3.5,
+        "orange": 7.1
+      }
+    },
+    {
+      "surah": 41,
+      "name_ar": "فصلت",
+      "verse_count": 54,
+      "topic_distribution": {
+        "purple": 33,
+        "brown": 1,
+        "green": 3,
+        "yellow": 9,
+        "blue": 2,
+        "red": 2,
+        "orange": 4
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 61.1,
+        "brown": 1.9,
+        "green": 5.6,
+        "yellow": 16.7,
+        "blue": 3.7,
+        "red": 3.7,
+        "orange": 7.4
+      }
+    },
+    {
+      "surah": 42,
+      "name_ar": "الشورى",
+      "verse_count": 53,
+      "topic_distribution": {
+        "purple": 26,
+        "blue": 9,
+        "yellow": 5,
+        "orange": 9,
+        "green": 4
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 49.1,
+        "blue": 17,
+        "yellow": 9.4,
+        "orange": 17,
+        "green": 7.5
+      }
+    },
+    {
+      "surah": 43,
+      "name_ar": "الزخرف",
+      "verse_count": 89,
+      "topic_distribution": {
+        "blue": 51,
+        "yellow": 24,
+        "red": 2,
+        "orange": 1,
+        "green": 11
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 57.3,
+        "yellow": 27,
+        "red": 2.2,
+        "orange": 1.1,
+        "green": 12.4
+      }
+    },
+    {
+      "surah": 44,
+      "name_ar": "الدخان",
+      "verse_count": 59,
+      "topic_distribution": {
+        "orange": 34,
+        "purple": 1,
+        "blue": 7,
+        "yellow": 7,
+        "red": 9,
+        "green": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 57.6,
+        "purple": 1.7,
+        "blue": 11.9,
+        "yellow": 11.9,
+        "red": 15.3,
+        "green": 1.7
+      }
+    },
+    {
+      "surah": 45,
+      "name_ar": "الجاثية",
+      "verse_count": 37,
+      "topic_distribution": {
+        "orange": 20,
+        "purple": 2,
+        "blue": 8,
+        "red": 5,
+        "yellow": 1,
+        "green": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 54.1,
+        "purple": 5.4,
+        "blue": 21.6,
+        "red": 13.5,
+        "yellow": 2.7,
+        "green": 2.7
+      }
+    },
+    {
+      "surah": 46,
+      "name_ar": "الأحقاف",
+      "verse_count": 35,
+      "topic_distribution": {
+        "orange": 6,
+        "purple": 1,
+        "blue": 6,
+        "yellow": 18,
+        "green": 3,
+        "red": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "orange": 17.1,
+        "purple": 2.9,
+        "blue": 17.1,
+        "yellow": 51.4,
+        "green": 8.6,
+        "red": 2.9
+      }
+    },
+    {
+      "surah": 47,
+      "name_ar": "محمد",
+      "verse_count": 38,
+      "topic_distribution": {
+        "green": 15,
+        "brown": 23
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "green": 39.5,
+        "brown": 60.5
+      }
+    },
+    {
+      "surah": 48,
+      "name_ar": "الفتح",
+      "verse_count": 29,
+      "topic_distribution": {
+        "green": 23,
+        "red": 5,
+        "brown": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 79.3,
+        "red": 17.2,
+        "brown": 3.4
+      }
+    },
+    {
+      "surah": 49,
+      "name_ar": "الحجرات",
+      "verse_count": 18,
+      "topic_distribution": {
+        "brown": 14,
+        "green": 3,
+        "blue": 1
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 77.8,
+        "green": 16.7,
+        "blue": 5.6
+      }
+    },
+    {
+      "surah": 50,
+      "name_ar": "ق",
+      "verse_count": 45,
+      "topic_distribution": {
+        "orange": 28,
+        "blue": 4,
+        "yellow": 9,
+        "red": 3,
+        "green": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 62.2,
+        "blue": 8.9,
+        "yellow": 20,
+        "red": 6.7,
+        "green": 2.2
+      }
+    },
+    {
+      "surah": 51,
+      "name_ar": "الذاريات",
+      "verse_count": 60,
+      "topic_distribution": {
+        "blue": 43,
+        "orange": 1,
+        "yellow": 14,
+        "green": 1,
+        "red": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 71.7,
+        "orange": 1.7,
+        "yellow": 23.3,
+        "green": 1.7,
+        "red": 1.7
+      }
+    },
+    {
+      "surah": 52,
+      "name_ar": "الطور",
+      "verse_count": 49,
+      "topic_distribution": {
+        "orange": 38,
+        "red": 8,
+        "green": 1,
+        "blue": 2
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 77.6,
+        "red": 16.3,
+        "green": 2,
+        "blue": 4.1
+      }
+    },
+    {
+      "surah": 53,
+      "name_ar": "النجم",
+      "verse_count": 62,
+      "topic_distribution": {
+        "purple": 46,
+        "blue": 1,
+        "green": 1,
+        "yellow": 14
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 74.2,
+        "blue": 1.6,
+        "green": 1.6,
+        "yellow": 22.6
+      }
+    },
+    {
+      "surah": 54,
+      "name_ar": "القمر",
+      "verse_count": 55,
+      "topic_distribution": {
+        "orange": 2,
+        "yellow": 51,
+        "red": 1,
+        "green": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "orange": 3.6,
+        "yellow": 92.7,
+        "red": 1.8,
+        "green": 1.8
+      }
+    },
+    {
+      "surah": 55,
+      "name_ar": "الرحمن",
+      "verse_count": 78,
+      "topic_distribution": {
+        "blue": 7,
+        "orange": 33,
+        "red": 38
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "blue": 9,
+        "orange": 42.3,
+        "red": 48.7
+      }
+    },
+    {
+      "surah": 56,
+      "name_ar": "الواقعة",
+      "verse_count": 96,
+      "topic_distribution": {
+        "orange": 38,
+        "green": 1,
+        "red": 55,
+        "purple": 1,
+        "yellow": 1
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "orange": 39.6,
+        "green": 1,
+        "red": 57.3,
+        "purple": 1,
+        "yellow": 1
+      }
+    },
+    {
+      "surah": 57,
+      "name_ar": "الحديد",
+      "verse_count": 29,
+      "topic_distribution": {
+        "blue": 13,
+        "green": 6,
+        "red": 3,
+        "yellow": 7
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 44.8,
+        "green": 20.7,
+        "red": 10.3,
+        "yellow": 24.1
+      }
+    },
+    {
+      "surah": 58,
+      "name_ar": "المجادلة",
+      "verse_count": 22,
+      "topic_distribution": {
+        "brown": 10,
+        "orange": 2,
+        "red": 6,
+        "green": 4
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 45.5,
+        "orange": 9.1,
+        "red": 27.3,
+        "green": 18.2
+      }
+    },
+    {
+      "surah": 59,
+      "name_ar": "الحشر",
+      "verse_count": 24,
+      "topic_distribution": {
+        "blue": 7,
+        "green": 14,
+        "red": 3
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "blue": 29.2,
+        "green": 58.3,
+        "red": 12.5
+      }
+    },
+    {
+      "surah": 60,
+      "name_ar": "الممتحنة",
+      "verse_count": 13,
+      "topic_distribution": {
+        "orange": 3,
+        "yellow": 2,
+        "brown": 7,
+        "green": 1
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "orange": 23.1,
+        "yellow": 15.4,
+        "brown": 53.8,
+        "green": 7.7
+      }
+    },
+    {
+      "surah": 61,
+      "name_ar": "الصف",
+      "verse_count": 14,
+      "topic_distribution": {
+        "blue": 1,
+        "green": 6,
+        "yellow": 7
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "blue": 7.1,
+        "green": 42.9,
+        "yellow": 50
+      }
+    },
+    {
+      "surah": 62,
+      "name_ar": "الجمعة",
+      "verse_count": 11,
+      "topic_distribution": {
+        "blue": 1,
+        "brown": 10
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "blue": 9.1,
+        "brown": 90.9
+      }
+    },
+    {
+      "surah": 63,
+      "name_ar": "المنافقون",
+      "verse_count": 11,
+      "topic_distribution": {
+        "red": 11
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 100
+      }
+    },
+    {
+      "surah": 64,
+      "name_ar": "التغابن",
+      "verse_count": 18,
+      "topic_distribution": {
+        "blue": 7,
+        "green": 10,
+        "red": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "blue": 38.9,
+        "green": 55.6,
+        "red": 5.6
+      }
+    },
+    {
+      "surah": 65,
+      "name_ar": "الطلاق",
+      "verse_count": 12,
+      "topic_distribution": {
+        "brown": 10,
+        "red": 1,
+        "green": 1
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 83.3,
+        "red": 8.3,
+        "green": 8.3
+      }
+    },
+    {
+      "surah": 66,
+      "name_ar": "التحريم",
+      "verse_count": 12,
+      "topic_distribution": {
+        "green": 5,
+        "brown": 3,
+        "red": 1,
+        "yellow": 3
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 41.7,
+        "brown": 25,
+        "red": 8.3,
+        "yellow": 25
+      }
+    },
+    {
+      "surah": 67,
+      "name_ar": "الملك",
+      "verse_count": 30,
+      "topic_distribution": {
+        "blue": 20,
+        "red": 9,
+        "green": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 66.7,
+        "red": 30,
+        "green": 3.3
+      }
+    },
+    {
+      "surah": 68,
+      "name_ar": "القلم",
+      "verse_count": 52,
+      "topic_distribution": {
+        "red": 44,
+        "green": 2,
+        "blue": 1,
+        "orange": 5
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 84.6,
+        "green": 3.8,
+        "blue": 1.9,
+        "orange": 9.6
+      }
+    },
+    {
+      "surah": 69,
+      "name_ar": "الحاقة",
+      "verse_count": 52,
+      "topic_distribution": {
+        "orange": 40,
+        "yellow": 5,
+        "red": 6,
+        "purple": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 76.9,
+        "yellow": 9.6,
+        "red": 11.5,
+        "purple": 1.9
+      }
+    },
+    {
+      "surah": 70,
+      "name_ar": "المعارج",
+      "verse_count": 44,
+      "topic_distribution": {
+        "orange": 38,
+        "red": 5,
+        "yellow": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 86.4,
+        "red": 11.4,
+        "yellow": 2.3
+      }
+    },
+    {
+      "surah": 71,
+      "name_ar": "نوح",
+      "verse_count": 28,
+      "topic_distribution": {
+        "yellow": 27,
+        "blue": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 96.4,
+        "blue": 3.6
+      }
+    },
+    {
+      "surah": 72,
+      "name_ar": "الجن",
+      "verse_count": 28,
+      "topic_distribution": {
+        "purple": 20,
+        "red": 8
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 71.4,
+        "red": 28.6
+      }
+    },
+    {
+      "surah": 73,
+      "name_ar": "المزمل",
+      "verse_count": 20,
+      "topic_distribution": {
+        "green": 12,
+        "red": 1,
+        "blue": 1,
+        "yellow": 5,
+        "brown": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 60,
+        "red": 5,
+        "blue": 5,
+        "yellow": 25,
+        "brown": 5
+      }
+    },
+    {
+      "surah": 74,
+      "name_ar": "المدثر",
+      "verse_count": 56,
+      "topic_distribution": {
+        "red": 54,
+        "orange": 1,
+        "green": 1
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 96.4,
+        "orange": 1.8,
+        "green": 1.8
+      }
+    },
+    {
+      "surah": 75,
+      "name_ar": "القيامة",
+      "verse_count": 40,
+      "topic_distribution": {
+        "orange": 40
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 100
+      }
+    },
+    {
+      "surah": 76,
+      "name_ar": "الإنسان",
+      "verse_count": 31,
+      "topic_distribution": {
+        "green": 26,
+        "red": 5
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 83.9,
+        "red": 16.1
+      }
+    },
+    {
+      "surah": 77,
+      "name_ar": "المرسلات",
+      "verse_count": 50,
+      "topic_distribution": {
+        "orange": 37,
+        "red": 10,
+        "blue": 1,
+        "green": 2
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 74,
+        "red": 20,
+        "blue": 2,
+        "green": 4
+      }
+    },
+    {
+      "surah": 78,
+      "name_ar": "النبأ",
+      "verse_count": 40,
+      "topic_distribution": {
+        "orange": 28,
+        "red": 5,
+        "blue": 7
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 70,
+        "red": 12.5,
+        "blue": 17.5
+      }
+    },
+    {
+      "surah": 79,
+      "name_ar": "النازعات",
+      "verse_count": 46,
+      "topic_distribution": {
+        "orange": 36,
+        "yellow": 5,
+        "red": 4,
+        "green": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 78.3,
+        "yellow": 10.9,
+        "red": 8.7,
+        "green": 2.2
+      }
+    },
+    {
+      "surah": 80,
+      "name_ar": "عبس",
+      "verse_count": 42,
+      "topic_distribution": {
+        "green": 41,
+        "blue": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 97.6,
+        "blue": 2.4
+      }
+    },
+    {
+      "surah": 81,
+      "name_ar": "التكوير",
+      "verse_count": 29,
+      "topic_distribution": {
+        "orange": 25,
+        "red": 1,
+        "green": 1,
+        "blue": 2
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 86.2,
+        "red": 3.4,
+        "green": 3.4,
+        "blue": 6.9
+      }
+    },
+    {
+      "surah": 82,
+      "name_ar": "الانفطار",
+      "verse_count": 19,
+      "topic_distribution": {
+        "orange": 19
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 100
+      }
+    },
+    {
+      "surah": 83,
+      "name_ar": "المطففين",
+      "verse_count": 36,
+      "topic_distribution": {
+        "red": 32,
+        "orange": 4
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 88.9,
+        "orange": 11.1
+      }
+    },
+    {
+      "surah": 84,
+      "name_ar": "الانشقاق",
+      "verse_count": 25,
+      "topic_distribution": {
+        "orange": 23,
+        "red": 1,
+        "green": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 92,
+        "red": 4,
+        "green": 4
+      }
+    },
+    {
+      "surah": 85,
+      "name_ar": "البروج",
+      "verse_count": 22,
+      "topic_distribution": {
+        "red": 11,
+        "green": 5,
+        "yellow": 6
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 50,
+        "green": 22.7,
+        "yellow": 27.3
+      }
+    },
+    {
+      "surah": 86,
+      "name_ar": "الطارق",
+      "verse_count": 17,
+      "topic_distribution": {
+        "blue": 17
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 100
+      }
+    },
+    {
+      "surah": 87,
+      "name_ar": "الأعلى",
+      "verse_count": 19,
+      "topic_distribution": {
+        "blue": 14,
+        "yellow": 5
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 73.7,
+        "yellow": 26.3
+      }
+    },
+    {
+      "surah": 88,
+      "name_ar": "الغاشية",
+      "verse_count": 26,
+      "topic_distribution": {
+        "orange": 26
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 100
+      }
+    },
+    {
+      "surah": 89,
+      "name_ar": "الفجر",
+      "verse_count": 30,
+      "topic_distribution": {
+        "orange": 22,
+        "yellow": 7,
+        "red": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 73.3,
+        "yellow": 23.3,
+        "red": 3.3
+      }
+    },
+    {
+      "surah": 90,
+      "name_ar": "البلد",
+      "verse_count": 20,
+      "topic_distribution": {
+        "green": 19,
+        "blue": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 95,
+        "blue": 5
+      }
+    },
+    {
+      "surah": 91,
+      "name_ar": "الشمس",
+      "verse_count": 15,
+      "topic_distribution": {
+        "blue": 14,
+        "yellow": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 93.3,
+        "yellow": 6.7
+      }
+    },
+    {
+      "surah": 92,
+      "name_ar": "الليل",
+      "verse_count": 21,
+      "topic_distribution": {
+        "green": 20,
+        "red": 1
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 95.2,
+        "red": 4.8
+      }
+    },
+    {
+      "surah": 93,
+      "name_ar": "الضحى",
+      "verse_count": 11,
+      "topic_distribution": {
+        "green": 11
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 100
+      }
+    },
+    {
+      "surah": 94,
+      "name_ar": "الشرح",
+      "verse_count": 8,
+      "topic_distribution": {
+        "green": 8
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 100
+      }
+    },
+    {
+      "surah": 95,
+      "name_ar": "التين",
+      "verse_count": 8,
+      "topic_distribution": {
+        "blue": 7,
+        "green": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 87.5,
+        "green": 12.5
+      }
+    },
+    {
+      "surah": 96,
+      "name_ar": "العلق",
+      "verse_count": 19,
+      "topic_distribution": {
+        "purple": 18,
+        "blue": 1
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 94.7,
+        "blue": 5.3
+      }
+    },
+    {
+      "surah": 97,
+      "name_ar": "القدر",
+      "verse_count": 5,
+      "topic_distribution": {
+        "purple": 5
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 100
+      }
+    },
+    {
+      "surah": 98,
+      "name_ar": "البينة",
+      "verse_count": 8,
+      "topic_distribution": {
+        "purple": 2,
+        "red": 3,
+        "brown": 1,
+        "green": 2
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "purple": 25,
+        "red": 37.5,
+        "brown": 12.5,
+        "green": 25
+      }
+    },
+    {
+      "surah": 99,
+      "name_ar": "الزلزلة",
+      "verse_count": 8,
+      "topic_distribution": {
+        "orange": 8
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 100
+      }
+    },
+    {
+      "surah": 100,
+      "name_ar": "العاديات",
+      "verse_count": 11,
+      "topic_distribution": {
+        "red": 10,
+        "orange": 1
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 90.9,
+        "orange": 9.1
+      }
+    },
+    {
+      "surah": 101,
+      "name_ar": "القارعة",
+      "verse_count": 11,
+      "topic_distribution": {
+        "orange": 11
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 100
+      }
+    },
+    {
+      "surah": 102,
+      "name_ar": "التكاثر",
+      "verse_count": 8,
+      "topic_distribution": {
+        "red": 8
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 100
+      }
+    },
+    {
+      "surah": 103,
+      "name_ar": "العصر",
+      "verse_count": 3,
+      "topic_distribution": {
+        "green": 3
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 100
+      }
+    },
+    {
+      "surah": 104,
+      "name_ar": "الهمزة",
+      "verse_count": 9,
+      "topic_distribution": {
+        "red": 9
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 100
+      }
+    },
+    {
+      "surah": 105,
+      "name_ar": "الفيل",
+      "verse_count": 5,
+      "topic_distribution": {
+        "yellow": 5
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 100
+      }
+    },
+    {
+      "surah": 106,
+      "name_ar": "قريش",
+      "verse_count": 4,
+      "topic_distribution": {
+        "green": 4
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 100
+      }
+    },
+    {
+      "surah": 107,
+      "name_ar": "الماعون",
+      "verse_count": 7,
+      "topic_distribution": {
+        "red": 7
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 100
+      }
+    },
+    {
+      "surah": 108,
+      "name_ar": "الكوثر",
+      "verse_count": 3,
+      "topic_distribution": {
+        "green": 3
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 100
+      }
+    },
+    {
+      "surah": 109,
+      "name_ar": "الكافرون",
+      "verse_count": 6,
+      "topic_distribution": {
+        "purple": 6
+      },
+      "dominant_topic": "purple",
+      "topic_percentages": {
+        "purple": 100
+      }
+    },
+    {
+      "surah": 110,
+      "name_ar": "النصر",
+      "verse_count": 3,
+      "topic_distribution": {
+        "green": 3
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 100
+      }
+    },
+    {
+      "surah": 111,
+      "name_ar": "المسد",
+      "verse_count": 5,
+      "topic_distribution": {
+        "red": 5
+      },
+      "dominant_topic": "red",
+      "topic_percentages": {
+        "red": 100
+      }
+    },
+    {
+      "surah": 112,
+      "name_ar": "الإخلاص",
+      "verse_count": 4,
+      "topic_distribution": {
+        "blue": 4
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 100
+      }
+    },
+    {
+      "surah": 113,
+      "name_ar": "الفلق",
+      "verse_count": 5,
+      "topic_distribution": {
+        "blue": 5
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 100
+      }
+    },
+    {
+      "surah": 114,
+      "name_ar": "الناس",
+      "verse_count": 6,
+      "topic_distribution": {
+        "blue": 5,
+        "green": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 83.3,
+        "green": 16.7
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+.next/
+out/
+build/
+dist/
+
+# Debug
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Phase 0 raw data (large files, re-downloadable)
+phase0-data/raw/scans/
+phase0-data/checkpoints/
+
+# SQLite WAL files
+*.sqlite-shm
+*.sqlite-wal

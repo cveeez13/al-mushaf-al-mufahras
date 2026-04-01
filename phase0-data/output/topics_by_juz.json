@@ -1,0 +1,662 @@
+{
+  "metadata": {
+    "generated": "2026-03-31",
+    "total_juz": 30
+  },
+  "juz": [
+    {
+      "juz": 1,
+      "verse_count": 148,
+      "topic_distribution": {
+        "blue": 14,
+        "orange": 4,
+        "green": 28,
+        "red": 6,
+        "purple": 1,
+        "brown": 10,
+        "yellow": 85
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "blue": 9.5,
+        "orange": 2.7,
+        "green": 18.9,
+        "red": 4.1,
+        "purple": 0.7,
+        "brown": 6.8,
+        "yellow": 57.4
+      }
+    },
+    {
+      "juz": 2,
+      "verse_count": 111,
+      "topic_distribution": {
+        "yellow": 29,
+        "red": 10,
+        "blue": 9,
+        "brown": 50,
+        "orange": 7,
+        "green": 6
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "yellow": 26.1,
+        "red": 9,
+        "blue": 8.1,
+        "brown": 45,
+        "orange": 6.3,
+        "green": 5.4
+      }
+    },
+    {
+      "juz": 3,
+      "verse_count": 126,
+      "topic_distribution": {
+        "yellow": 55,
+        "blue": 24,
+        "red": 17,
+        "green": 5,
+        "brown": 15,
+        "purple": 2,
+        "orange": 8
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 43.7,
+        "blue": 19,
+        "red": 13.5,
+        "green": 4,
+        "brown": 11.9,
+        "purple": 1.6,
+        "orange": 6.3
+      }
+    },
+    {
+      "juz": 4,
+      "verse_count": 131,
+      "topic_distribution": {
+        "yellow": 11,
+        "green": 63,
+        "red": 10,
+        "blue": 14,
+        "brown": 20,
+        "orange": 13
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "yellow": 8.4,
+        "green": 48.1,
+        "red": 7.6,
+        "blue": 10.7,
+        "brown": 15.3,
+        "orange": 9.9
+      }
+    },
+    {
+      "juz": 5,
+      "verse_count": 124,
+      "topic_distribution": {
+        "brown": 73,
+        "blue": 6,
+        "green": 10,
+        "red": 25,
+        "yellow": 1,
+        "orange": 9
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 58.9,
+        "blue": 4.8,
+        "green": 8.1,
+        "red": 20.2,
+        "yellow": 0.8,
+        "orange": 7.3
+      }
+    },
+    {
+      "juz": 6,
+      "verse_count": 111,
+      "topic_distribution": {
+        "brown": 49,
+        "yellow": 42,
+        "orange": 5,
+        "red": 5,
+        "blue": 3,
+        "green": 7
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 44.1,
+        "yellow": 37.8,
+        "orange": 4.5,
+        "red": 4.5,
+        "blue": 2.7,
+        "green": 6.3
+      }
+    },
+    {
+      "juz": 7,
+      "verse_count": 148,
+      "topic_distribution": {
+        "brown": 23,
+        "green": 4,
+        "red": 1,
+        "yellow": 24,
+        "blue": 92,
+        "orange": 3,
+        "purple": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "brown": 15.5,
+        "green": 2.7,
+        "red": 0.7,
+        "yellow": 16.2,
+        "blue": 62.2,
+        "orange": 2,
+        "purple": 0.7
+      }
+    },
+    {
+      "juz": 8,
+      "verse_count": 142,
+      "topic_distribution": {
+        "blue": 55,
+        "brown": 3,
+        "yellow": 35,
+        "orange": 9,
+        "green": 31,
+        "red": 9
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "blue": 38.7,
+        "brown": 2.1,
+        "yellow": 24.6,
+        "orange": 6.3,
+        "green": 21.8,
+        "red": 6.3
+      }
+    },
+    {
+      "juz": 9,
+      "verse_count": 159,
+      "topic_distribution": {
+        "yellow": 72,
+        "green": 6,
+        "blue": 31,
+        "red": 12,
+        "orange": 13,
+        "brown": 25
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 45.3,
+        "green": 3.8,
+        "blue": 19.5,
+        "red": 7.5,
+        "orange": 8.2,
+        "brown": 15.7
+      }
+    },
+    {
+      "juz": 10,
+      "verse_count": 127,
+      "topic_distribution": {
+        "brown": 46,
+        "yellow": 10,
+        "green": 21,
+        "blue": 25,
+        "red": 25
+      },
+      "dominant_topic": "brown",
+      "topic_percentages": {
+        "brown": 36.2,
+        "yellow": 7.9,
+        "green": 16.5,
+        "blue": 19.7,
+        "red": 19.7
+      }
+    },
+    {
+      "juz": 11,
+      "verse_count": 151,
+      "topic_distribution": {
+        "green": 55,
+        "red": 6,
+        "blue": 16,
+        "yellow": 41,
+        "brown": 1,
+        "purple": 22,
+        "orange": 10
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 36.4,
+        "red": 4,
+        "blue": 10.6,
+        "yellow": 27.2,
+        "brown": 0.7,
+        "purple": 14.6,
+        "orange": 6.6
+      }
+    },
+    {
+      "juz": 12,
+      "verse_count": 170,
+      "topic_distribution": {
+        "yellow": 146,
+        "blue": 4,
+        "green": 9,
+        "purple": 1,
+        "red": 4,
+        "orange": 6
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 85.9,
+        "blue": 2.4,
+        "green": 5.3,
+        "purple": 0.6,
+        "red": 2.4,
+        "orange": 3.5
+      }
+    },
+    {
+      "juz": 13,
+      "verse_count": 155,
+      "topic_distribution": {
+        "yellow": 79,
+        "blue": 52,
+        "orange": 5,
+        "red": 5,
+        "green": 12,
+        "purple": 2
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 51,
+        "blue": 33.5,
+        "orange": 3.2,
+        "red": 3.2,
+        "green": 7.7,
+        "purple": 1.3
+      }
+    },
+    {
+      "juz": 14,
+      "verse_count": 226,
+      "topic_distribution": {
+        "red": 29,
+        "yellow": 47,
+        "blue": 96,
+        "orange": 40,
+        "green": 8,
+        "brown": 6
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "red": 12.8,
+        "yellow": 20.8,
+        "blue": 42.5,
+        "orange": 17.7,
+        "green": 3.5,
+        "brown": 2.7
+      }
+    },
+    {
+      "juz": 15,
+      "verse_count": 185,
+      "topic_distribution": {
+        "yellow": 76,
+        "red": 30,
+        "orange": 42,
+        "blue": 27,
+        "purple": 3,
+        "green": 7
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 41.1,
+        "red": 16.2,
+        "orange": 22.7,
+        "blue": 14.6,
+        "purple": 1.6,
+        "green": 3.8
+      }
+    },
+    {
+      "juz": 16,
+      "verse_count": 269,
+      "topic_distribution": {
+        "yellow": 218,
+        "red": 6,
+        "orange": 19,
+        "blue": 22,
+        "brown": 1,
+        "green": 3
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 81,
+        "red": 2.2,
+        "orange": 7.1,
+        "blue": 8.2,
+        "brown": 0.4,
+        "green": 1.1
+      }
+    },
+    {
+      "juz": 17,
+      "verse_count": 190,
+      "topic_distribution": {
+        "yellow": 96,
+        "blue": 26,
+        "red": 8,
+        "orange": 24,
+        "green": 22,
+        "brown": 14
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 50.5,
+        "blue": 13.7,
+        "red": 4.2,
+        "orange": 12.6,
+        "green": 11.6,
+        "brown": 7.4
+      }
+    },
+    {
+      "juz": 18,
+      "verse_count": 202,
+      "topic_distribution": {
+        "green": 97,
+        "yellow": 15,
+        "blue": 33,
+        "orange": 7,
+        "red": 4,
+        "brown": 35,
+        "purple": 11
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "green": 48,
+        "yellow": 7.4,
+        "blue": 16.3,
+        "orange": 3.5,
+        "red": 2,
+        "brown": 17.3,
+        "purple": 5.4
+      }
+    },
+    {
+      "juz": 19,
+      "verse_count": 339,
+      "topic_distribution": {
+        "purple": 31,
+        "green": 5,
+        "red": 6,
+        "yellow": 247,
+        "blue": 31,
+        "orange": 18,
+        "brown": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "purple": 9.1,
+        "green": 1.5,
+        "red": 1.8,
+        "yellow": 72.9,
+        "blue": 9.1,
+        "orange": 5.3,
+        "brown": 0.3
+      }
+    },
+    {
+      "juz": 20,
+      "verse_count": 171,
+      "topic_distribution": {
+        "yellow": 87,
+        "blue": 29,
+        "purple": 1,
+        "orange": 41,
+        "green": 10,
+        "red": 3
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "yellow": 50.9,
+        "blue": 17,
+        "purple": 0.6,
+        "orange": 24,
+        "green": 5.8,
+        "red": 1.8
+      }
+    },
+    {
+      "juz": 21,
+      "verse_count": 178,
+      "topic_distribution": {
+        "yellow": 30,
+        "blue": 72,
+        "red": 7,
+        "green": 23,
+        "orange": 32,
+        "brown": 13,
+        "purple": 1
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "yellow": 16.9,
+        "blue": 40.4,
+        "red": 3.9,
+        "green": 12.9,
+        "orange": 18,
+        "brown": 7.3,
+        "purple": 0.6
+      }
+    },
+    {
+      "juz": 22,
+      "verse_count": 169,
+      "topic_distribution": {
+        "green": 25,
+        "brown": 17,
+        "yellow": 6,
+        "orange": 8,
+        "red": 51,
+        "blue": 59,
+        "purple": 3
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "green": 14.8,
+        "brown": 10.1,
+        "yellow": 3.6,
+        "orange": 4.7,
+        "red": 30.2,
+        "blue": 34.9,
+        "purple": 1.8
+      }
+    },
+    {
+      "juz": 23,
+      "verse_count": 357,
+      "topic_distribution": {
+        "blue": 86,
+        "yellow": 144,
+        "orange": 35,
+        "green": 13,
+        "red": 76,
+        "purple": 2,
+        "brown": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "blue": 24.1,
+        "yellow": 40.3,
+        "orange": 9.8,
+        "green": 3.6,
+        "red": 21.3,
+        "purple": 0.6,
+        "brown": 0.3
+      }
+    },
+    {
+      "juz": 24,
+      "verse_count": 175,
+      "topic_distribution": {
+        "red": 32,
+        "orange": 29,
+        "blue": 33,
+        "green": 10,
+        "purple": 30,
+        "yellow": 40,
+        "brown": 1
+      },
+      "dominant_topic": "yellow",
+      "topic_percentages": {
+        "red": 18.3,
+        "orange": 16.6,
+        "blue": 18.9,
+        "green": 5.7,
+        "purple": 17.1,
+        "yellow": 22.9,
+        "brown": 0.6
+      }
+    },
+    {
+      "juz": 25,
+      "verse_count": 246,
+      "topic_distribution": {
+        "orange": 66,
+        "purple": 35,
+        "blue": 75,
+        "yellow": 37,
+        "green": 17,
+        "red": 16
+      },
+      "dominant_topic": "blue",
+      "topic_percentages": {
+        "orange": 26.8,
+        "purple": 14.2,
+        "blue": 30.5,
+        "yellow": 15,
+        "green": 6.9,
+        "red": 6.5
+      }
+    },
+    {
+      "juz": 26,
+      "verse_count": 195,
+      "topic_distribution": {
+        "orange": 35,
+        "purple": 1,
+        "blue": 39,
+        "yellow": 28,
+        "green": 45,
+        "red": 9,
+        "brown": 38
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "orange": 17.9,
+        "purple": 0.5,
+        "blue": 20,
+        "yellow": 14.4,
+        "green": 23.1,
+        "red": 4.6,
+        "brown": 19.5
+      }
+    },
+    {
+      "juz": 27,
+      "verse_count": 399,
+      "topic_distribution": {
+        "blue": 38,
+        "yellow": 86,
+        "green": 11,
+        "red": 106,
+        "orange": 111,
+        "purple": 47
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "blue": 9.5,
+        "yellow": 21.6,
+        "green": 2.8,
+        "red": 26.6,
+        "orange": 27.8,
+        "purple": 11.8
+      }
+    },
+    {
+      "juz": 28,
+      "verse_count": 137,
+      "topic_distribution": {
+        "brown": 40,
+        "orange": 5,
+        "red": 23,
+        "green": 41,
+        "blue": 16,
+        "yellow": 12
+      },
+      "dominant_topic": "green",
+      "topic_percentages": {
+        "brown": 29.2,
+        "orange": 3.6,
+        "red": 16.8,
+        "green": 29.9,
+        "blue": 11.7,
+        "yellow": 8.8
+      }
+    },
+    {
+      "juz": 29,
+      "verse_count": 431,
+      "topic_distribution": {
+        "blue": 24,
+        "red": 142,
+        "green": 44,
+        "orange": 161,
+        "yellow": 38,
+        "purple": 21,
+        "brown": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "blue": 5.6,
+        "red": 32.9,
+        "green": 10.2,
+        "orange": 37.4,
+        "yellow": 8.8,
+        "purple": 4.9,
+        "brown": 0.2
+      }
+    },
+    {
+      "juz": 30,
+      "verse_count": 564,
+      "topic_distribution": {
+        "orange": 203,
+        "red": 98,
+        "blue": 78,
+        "yellow": 29,
+        "green": 124,
+        "purple": 31,
+        "brown": 1
+      },
+      "dominant_topic": "orange",
+      "topic_percentages": {
+        "orange": 36,
+        "red": 17.4,
+        "blue": 13.8,
+        "yellow": 5.1,
+        "green": 22,
+        "purple": 5.5,
+        "brown": 0.2
+      }
+    }
+  ]
+}

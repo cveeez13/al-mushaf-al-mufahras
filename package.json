@@ -1,0 +1,54 @@
+{
+  "name": "al-mushaf-al-mufahras",
+  "version": "1.0.0",
+  "description": "المصحف المفهرس - Color-coded Quran topic classification viewer",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src/",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "phase0:classify": "node phase0-data/hybrid-classifier.js",
+    "phase0:derive": "node phase0-data/generate-derived.js",
+    "phase0:sqlite": "node phase0-data/generate-sqlite.js",
+    "phase0:verify": "node phase0-data/generate-verification.js"
+  },
+  "keywords": [
+    "quran",
+    "mushaf",
+    "topic-classification",
+    "color-coded"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "d3-force": "^3.0.0",
+    "leaflet": "^1.9.4",
+    "next": "^16.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/d3-force": "^3.0.10",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "axios": "^1.14.0",
+    "better-sqlite3": "^12.8.0",
+    "cheerio": "^1.2.0",
+    "eslint": "^9.22.0",
+    "eslint-config-next": "^16.2.1",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.5.8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vitest": "^3.2.1"
+  }
+}

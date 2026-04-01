@@ -1,0 +1,4834 @@
+[
+  {
+    "page": 1,
+    "startGlobalAyah": 1,
+    "endGlobalAyah": 7,
+    "verseCount": 7,
+    "firstVerse": "1:1",
+    "lastVerse": "1:7"
+  },
+  {
+    "page": 2,
+    "startGlobalAyah": 8,
+    "endGlobalAyah": 12,
+    "verseCount": 5,
+    "firstVerse": "2:1",
+    "lastVerse": "2:5"
+  },
+  {
+    "page": 3,
+    "startGlobalAyah": 13,
+    "endGlobalAyah": 23,
+    "verseCount": 11,
+    "firstVerse": "2:6",
+    "lastVerse": "2:16"
+  },
+  {
+    "page": 4,
+    "startGlobalAyah": 24,
+    "endGlobalAyah": 31,
+    "verseCount": 8,
+    "firstVerse": "2:17",
+    "lastVerse": "2:24"
+  },
+  {
+    "page": 5,
+    "startGlobalAyah": 32,
+    "endGlobalAyah": 36,
+    "verseCount": 5,
+    "firstVerse": "2:25",
+    "lastVerse": "2:29"
+  },
+  {
+    "page": 6,
+    "startGlobalAyah": 37,
+    "endGlobalAyah": 44,
+    "verseCount": 8,
+    "firstVerse": "2:30",
+    "lastVerse": "2:37"
+  },
+  {
+    "page": 7,
+    "startGlobalAyah": 45,
+    "endGlobalAyah": 55,
+    "verseCount": 11,
+    "firstVerse": "2:38",
+    "lastVerse": "2:48"
+  },
+  {
+    "page": 8,
+    "startGlobalAyah": 56,
+    "endGlobalAyah": 64,
+    "verseCount": 9,
+    "firstVerse": "2:49",
+    "lastVerse": "2:57"
+  },
+  {
+    "page": 9,
+    "startGlobalAyah": 65,
+    "endGlobalAyah": 68,
+    "verseCount": 4,
+    "firstVerse": "2:58",
+    "lastVerse": "2:61"
+  },
+  {
+    "page": 10,
+    "startGlobalAyah": 69,
+    "endGlobalAyah": 76,
+    "verseCount": 8,
+    "firstVerse": "2:62",
+    "lastVerse": "2:69"
+  },
+  {
+    "page": 11,
+    "startGlobalAyah": 77,
+    "endGlobalAyah": 83,
+    "verseCount": 7,
+    "firstVerse": "2:70",
+    "lastVerse": "2:76"
+  },
+  {
+    "page": 12,
+    "startGlobalAyah": 84,
+    "endGlobalAyah": 90,
+    "verseCount": 7,
+    "firstVerse": "2:77",
+    "lastVerse": "2:83"
+  },
+  {
+    "page": 13,
+    "startGlobalAyah": 91,
+    "endGlobalAyah": 95,
+    "verseCount": 5,
+    "firstVerse": "2:84",
+    "lastVerse": "2:88"
+  },
+  {
+    "page": 14,
+    "startGlobalAyah": 96,
+    "endGlobalAyah": 100,
+    "verseCount": 5,
+    "firstVerse": "2:89",
+    "lastVerse": "2:93"
+  },
+  {
+    "page": 15,
+    "startGlobalAyah": 101,
+    "endGlobalAyah": 108,
+    "verseCount": 8,
+    "firstVerse": "2:94",
+    "lastVerse": "2:101"
+  },
+  {
+    "page": 16,
+    "startGlobalAyah": 109,
+    "endGlobalAyah": 112,
+    "verseCount": 4,
+    "firstVerse": "2:102",
+    "lastVerse": "2:105"
+  },
+  {
+    "page": 17,
+    "startGlobalAyah": 113,
+    "endGlobalAyah": 119,
+    "verseCount": 7,
+    "firstVerse": "2:106",
+    "lastVerse": "2:112"
+  },
+  {
+    "page": 18,
+    "startGlobalAyah": 120,
+    "endGlobalAyah": 126,
+    "verseCount": 7,
+    "firstVerse": "2:113",
+    "lastVerse": "2:119"
+  },
+  {
+    "page": 19,
+    "startGlobalAyah": 127,
+    "endGlobalAyah": 133,
+    "verseCount": 7,
+    "firstVerse": "2:120",
+    "lastVerse": "2:126"
+  },
+  {
+    "page": 20,
+    "startGlobalAyah": 134,
+    "endGlobalAyah": 141,
+    "verseCount": 8,
+    "firstVerse": "2:127",
+    "lastVerse": "2:134"
+  },
+  {
+    "page": 21,
+    "startGlobalAyah": 142,
+    "endGlobalAyah": 148,
+    "verseCount": 7,
+    "firstVerse": "2:135",
+    "lastVerse": "2:141"
+  },
+  {
+    "page": 22,
+    "startGlobalAyah": 149,
+    "endGlobalAyah": 152,
+    "verseCount": 4,
+    "firstVerse": "2:142",
+    "lastVerse": "2:145"
+  },
+  {
+    "page": 23,
+    "startGlobalAyah": 153,
+    "endGlobalAyah": 160,
+    "verseCount": 8,
+    "firstVerse": "2:146",
+    "lastVerse": "2:153"
+  },
+  {
+    "page": 24,
+    "startGlobalAyah": 161,
+    "endGlobalAyah": 170,
+    "verseCount": 10,
+    "firstVerse": "2:154",
+    "lastVerse": "2:163"
+  },
+  {
+    "page": 25,
+    "startGlobalAyah": 171,
+    "endGlobalAyah": 176,
+    "verseCount": 6,
+    "firstVerse": "2:164",
+    "lastVerse": "2:169"
+  },
+  {
+    "page": 26,
+    "startGlobalAyah": 177,
+    "endGlobalAyah": 183,
+    "verseCount": 7,
+    "firstVerse": "2:170",
+    "lastVerse": "2:176"
+  },
+  {
+    "page": 27,
+    "startGlobalAyah": 184,
+    "endGlobalAyah": 188,
+    "verseCount": 5,
+    "firstVerse": "2:177",
+    "lastVerse": "2:181"
+  },
+  {
+    "page": 28,
+    "startGlobalAyah": 189,
+    "endGlobalAyah": 193,
+    "verseCount": 5,
+    "firstVerse": "2:182",
+    "lastVerse": "2:186"
+  },
+  {
+    "page": 29,
+    "startGlobalAyah": 194,
+    "endGlobalAyah": 197,
+    "verseCount": 4,
+    "firstVerse": "2:187",
+    "lastVerse": "2:190"
+  },
+  {
+    "page": 30,
+    "startGlobalAyah": 198,
+    "endGlobalAyah": 203,
+    "verseCount": 6,
+    "firstVerse": "2:191",
+    "lastVerse": "2:196"
+  },
+  {
+    "page": 31,
+    "startGlobalAyah": 204,
+    "endGlobalAyah": 209,
+    "verseCount": 6,
+    "firstVerse": "2:197",
+    "lastVerse": "2:202"
+  },
+  {
+    "page": 32,
+    "startGlobalAyah": 210,
+    "endGlobalAyah": 217,
+    "verseCount": 8,
+    "firstVerse": "2:203",
+    "lastVerse": "2:210"
+  },
+  {
+    "page": 33,
+    "startGlobalAyah": 218,
+    "endGlobalAyah": 222,
+    "verseCount": 5,
+    "firstVerse": "2:211",
+    "lastVerse": "2:215"
+  },
+  {
+    "page": 34,
+    "startGlobalAyah": 223,
+    "endGlobalAyah": 226,
+    "verseCount": 4,
+    "firstVerse": "2:216",
+    "lastVerse": "2:219"
+  },
+  {
+    "page": 35,
+    "startGlobalAyah": 227,
+    "endGlobalAyah": 231,
+    "verseCount": 5,
+    "firstVerse": "2:220",
+    "lastVerse": "2:224"
+  },
+  {
+    "page": 36,
+    "startGlobalAyah": 232,
+    "endGlobalAyah": 237,
+    "verseCount": 6,
+    "firstVerse": "2:225",
+    "lastVerse": "2:230"
+  },
+  {
+    "page": 37,
+    "startGlobalAyah": 238,
+    "endGlobalAyah": 240,
+    "verseCount": 3,
+    "firstVerse": "2:231",
+    "lastVerse": "2:233"
+  },
+  {
+    "page": 38,
+    "startGlobalAyah": 241,
+    "endGlobalAyah": 244,
+    "verseCount": 4,
+    "firstVerse": "2:234",
+    "lastVerse": "2:237"
+  },
+  {
+    "page": 39,
+    "startGlobalAyah": 245,
+    "endGlobalAyah": 252,
+    "verseCount": 8,
+    "firstVerse": "2:238",
+    "lastVerse": "2:245"
+  },
+  {
+    "page": 40,
+    "startGlobalAyah": 253,
+    "endGlobalAyah": 255,
+    "verseCount": 3,
+    "firstVerse": "2:246",
+    "lastVerse": "2:248"
+  },
+  {
+    "page": 41,
+    "startGlobalAyah": 256,
+    "endGlobalAyah": 259,
+    "verseCount": 4,
+    "firstVerse": "2:249",
+    "lastVerse": "2:252"
+  },
+  {
+    "page": 42,
+    "startGlobalAyah": 260,
+    "endGlobalAyah": 263,
+    "verseCount": 4,
+    "firstVerse": "2:253",
+    "lastVerse": "2:256"
+  },
+  {
+    "page": 43,
+    "startGlobalAyah": 264,
+    "endGlobalAyah": 266,
+    "verseCount": 3,
+    "firstVerse": "2:257",
+    "lastVerse": "2:259"
+  },
+  {
+    "page": 44,
+    "startGlobalAyah": 267,
+    "endGlobalAyah": 271,
+    "verseCount": 5,
+    "firstVerse": "2:260",
+    "lastVerse": "2:264"
+  },
+  {
+    "page": 45,
+    "startGlobalAyah": 272,
+    "endGlobalAyah": 276,
+    "verseCount": 5,
+    "firstVerse": "2:265",
+    "lastVerse": "2:269"
+  },
+  {
+    "page": 46,
+    "startGlobalAyah": 277,
+    "endGlobalAyah": 281,
+    "verseCount": 5,
+    "firstVerse": "2:270",
+    "lastVerse": "2:274"
+  },
+  {
+    "page": 47,
+    "startGlobalAyah": 282,
+    "endGlobalAyah": 288,
+    "verseCount": 7,
+    "firstVerse": "2:275",
+    "lastVerse": "2:281"
+  },
+  {
+    "page": 48,
+    "startGlobalAyah": 289,
+    "endGlobalAyah": 289,
+    "verseCount": 1,
+    "firstVerse": "2:282",
+    "lastVerse": "2:282"
+  },
+  {
+    "page": 49,
+    "startGlobalAyah": 290,
+    "endGlobalAyah": 293,
+    "verseCount": 4,
+    "firstVerse": "2:283",
+    "lastVerse": "2:286"
+  },
+  {
+    "page": 50,
+    "startGlobalAyah": 294,
+    "endGlobalAyah": 302,
+    "verseCount": 9,
+    "firstVerse": "3:1",
+    "lastVerse": "3:9"
+  },
+  {
+    "page": 51,
+    "startGlobalAyah": 303,
+    "endGlobalAyah": 308,
+    "verseCount": 6,
+    "firstVerse": "3:10",
+    "lastVerse": "3:15"
+  },
+  {
+    "page": 52,
+    "startGlobalAyah": 309,
+    "endGlobalAyah": 315,
+    "verseCount": 7,
+    "firstVerse": "3:16",
+    "lastVerse": "3:22"
+  },
+  {
+    "page": 53,
+    "startGlobalAyah": 316,
+    "endGlobalAyah": 322,
+    "verseCount": 7,
+    "firstVerse": "3:23",
+    "lastVerse": "3:29"
+  },
+  {
+    "page": 54,
+    "startGlobalAyah": 323,
+    "endGlobalAyah": 330,
+    "verseCount": 8,
+    "firstVerse": "3:30",
+    "lastVerse": "3:37"
+  },
+  {
+    "page": 55,
+    "startGlobalAyah": 331,
+    "endGlobalAyah": 338,
+    "verseCount": 8,
+    "firstVerse": "3:38",
+    "lastVerse": "3:45"
+  },
+  {
+    "page": 56,
+    "startGlobalAyah": 339,
+    "endGlobalAyah": 345,
+    "verseCount": 7,
+    "firstVerse": "3:46",
+    "lastVerse": "3:52"
+  },
+  {
+    "page": 57,
+    "startGlobalAyah": 346,
+    "endGlobalAyah": 354,
+    "verseCount": 9,
+    "firstVerse": "3:53",
+    "lastVerse": "3:61"
+  },
+  {
+    "page": 58,
+    "startGlobalAyah": 355,
+    "endGlobalAyah": 363,
+    "verseCount": 9,
+    "firstVerse": "3:62",
+    "lastVerse": "3:70"
+  },
+  {
+    "page": 59,
+    "startGlobalAyah": 364,
+    "endGlobalAyah": 370,
+    "verseCount": 7,
+    "firstVerse": "3:71",
+    "lastVerse": "3:77"
+  },
+  {
+    "page": 60,
+    "startGlobalAyah": 371,
+    "endGlobalAyah": 376,
+    "verseCount": 6,
+    "firstVerse": "3:78",
+    "lastVerse": "3:83"
+  },
+  {
+    "page": 61,
+    "startGlobalAyah": 377,
+    "endGlobalAyah": 384,
+    "verseCount": 8,
+    "firstVerse": "3:84",
+    "lastVerse": "3:91"
+  },
+  {
+    "page": 62,
+    "startGlobalAyah": 385,
+    "endGlobalAyah": 393,
+    "verseCount": 9,
+    "firstVerse": "3:92",
+    "lastVerse": "3:100"
+  },
+  {
+    "page": 63,
+    "startGlobalAyah": 394,
+    "endGlobalAyah": 401,
+    "verseCount": 8,
+    "firstVerse": "3:101",
+    "lastVerse": "3:108"
+  },
+  {
+    "page": 64,
+    "startGlobalAyah": 402,
+    "endGlobalAyah": 408,
+    "verseCount": 7,
+    "firstVerse": "3:109",
+    "lastVerse": "3:115"
+  },
+  {
+    "page": 65,
+    "startGlobalAyah": 409,
+    "endGlobalAyah": 414,
+    "verseCount": 6,
+    "firstVerse": "3:116",
+    "lastVerse": "3:121"
+  },
+  {
+    "page": 66,
+    "startGlobalAyah": 415,
+    "endGlobalAyah": 425,
+    "verseCount": 11,
+    "firstVerse": "3:122",
+    "lastVerse": "3:132"
+  },
+  {
+    "page": 67,
+    "startGlobalAyah": 426,
+    "endGlobalAyah": 433,
+    "verseCount": 8,
+    "firstVerse": "3:133",
+    "lastVerse": "3:140"
+  },
+  {
+    "page": 68,
+    "startGlobalAyah": 434,
+    "endGlobalAyah": 441,
+    "verseCount": 8,
+    "firstVerse": "3:141",
+    "lastVerse": "3:148"
+  },
+  {
+    "page": 69,
+    "startGlobalAyah": 442,
+    "endGlobalAyah": 446,
+    "verseCount": 5,
+    "firstVerse": "3:149",
+    "lastVerse": "3:153"
+  },
+  {
+    "page": 70,
+    "startGlobalAyah": 447,
+    "endGlobalAyah": 450,
+    "verseCount": 4,
+    "firstVerse": "3:154",
+    "lastVerse": "3:157"
+  },
+  {
+    "page": 71,
+    "startGlobalAyah": 451,
+    "endGlobalAyah": 458,
+    "verseCount": 8,
+    "firstVerse": "3:158",
+    "lastVerse": "3:165"
+  },
+  {
+    "page": 72,
+    "startGlobalAyah": 459,
+    "endGlobalAyah": 466,
+    "verseCount": 8,
+    "firstVerse": "3:166",
+    "lastVerse": "3:173"
+  },
+  {
+    "page": 73,
+    "startGlobalAyah": 467,
+    "endGlobalAyah": 473,
+    "verseCount": 7,
+    "firstVerse": "3:174",
+    "lastVerse": "3:180"
+  },
+  {
+    "page": 74,
+    "startGlobalAyah": 474,
+    "endGlobalAyah": 479,
+    "verseCount": 6,
+    "firstVerse": "3:181",
+    "lastVerse": "3:186"
+  },
+  {
+    "page": 75,
+    "startGlobalAyah": 480,
+    "endGlobalAyah": 487,
+    "verseCount": 8,
+    "firstVerse": "3:187",
+    "lastVerse": "3:194"
+  },
+  {
+    "page": 76,
+    "startGlobalAyah": 488,
+    "endGlobalAyah": 493,
+    "verseCount": 6,
+    "firstVerse": "3:195",
+    "lastVerse": "3:200"
+  },
+  {
+    "page": 77,
+    "startGlobalAyah": 494,
+    "endGlobalAyah": 499,
+    "verseCount": 6,
+    "firstVerse": "4:1",
+    "lastVerse": "4:6"
+  },
+  {
+    "page": 78,
+    "startGlobalAyah": 500,
+    "endGlobalAyah": 504,
+    "verseCount": 5,
+    "firstVerse": "4:7",
+    "lastVerse": "4:11"
+  },
+  {
+    "page": 79,
+    "startGlobalAyah": 505,
+    "endGlobalAyah": 507,
+    "verseCount": 3,
+    "firstVerse": "4:12",
+    "lastVerse": "4:14"
+  },
+  {
+    "page": 80,
+    "startGlobalAyah": 508,
+    "endGlobalAyah": 512,
+    "verseCount": 5,
+    "firstVerse": "4:15",
+    "lastVerse": "4:19"
+  },
+  {
+    "page": 81,
+    "startGlobalAyah": 513,
+    "endGlobalAyah": 516,
+    "verseCount": 4,
+    "firstVerse": "4:20",
+    "lastVerse": "4:23"
+  },
+  {
+    "page": 82,
+    "startGlobalAyah": 517,
+    "endGlobalAyah": 519,
+    "verseCount": 3,
+    "firstVerse": "4:24",
+    "lastVerse": "4:26"
+  },
+  {
+    "page": 83,
+    "startGlobalAyah": 520,
+    "endGlobalAyah": 526,
+    "verseCount": 7,
+    "firstVerse": "4:27",
+    "lastVerse": "4:33"
+  },
+  {
+    "page": 84,
+    "startGlobalAyah": 527,
+    "endGlobalAyah": 530,
+    "verseCount": 4,
+    "firstVerse": "4:34",
+    "lastVerse": "4:37"
+  },
+  {
+    "page": 85,
+    "startGlobalAyah": 531,
+    "endGlobalAyah": 537,
+    "verseCount": 7,
+    "firstVerse": "4:38",
+    "lastVerse": "4:44"
+  },
+  {
+    "page": 86,
+    "startGlobalAyah": 538,
+    "endGlobalAyah": 544,
+    "verseCount": 7,
+    "firstVerse": "4:45",
+    "lastVerse": "4:51"
+  },
+  {
+    "page": 87,
+    "startGlobalAyah": 545,
+    "endGlobalAyah": 552,
+    "verseCount": 8,
+    "firstVerse": "4:52",
+    "lastVerse": "4:59"
+  },
+  {
+    "page": 88,
+    "startGlobalAyah": 553,
+    "endGlobalAyah": 558,
+    "verseCount": 6,
+    "firstVerse": "4:60",
+    "lastVerse": "4:65"
+  },
+  {
+    "page": 89,
+    "startGlobalAyah": 559,
+    "endGlobalAyah": 567,
+    "verseCount": 9,
+    "firstVerse": "4:66",
+    "lastVerse": "4:74"
+  },
+  {
+    "page": 90,
+    "startGlobalAyah": 568,
+    "endGlobalAyah": 572,
+    "verseCount": 5,
+    "firstVerse": "4:75",
+    "lastVerse": "4:79"
+  },
+  {
+    "page": 91,
+    "startGlobalAyah": 573,
+    "endGlobalAyah": 579,
+    "verseCount": 7,
+    "firstVerse": "4:80",
+    "lastVerse": "4:86"
+  },
+  {
+    "page": 92,
+    "startGlobalAyah": 580,
+    "endGlobalAyah": 584,
+    "verseCount": 5,
+    "firstVerse": "4:87",
+    "lastVerse": "4:91"
+  },
+  {
+    "page": 93,
+    "startGlobalAyah": 585,
+    "endGlobalAyah": 587,
+    "verseCount": 3,
+    "firstVerse": "4:92",
+    "lastVerse": "4:94"
+  },
+  {
+    "page": 94,
+    "startGlobalAyah": 588,
+    "endGlobalAyah": 594,
+    "verseCount": 7,
+    "firstVerse": "4:95",
+    "lastVerse": "4:101"
+  },
+  {
+    "page": 95,
+    "startGlobalAyah": 595,
+    "endGlobalAyah": 598,
+    "verseCount": 4,
+    "firstVerse": "4:102",
+    "lastVerse": "4:105"
+  },
+  {
+    "page": 96,
+    "startGlobalAyah": 599,
+    "endGlobalAyah": 606,
+    "verseCount": 8,
+    "firstVerse": "4:106",
+    "lastVerse": "4:113"
+  },
+  {
+    "page": 97,
+    "startGlobalAyah": 607,
+    "endGlobalAyah": 614,
+    "verseCount": 8,
+    "firstVerse": "4:114",
+    "lastVerse": "4:121"
+  },
+  {
+    "page": 98,
+    "startGlobalAyah": 615,
+    "endGlobalAyah": 620,
+    "verseCount": 6,
+    "firstVerse": "4:122",
+    "lastVerse": "4:127"
+  },
+  {
+    "page": 99,
+    "startGlobalAyah": 621,
+    "endGlobalAyah": 627,
+    "verseCount": 7,
+    "firstVerse": "4:128",
+    "lastVerse": "4:134"
+  },
+  {
+    "page": 100,
+    "startGlobalAyah": 628,
+    "endGlobalAyah": 633,
+    "verseCount": 6,
+    "firstVerse": "4:135",
+    "lastVerse": "4:140"
+  },
+  {
+    "page": 101,
+    "startGlobalAyah": 634,
+    "endGlobalAyah": 640,
+    "verseCount": 7,
+    "firstVerse": "4:141",
+    "lastVerse": "4:147"
+  },
+  {
+    "page": 102,
+    "startGlobalAyah": 641,
+    "endGlobalAyah": 647,
+    "verseCount": 7,
+    "firstVerse": "4:148",
+    "lastVerse": "4:154"
+  },
+  {
+    "page": 103,
+    "startGlobalAyah": 648,
+    "endGlobalAyah": 655,
+    "verseCount": 8,
+    "firstVerse": "4:155",
+    "lastVerse": "4:162"
+  },
+  {
+    "page": 104,
+    "startGlobalAyah": 656,
+    "endGlobalAyah": 663,
+    "verseCount": 8,
+    "firstVerse": "4:163",
+    "lastVerse": "4:170"
+  },
+  {
+    "page": 105,
+    "startGlobalAyah": 664,
+    "endGlobalAyah": 668,
+    "verseCount": 5,
+    "firstVerse": "4:171",
+    "lastVerse": "4:175"
+  },
+  {
+    "page": 106,
+    "startGlobalAyah": 669,
+    "endGlobalAyah": 671,
+    "verseCount": 3,
+    "firstVerse": "4:176",
+    "lastVerse": "5:2"
+  },
+  {
+    "page": 107,
+    "startGlobalAyah": 672,
+    "endGlobalAyah": 674,
+    "verseCount": 3,
+    "firstVerse": "5:3",
+    "lastVerse": "5:5"
+  },
+  {
+    "page": 108,
+    "startGlobalAyah": 675,
+    "endGlobalAyah": 678,
+    "verseCount": 4,
+    "firstVerse": "5:6",
+    "lastVerse": "5:9"
+  },
+  {
+    "page": 109,
+    "startGlobalAyah": 679,
+    "endGlobalAyah": 682,
+    "verseCount": 4,
+    "firstVerse": "5:10",
+    "lastVerse": "5:13"
+  },
+  {
+    "page": 110,
+    "startGlobalAyah": 683,
+    "endGlobalAyah": 686,
+    "verseCount": 4,
+    "firstVerse": "5:14",
+    "lastVerse": "5:17"
+  },
+  {
+    "page": 111,
+    "startGlobalAyah": 687,
+    "endGlobalAyah": 692,
+    "verseCount": 6,
+    "firstVerse": "5:18",
+    "lastVerse": "5:23"
+  },
+  {
+    "page": 112,
+    "startGlobalAyah": 693,
+    "endGlobalAyah": 700,
+    "verseCount": 8,
+    "firstVerse": "5:24",
+    "lastVerse": "5:31"
+  },
+  {
+    "page": 113,
+    "startGlobalAyah": 701,
+    "endGlobalAyah": 705,
+    "verseCount": 5,
+    "firstVerse": "5:32",
+    "lastVerse": "5:36"
+  },
+  {
+    "page": 114,
+    "startGlobalAyah": 706,
+    "endGlobalAyah": 710,
+    "verseCount": 5,
+    "firstVerse": "5:37",
+    "lastVerse": "5:41"
+  },
+  {
+    "page": 115,
+    "startGlobalAyah": 711,
+    "endGlobalAyah": 714,
+    "verseCount": 4,
+    "firstVerse": "5:42",
+    "lastVerse": "5:45"
+  },
+  {
+    "page": 116,
+    "startGlobalAyah": 715,
+    "endGlobalAyah": 719,
+    "verseCount": 5,
+    "firstVerse": "5:46",
+    "lastVerse": "5:50"
+  },
+  {
+    "page": 117,
+    "startGlobalAyah": 720,
+    "endGlobalAyah": 726,
+    "verseCount": 7,
+    "firstVerse": "5:51",
+    "lastVerse": "5:57"
+  },
+  {
+    "page": 118,
+    "startGlobalAyah": 727,
+    "endGlobalAyah": 733,
+    "verseCount": 7,
+    "firstVerse": "5:58",
+    "lastVerse": "5:64"
+  },
+  {
+    "page": 119,
+    "startGlobalAyah": 734,
+    "endGlobalAyah": 739,
+    "verseCount": 6,
+    "firstVerse": "5:65",
+    "lastVerse": "5:70"
+  },
+  {
+    "page": 120,
+    "startGlobalAyah": 740,
+    "endGlobalAyah": 746,
+    "verseCount": 7,
+    "firstVerse": "5:71",
+    "lastVerse": "5:77"
+  },
+  {
+    "page": 121,
+    "startGlobalAyah": 747,
+    "endGlobalAyah": 752,
+    "verseCount": 6,
+    "firstVerse": "5:78",
+    "lastVerse": "5:83"
+  },
+  {
+    "page": 122,
+    "startGlobalAyah": 753,
+    "endGlobalAyah": 759,
+    "verseCount": 7,
+    "firstVerse": "5:84",
+    "lastVerse": "5:90"
+  },
+  {
+    "page": 123,
+    "startGlobalAyah": 760,
+    "endGlobalAyah": 764,
+    "verseCount": 5,
+    "firstVerse": "5:91",
+    "lastVerse": "5:95"
+  },
+  {
+    "page": 124,
+    "startGlobalAyah": 765,
+    "endGlobalAyah": 772,
+    "verseCount": 8,
+    "firstVerse": "5:96",
+    "lastVerse": "5:103"
+  },
+  {
+    "page": 125,
+    "startGlobalAyah": 773,
+    "endGlobalAyah": 777,
+    "verseCount": 5,
+    "firstVerse": "5:104",
+    "lastVerse": "5:108"
+  },
+  {
+    "page": 126,
+    "startGlobalAyah": 778,
+    "endGlobalAyah": 782,
+    "verseCount": 5,
+    "firstVerse": "5:109",
+    "lastVerse": "5:113"
+  },
+  {
+    "page": 127,
+    "startGlobalAyah": 783,
+    "endGlobalAyah": 789,
+    "verseCount": 7,
+    "firstVerse": "5:114",
+    "lastVerse": "5:120"
+  },
+  {
+    "page": 128,
+    "startGlobalAyah": 790,
+    "endGlobalAyah": 797,
+    "verseCount": 8,
+    "firstVerse": "6:1",
+    "lastVerse": "6:8"
+  },
+  {
+    "page": 129,
+    "startGlobalAyah": 798,
+    "endGlobalAyah": 807,
+    "verseCount": 10,
+    "firstVerse": "6:9",
+    "lastVerse": "6:18"
+  },
+  {
+    "page": 130,
+    "startGlobalAyah": 808,
+    "endGlobalAyah": 816,
+    "verseCount": 9,
+    "firstVerse": "6:19",
+    "lastVerse": "6:27"
+  },
+  {
+    "page": 131,
+    "startGlobalAyah": 817,
+    "endGlobalAyah": 824,
+    "verseCount": 8,
+    "firstVerse": "6:28",
+    "lastVerse": "6:35"
+  },
+  {
+    "page": 132,
+    "startGlobalAyah": 825,
+    "endGlobalAyah": 833,
+    "verseCount": 9,
+    "firstVerse": "6:36",
+    "lastVerse": "6:44"
+  },
+  {
+    "page": 133,
+    "startGlobalAyah": 834,
+    "endGlobalAyah": 841,
+    "verseCount": 8,
+    "firstVerse": "6:45",
+    "lastVerse": "6:52"
+  },
+  {
+    "page": 134,
+    "startGlobalAyah": 842,
+    "endGlobalAyah": 848,
+    "verseCount": 7,
+    "firstVerse": "6:53",
+    "lastVerse": "6:59"
+  },
+  {
+    "page": 135,
+    "startGlobalAyah": 849,
+    "endGlobalAyah": 857,
+    "verseCount": 9,
+    "firstVerse": "6:60",
+    "lastVerse": "6:68"
+  },
+  {
+    "page": 136,
+    "startGlobalAyah": 858,
+    "endGlobalAyah": 862,
+    "verseCount": 5,
+    "firstVerse": "6:69",
+    "lastVerse": "6:73"
+  },
+  {
+    "page": 137,
+    "startGlobalAyah": 863,
+    "endGlobalAyah": 870,
+    "verseCount": 8,
+    "firstVerse": "6:74",
+    "lastVerse": "6:81"
+  },
+  {
+    "page": 138,
+    "startGlobalAyah": 871,
+    "endGlobalAyah": 879,
+    "verseCount": 9,
+    "firstVerse": "6:82",
+    "lastVerse": "6:90"
+  },
+  {
+    "page": 139,
+    "startGlobalAyah": 880,
+    "endGlobalAyah": 883,
+    "verseCount": 4,
+    "firstVerse": "6:91",
+    "lastVerse": "6:94"
+  },
+  {
+    "page": 140,
+    "startGlobalAyah": 884,
+    "endGlobalAyah": 890,
+    "verseCount": 7,
+    "firstVerse": "6:95",
+    "lastVerse": "6:101"
+  },
+  {
+    "page": 141,
+    "startGlobalAyah": 891,
+    "endGlobalAyah": 899,
+    "verseCount": 9,
+    "firstVerse": "6:102",
+    "lastVerse": "6:110"
+  },
+  {
+    "page": 142,
+    "startGlobalAyah": 900,
+    "endGlobalAyah": 907,
+    "verseCount": 8,
+    "firstVerse": "6:111",
+    "lastVerse": "6:118"
+  },
+  {
+    "page": 143,
+    "startGlobalAyah": 908,
+    "endGlobalAyah": 913,
+    "verseCount": 6,
+    "firstVerse": "6:119",
+    "lastVerse": "6:124"
+  },
+  {
+    "page": 144,
+    "startGlobalAyah": 914,
+    "endGlobalAyah": 919,
+    "verseCount": 6,
+    "firstVerse": "6:125",
+    "lastVerse": "6:130"
+  },
+  {
+    "page": 145,
+    "startGlobalAyah": 920,
+    "endGlobalAyah": 926,
+    "verseCount": 7,
+    "firstVerse": "6:131",
+    "lastVerse": "6:137"
+  },
+  {
+    "page": 146,
+    "startGlobalAyah": 927,
+    "endGlobalAyah": 931,
+    "verseCount": 5,
+    "firstVerse": "6:138",
+    "lastVerse": "6:142"
+  },
+  {
+    "page": 147,
+    "startGlobalAyah": 932,
+    "endGlobalAyah": 935,
+    "verseCount": 4,
+    "firstVerse": "6:143",
+    "lastVerse": "6:146"
+  },
+  {
+    "page": 148,
+    "startGlobalAyah": 936,
+    "endGlobalAyah": 940,
+    "verseCount": 5,
+    "firstVerse": "6:147",
+    "lastVerse": "6:151"
+  },
+  {
+    "page": 149,
+    "startGlobalAyah": 941,
+    "endGlobalAyah": 946,
+    "verseCount": 6,
+    "firstVerse": "6:152",
+    "lastVerse": "6:157"
+  },
+  {
+    "page": 150,
+    "startGlobalAyah": 947,
+    "endGlobalAyah": 954,
+    "verseCount": 8,
+    "firstVerse": "6:158",
+    "lastVerse": "6:165"
+  },
+  {
+    "page": 151,
+    "startGlobalAyah": 955,
+    "endGlobalAyah": 965,
+    "verseCount": 11,
+    "firstVerse": "7:1",
+    "lastVerse": "7:11"
+  },
+  {
+    "page": 152,
+    "startGlobalAyah": 966,
+    "endGlobalAyah": 976,
+    "verseCount": 11,
+    "firstVerse": "7:12",
+    "lastVerse": "7:22"
+  },
+  {
+    "page": 153,
+    "startGlobalAyah": 977,
+    "endGlobalAyah": 984,
+    "verseCount": 8,
+    "firstVerse": "7:23",
+    "lastVerse": "7:30"
+  },
+  {
+    "page": 154,
+    "startGlobalAyah": 985,
+    "endGlobalAyah": 991,
+    "verseCount": 7,
+    "firstVerse": "7:31",
+    "lastVerse": "7:37"
+  },
+  {
+    "page": 155,
+    "startGlobalAyah": 992,
+    "endGlobalAyah": 997,
+    "verseCount": 6,
+    "firstVerse": "7:38",
+    "lastVerse": "7:43"
+  },
+  {
+    "page": 156,
+    "startGlobalAyah": 998,
+    "endGlobalAyah": 1005,
+    "verseCount": 8,
+    "firstVerse": "7:44",
+    "lastVerse": "7:51"
+  },
+  {
+    "page": 157,
+    "startGlobalAyah": 1006,
+    "endGlobalAyah": 1011,
+    "verseCount": 6,
+    "firstVerse": "7:52",
+    "lastVerse": "7:57"
+  },
+  {
+    "page": 158,
+    "startGlobalAyah": 1012,
+    "endGlobalAyah": 1021,
+    "verseCount": 10,
+    "firstVerse": "7:58",
+    "lastVerse": "7:67"
+  },
+  {
+    "page": 159,
+    "startGlobalAyah": 1022,
+    "endGlobalAyah": 1027,
+    "verseCount": 6,
+    "firstVerse": "7:68",
+    "lastVerse": "7:73"
+  },
+  {
+    "page": 160,
+    "startGlobalAyah": 1028,
+    "endGlobalAyah": 1035,
+    "verseCount": 8,
+    "firstVerse": "7:74",
+    "lastVerse": "7:81"
+  },
+  {
+    "page": 161,
+    "startGlobalAyah": 1036,
+    "endGlobalAyah": 1041,
+    "verseCount": 6,
+    "firstVerse": "7:82",
+    "lastVerse": "7:87"
+  },
+  {
+    "page": 162,
+    "startGlobalAyah": 1042,
+    "endGlobalAyah": 1049,
+    "verseCount": 8,
+    "firstVerse": "7:88",
+    "lastVerse": "7:95"
+  },
+  {
+    "page": 163,
+    "startGlobalAyah": 1050,
+    "endGlobalAyah": 1058,
+    "verseCount": 9,
+    "firstVerse": "7:96",
+    "lastVerse": "7:104"
+  },
+  {
+    "page": 164,
+    "startGlobalAyah": 1059,
+    "endGlobalAyah": 1074,
+    "verseCount": 16,
+    "firstVerse": "7:105",
+    "lastVerse": "7:120"
+  },
+  {
+    "page": 165,
+    "startGlobalAyah": 1075,
+    "endGlobalAyah": 1084,
+    "verseCount": 10,
+    "firstVerse": "7:121",
+    "lastVerse": "7:130"
+  },
+  {
+    "page": 166,
+    "startGlobalAyah": 1085,
+    "endGlobalAyah": 1091,
+    "verseCount": 7,
+    "firstVerse": "7:131",
+    "lastVerse": "7:137"
+  },
+  {
+    "page": 167,
+    "startGlobalAyah": 1092,
+    "endGlobalAyah": 1097,
+    "verseCount": 6,
+    "firstVerse": "7:138",
+    "lastVerse": "7:143"
+  },
+  {
+    "page": 168,
+    "startGlobalAyah": 1098,
+    "endGlobalAyah": 1103,
+    "verseCount": 6,
+    "firstVerse": "7:144",
+    "lastVerse": "7:149"
+  },
+  {
+    "page": 169,
+    "startGlobalAyah": 1104,
+    "endGlobalAyah": 1109,
+    "verseCount": 6,
+    "firstVerse": "7:150",
+    "lastVerse": "7:155"
+  },
+  {
+    "page": 170,
+    "startGlobalAyah": 1110,
+    "endGlobalAyah": 1113,
+    "verseCount": 4,
+    "firstVerse": "7:156",
+    "lastVerse": "7:159"
+  },
+  {
+    "page": 171,
+    "startGlobalAyah": 1114,
+    "endGlobalAyah": 1117,
+    "verseCount": 4,
+    "firstVerse": "7:160",
+    "lastVerse": "7:163"
+  },
+  {
+    "page": 172,
+    "startGlobalAyah": 1118,
+    "endGlobalAyah": 1124,
+    "verseCount": 7,
+    "firstVerse": "7:164",
+    "lastVerse": "7:170"
+  },
+  {
+    "page": 173,
+    "startGlobalAyah": 1125,
+    "endGlobalAyah": 1132,
+    "verseCount": 8,
+    "firstVerse": "7:171",
+    "lastVerse": "7:178"
+  },
+  {
+    "page": 174,
+    "startGlobalAyah": 1133,
+    "endGlobalAyah": 1141,
+    "verseCount": 9,
+    "firstVerse": "7:179",
+    "lastVerse": "7:187"
+  },
+  {
+    "page": 175,
+    "startGlobalAyah": 1142,
+    "endGlobalAyah": 1149,
+    "verseCount": 8,
+    "firstVerse": "7:188",
+    "lastVerse": "7:195"
+  },
+  {
+    "page": 176,
+    "startGlobalAyah": 1150,
+    "endGlobalAyah": 1160,
+    "verseCount": 11,
+    "firstVerse": "7:196",
+    "lastVerse": "7:206"
+  },
+  {
+    "page": 177,
+    "startGlobalAyah": 1161,
+    "endGlobalAyah": 1168,
+    "verseCount": 8,
+    "firstVerse": "8:1",
+    "lastVerse": "8:8"
+  },
+  {
+    "page": 178,
+    "startGlobalAyah": 1169,
+    "endGlobalAyah": 1176,
+    "verseCount": 8,
+    "firstVerse": "8:9",
+    "lastVerse": "8:16"
+  },
+  {
+    "page": 179,
+    "startGlobalAyah": 1177,
+    "endGlobalAyah": 1185,
+    "verseCount": 9,
+    "firstVerse": "8:17",
+    "lastVerse": "8:25"
+  },
+  {
+    "page": 180,
+    "startGlobalAyah": 1186,
+    "endGlobalAyah": 1193,
+    "verseCount": 8,
+    "firstVerse": "8:26",
+    "lastVerse": "8:33"
+  },
+  {
+    "page": 181,
+    "startGlobalAyah": 1194,
+    "endGlobalAyah": 1200,
+    "verseCount": 7,
+    "firstVerse": "8:34",
+    "lastVerse": "8:40"
+  },
+  {
+    "page": 182,
+    "startGlobalAyah": 1201,
+    "endGlobalAyah": 1205,
+    "verseCount": 5,
+    "firstVerse": "8:41",
+    "lastVerse": "8:45"
+  },
+  {
+    "page": 183,
+    "startGlobalAyah": 1206,
+    "endGlobalAyah": 1212,
+    "verseCount": 7,
+    "firstVerse": "8:46",
+    "lastVerse": "8:52"
+  },
+  {
+    "page": 184,
+    "startGlobalAyah": 1213,
+    "endGlobalAyah": 1221,
+    "verseCount": 9,
+    "firstVerse": "8:53",
+    "lastVerse": "8:61"
+  },
+  {
+    "page": 185,
+    "startGlobalAyah": 1222,
+    "endGlobalAyah": 1229,
+    "verseCount": 8,
+    "firstVerse": "8:62",
+    "lastVerse": "8:69"
+  },
+  {
+    "page": 186,
+    "startGlobalAyah": 1230,
+    "endGlobalAyah": 1235,
+    "verseCount": 6,
+    "firstVerse": "8:70",
+    "lastVerse": "8:75"
+  },
+  {
+    "page": 187,
+    "startGlobalAyah": 1236,
+    "endGlobalAyah": 1241,
+    "verseCount": 6,
+    "firstVerse": "9:1",
+    "lastVerse": "9:6"
+  },
+  {
+    "page": 188,
+    "startGlobalAyah": 1242,
+    "endGlobalAyah": 1248,
+    "verseCount": 7,
+    "firstVerse": "9:7",
+    "lastVerse": "9:13"
+  },
+  {
+    "page": 189,
+    "startGlobalAyah": 1249,
+    "endGlobalAyah": 1255,
+    "verseCount": 7,
+    "firstVerse": "9:14",
+    "lastVerse": "9:20"
+  },
+  {
+    "page": 190,
+    "startGlobalAyah": 1256,
+    "endGlobalAyah": 1261,
+    "verseCount": 6,
+    "firstVerse": "9:21",
+    "lastVerse": "9:26"
+  },
+  {
+    "page": 191,
+    "startGlobalAyah": 1262,
+    "endGlobalAyah": 1266,
+    "verseCount": 5,
+    "firstVerse": "9:27",
+    "lastVerse": "9:31"
+  },
+  {
+    "page": 192,
+    "startGlobalAyah": 1267,
+    "endGlobalAyah": 1271,
+    "verseCount": 5,
+    "firstVerse": "9:32",
+    "lastVerse": "9:36"
+  },
+  {
+    "page": 193,
+    "startGlobalAyah": 1272,
+    "endGlobalAyah": 1275,
+    "verseCount": 4,
+    "firstVerse": "9:37",
+    "lastVerse": "9:40"
+  },
+  {
+    "page": 194,
+    "startGlobalAyah": 1276,
+    "endGlobalAyah": 1282,
+    "verseCount": 7,
+    "firstVerse": "9:41",
+    "lastVerse": "9:47"
+  },
+  {
+    "page": 195,
+    "startGlobalAyah": 1283,
+    "endGlobalAyah": 1289,
+    "verseCount": 7,
+    "firstVerse": "9:48",
+    "lastVerse": "9:54"
+  },
+  {
+    "page": 196,
+    "startGlobalAyah": 1290,
+    "endGlobalAyah": 1296,
+    "verseCount": 7,
+    "firstVerse": "9:55",
+    "lastVerse": "9:61"
+  },
+  {
+    "page": 197,
+    "startGlobalAyah": 1297,
+    "endGlobalAyah": 1303,
+    "verseCount": 7,
+    "firstVerse": "9:62",
+    "lastVerse": "9:68"
+  },
+  {
+    "page": 198,
+    "startGlobalAyah": 1304,
+    "endGlobalAyah": 1307,
+    "verseCount": 4,
+    "firstVerse": "9:69",
+    "lastVerse": "9:72"
+  },
+  {
+    "page": 199,
+    "startGlobalAyah": 1308,
+    "endGlobalAyah": 1314,
+    "verseCount": 7,
+    "firstVerse": "9:73",
+    "lastVerse": "9:79"
+  },
+  {
+    "page": 200,
+    "startGlobalAyah": 1315,
+    "endGlobalAyah": 1321,
+    "verseCount": 7,
+    "firstVerse": "9:80",
+    "lastVerse": "9:86"
+  },
+  {
+    "page": 201,
+    "startGlobalAyah": 1322,
+    "endGlobalAyah": 1328,
+    "verseCount": 7,
+    "firstVerse": "9:87",
+    "lastVerse": "9:93"
+  },
+  {
+    "page": 202,
+    "startGlobalAyah": 1329,
+    "endGlobalAyah": 1334,
+    "verseCount": 6,
+    "firstVerse": "9:94",
+    "lastVerse": "9:99"
+  },
+  {
+    "page": 203,
+    "startGlobalAyah": 1335,
+    "endGlobalAyah": 1341,
+    "verseCount": 7,
+    "firstVerse": "9:100",
+    "lastVerse": "9:106"
+  },
+  {
+    "page": 204,
+    "startGlobalAyah": 1342,
+    "endGlobalAyah": 1346,
+    "verseCount": 5,
+    "firstVerse": "9:107",
+    "lastVerse": "9:111"
+  },
+  {
+    "page": 205,
+    "startGlobalAyah": 1347,
+    "endGlobalAyah": 1352,
+    "verseCount": 6,
+    "firstVerse": "9:112",
+    "lastVerse": "9:117"
+  },
+  {
+    "page": 206,
+    "startGlobalAyah": 1353,
+    "endGlobalAyah": 1357,
+    "verseCount": 5,
+    "firstVerse": "9:118",
+    "lastVerse": "9:122"
+  },
+  {
+    "page": 207,
+    "startGlobalAyah": 1358,
+    "endGlobalAyah": 1364,
+    "verseCount": 7,
+    "firstVerse": "9:123",
+    "lastVerse": "9:129"
+  },
+  {
+    "page": 208,
+    "startGlobalAyah": 1365,
+    "endGlobalAyah": 1370,
+    "verseCount": 6,
+    "firstVerse": "10:1",
+    "lastVerse": "10:6"
+  },
+  {
+    "page": 209,
+    "startGlobalAyah": 1371,
+    "endGlobalAyah": 1378,
+    "verseCount": 8,
+    "firstVerse": "10:7",
+    "lastVerse": "10:14"
+  },
+  {
+    "page": 210,
+    "startGlobalAyah": 1379,
+    "endGlobalAyah": 1384,
+    "verseCount": 6,
+    "firstVerse": "10:15",
+    "lastVerse": "10:20"
+  },
+  {
+    "page": 211,
+    "startGlobalAyah": 1385,
+    "endGlobalAyah": 1389,
+    "verseCount": 5,
+    "firstVerse": "10:21",
+    "lastVerse": "10:25"
+  },
+  {
+    "page": 212,
+    "startGlobalAyah": 1390,
+    "endGlobalAyah": 1397,
+    "verseCount": 8,
+    "firstVerse": "10:26",
+    "lastVerse": "10:33"
+  },
+  {
+    "page": 213,
+    "startGlobalAyah": 1398,
+    "endGlobalAyah": 1406,
+    "verseCount": 9,
+    "firstVerse": "10:34",
+    "lastVerse": "10:42"
+  },
+  {
+    "page": 214,
+    "startGlobalAyah": 1407,
+    "endGlobalAyah": 1417,
+    "verseCount": 11,
+    "firstVerse": "10:43",
+    "lastVerse": "10:53"
+  },
+  {
+    "page": 215,
+    "startGlobalAyah": 1418,
+    "endGlobalAyah": 1425,
+    "verseCount": 8,
+    "firstVerse": "10:54",
+    "lastVerse": "10:61"
+  },
+  {
+    "page": 216,
+    "startGlobalAyah": 1426,
+    "endGlobalAyah": 1434,
+    "verseCount": 9,
+    "firstVerse": "10:62",
+    "lastVerse": "10:70"
+  },
+  {
+    "page": 217,
+    "startGlobalAyah": 1435,
+    "endGlobalAyah": 1442,
+    "verseCount": 8,
+    "firstVerse": "10:71",
+    "lastVerse": "10:78"
+  },
+  {
+    "page": 218,
+    "startGlobalAyah": 1443,
+    "endGlobalAyah": 1452,
+    "verseCount": 10,
+    "firstVerse": "10:79",
+    "lastVerse": "10:88"
+  },
+  {
+    "page": 219,
+    "startGlobalAyah": 1453,
+    "endGlobalAyah": 1461,
+    "verseCount": 9,
+    "firstVerse": "10:89",
+    "lastVerse": "10:97"
+  },
+  {
+    "page": 220,
+    "startGlobalAyah": 1462,
+    "endGlobalAyah": 1470,
+    "verseCount": 9,
+    "firstVerse": "10:98",
+    "lastVerse": "10:106"
+  },
+  {
+    "page": 221,
+    "startGlobalAyah": 1471,
+    "endGlobalAyah": 1478,
+    "verseCount": 8,
+    "firstVerse": "10:107",
+    "lastVerse": "11:5"
+  },
+  {
+    "page": 222,
+    "startGlobalAyah": 1479,
+    "endGlobalAyah": 1485,
+    "verseCount": 7,
+    "firstVerse": "11:6",
+    "lastVerse": "11:12"
+  },
+  {
+    "page": 223,
+    "startGlobalAyah": 1486,
+    "endGlobalAyah": 1492,
+    "verseCount": 7,
+    "firstVerse": "11:13",
+    "lastVerse": "11:19"
+  },
+  {
+    "page": 224,
+    "startGlobalAyah": 1493,
+    "endGlobalAyah": 1501,
+    "verseCount": 9,
+    "firstVerse": "11:20",
+    "lastVerse": "11:28"
+  },
+  {
+    "page": 225,
+    "startGlobalAyah": 1502,
+    "endGlobalAyah": 1510,
+    "verseCount": 9,
+    "firstVerse": "11:29",
+    "lastVerse": "11:37"
+  },
+  {
+    "page": 226,
+    "startGlobalAyah": 1511,
+    "endGlobalAyah": 1518,
+    "verseCount": 8,
+    "firstVerse": "11:38",
+    "lastVerse": "11:45"
+  },
+  {
+    "page": 227,
+    "startGlobalAyah": 1519,
+    "endGlobalAyah": 1526,
+    "verseCount": 8,
+    "firstVerse": "11:46",
+    "lastVerse": "11:53"
+  },
+  {
+    "page": 228,
+    "startGlobalAyah": 1527,
+    "endGlobalAyah": 1535,
+    "verseCount": 9,
+    "firstVerse": "11:54",
+    "lastVerse": "11:62"
+  },
+  {
+    "page": 229,
+    "startGlobalAyah": 1536,
+    "endGlobalAyah": 1544,
+    "verseCount": 9,
+    "firstVerse": "11:63",
+    "lastVerse": "11:71"
+  },
+  {
+    "page": 230,
+    "startGlobalAyah": 1545,
+    "endGlobalAyah": 1554,
+    "verseCount": 10,
+    "firstVerse": "11:72",
+    "lastVerse": "11:81"
+  },
+  {
+    "page": 231,
+    "startGlobalAyah": 1555,
+    "endGlobalAyah": 1561,
+    "verseCount": 7,
+    "firstVerse": "11:82",
+    "lastVerse": "11:88"
+  },
+  {
+    "page": 232,
+    "startGlobalAyah": 1562,
+    "endGlobalAyah": 1570,
+    "verseCount": 9,
+    "firstVerse": "11:89",
+    "lastVerse": "11:97"
+  },
+  {
+    "page": 233,
+    "startGlobalAyah": 1571,
+    "endGlobalAyah": 1581,
+    "verseCount": 11,
+    "firstVerse": "11:98",
+    "lastVerse": "11:108"
+  },
+  {
+    "page": 234,
+    "startGlobalAyah": 1582,
+    "endGlobalAyah": 1590,
+    "verseCount": 9,
+    "firstVerse": "11:109",
+    "lastVerse": "11:117"
+  },
+  {
+    "page": 235,
+    "startGlobalAyah": 1591,
+    "endGlobalAyah": 1600,
+    "verseCount": 10,
+    "firstVerse": "11:118",
+    "lastVerse": "12:4"
+  },
+  {
+    "page": 236,
+    "startGlobalAyah": 1601,
+    "endGlobalAyah": 1610,
+    "verseCount": 10,
+    "firstVerse": "12:5",
+    "lastVerse": "12:14"
+  },
+  {
+    "page": 237,
+    "startGlobalAyah": 1611,
+    "endGlobalAyah": 1618,
+    "verseCount": 8,
+    "firstVerse": "12:15",
+    "lastVerse": "12:22"
+  },
+  {
+    "page": 238,
+    "startGlobalAyah": 1619,
+    "endGlobalAyah": 1626,
+    "verseCount": 8,
+    "firstVerse": "12:23",
+    "lastVerse": "12:30"
+  },
+  {
+    "page": 239,
+    "startGlobalAyah": 1627,
+    "endGlobalAyah": 1633,
+    "verseCount": 7,
+    "firstVerse": "12:31",
+    "lastVerse": "12:37"
+  },
+  {
+    "page": 240,
+    "startGlobalAyah": 1634,
+    "endGlobalAyah": 1639,
+    "verseCount": 6,
+    "firstVerse": "12:38",
+    "lastVerse": "12:43"
+  },
+  {
+    "page": 241,
+    "startGlobalAyah": 1640,
+    "endGlobalAyah": 1648,
+    "verseCount": 9,
+    "firstVerse": "12:44",
+    "lastVerse": "12:52"
+  },
+  {
+    "page": 242,
+    "startGlobalAyah": 1649,
+    "endGlobalAyah": 1659,
+    "verseCount": 11,
+    "firstVerse": "12:53",
+    "lastVerse": "12:63"
+  },
+  {
+    "page": 243,
+    "startGlobalAyah": 1660,
+    "endGlobalAyah": 1665,
+    "verseCount": 6,
+    "firstVerse": "12:64",
+    "lastVerse": "12:69"
+  },
+  {
+    "page": 244,
+    "startGlobalAyah": 1666,
+    "endGlobalAyah": 1674,
+    "verseCount": 9,
+    "firstVerse": "12:70",
+    "lastVerse": "12:78"
+  },
+  {
+    "page": 245,
+    "startGlobalAyah": 1675,
+    "endGlobalAyah": 1682,
+    "verseCount": 8,
+    "firstVerse": "12:79",
+    "lastVerse": "12:86"
+  },
+  {
+    "page": 246,
+    "startGlobalAyah": 1683,
+    "endGlobalAyah": 1691,
+    "verseCount": 9,
+    "firstVerse": "12:87",
+    "lastVerse": "12:95"
+  },
+  {
+    "page": 247,
+    "startGlobalAyah": 1692,
+    "endGlobalAyah": 1699,
+    "verseCount": 8,
+    "firstVerse": "12:96",
+    "lastVerse": "12:103"
+  },
+  {
+    "page": 248,
+    "startGlobalAyah": 1700,
+    "endGlobalAyah": 1707,
+    "verseCount": 8,
+    "firstVerse": "12:104",
+    "lastVerse": "12:111"
+  },
+  {
+    "page": 249,
+    "startGlobalAyah": 1708,
+    "endGlobalAyah": 1712,
+    "verseCount": 5,
+    "firstVerse": "13:1",
+    "lastVerse": "13:5"
+  },
+  {
+    "page": 250,
+    "startGlobalAyah": 1713,
+    "endGlobalAyah": 1720,
+    "verseCount": 8,
+    "firstVerse": "13:6",
+    "lastVerse": "13:13"
+  },
+  {
+    "page": 251,
+    "startGlobalAyah": 1721,
+    "endGlobalAyah": 1725,
+    "verseCount": 5,
+    "firstVerse": "13:14",
+    "lastVerse": "13:18"
+  },
+  {
+    "page": 252,
+    "startGlobalAyah": 1726,
+    "endGlobalAyah": 1735,
+    "verseCount": 10,
+    "firstVerse": "13:19",
+    "lastVerse": "13:28"
+  },
+  {
+    "page": 253,
+    "startGlobalAyah": 1736,
+    "endGlobalAyah": 1741,
+    "verseCount": 6,
+    "firstVerse": "13:29",
+    "lastVerse": "13:34"
+  },
+  {
+    "page": 254,
+    "startGlobalAyah": 1742,
+    "endGlobalAyah": 1749,
+    "verseCount": 8,
+    "firstVerse": "13:35",
+    "lastVerse": "13:42"
+  },
+  {
+    "page": 255,
+    "startGlobalAyah": 1750,
+    "endGlobalAyah": 1755,
+    "verseCount": 6,
+    "firstVerse": "13:43",
+    "lastVerse": "14:5"
+  },
+  {
+    "page": 256,
+    "startGlobalAyah": 1756,
+    "endGlobalAyah": 1760,
+    "verseCount": 5,
+    "firstVerse": "14:6",
+    "lastVerse": "14:10"
+  },
+  {
+    "page": 257,
+    "startGlobalAyah": 1761,
+    "endGlobalAyah": 1768,
+    "verseCount": 8,
+    "firstVerse": "14:11",
+    "lastVerse": "14:18"
+  },
+  {
+    "page": 258,
+    "startGlobalAyah": 1769,
+    "endGlobalAyah": 1774,
+    "verseCount": 6,
+    "firstVerse": "14:19",
+    "lastVerse": "14:24"
+  },
+  {
+    "page": 259,
+    "startGlobalAyah": 1775,
+    "endGlobalAyah": 1783,
+    "verseCount": 9,
+    "firstVerse": "14:25",
+    "lastVerse": "14:33"
+  },
+  {
+    "page": 260,
+    "startGlobalAyah": 1784,
+    "endGlobalAyah": 1792,
+    "verseCount": 9,
+    "firstVerse": "14:34",
+    "lastVerse": "14:42"
+  },
+  {
+    "page": 261,
+    "startGlobalAyah": 1793,
+    "endGlobalAyah": 1802,
+    "verseCount": 10,
+    "firstVerse": "14:43",
+    "lastVerse": "14:52"
+  },
+  {
+    "page": 262,
+    "startGlobalAyah": 1803,
+    "endGlobalAyah": 1817,
+    "verseCount": 15,
+    "firstVerse": "15:1",
+    "lastVerse": "15:15"
+  },
+  {
+    "page": 263,
+    "startGlobalAyah": 1818,
+    "endGlobalAyah": 1833,
+    "verseCount": 16,
+    "firstVerse": "15:16",
+    "lastVerse": "15:31"
+  },
+  {
+    "page": 264,
+    "startGlobalAyah": 1834,
+    "endGlobalAyah": 1853,
+    "verseCount": 20,
+    "firstVerse": "15:32",
+    "lastVerse": "15:51"
+  },
+  {
+    "page": 265,
+    "startGlobalAyah": 1854,
+    "endGlobalAyah": 1872,
+    "verseCount": 19,
+    "firstVerse": "15:52",
+    "lastVerse": "15:70"
+  },
+  {
+    "page": 266,
+    "startGlobalAyah": 1873,
+    "endGlobalAyah": 1892,
+    "verseCount": 20,
+    "firstVerse": "15:71",
+    "lastVerse": "15:90"
+  },
+  {
+    "page": 267,
+    "startGlobalAyah": 1893,
+    "endGlobalAyah": 1907,
+    "verseCount": 15,
+    "firstVerse": "15:91",
+    "lastVerse": "16:6"
+  },
+  {
+    "page": 268,
+    "startGlobalAyah": 1908,
+    "endGlobalAyah": 1915,
+    "verseCount": 8,
+    "firstVerse": "16:7",
+    "lastVerse": "16:14"
+  },
+  {
+    "page": 269,
+    "startGlobalAyah": 1916,
+    "endGlobalAyah": 1927,
+    "verseCount": 12,
+    "firstVerse": "16:15",
+    "lastVerse": "16:26"
+  },
+  {
+    "page": 270,
+    "startGlobalAyah": 1928,
+    "endGlobalAyah": 1935,
+    "verseCount": 8,
+    "firstVerse": "16:27",
+    "lastVerse": "16:34"
+  },
+  {
+    "page": 271,
+    "startGlobalAyah": 1936,
+    "endGlobalAyah": 1943,
+    "verseCount": 8,
+    "firstVerse": "16:35",
+    "lastVerse": "16:42"
+  },
+  {
+    "page": 272,
+    "startGlobalAyah": 1944,
+    "endGlobalAyah": 1955,
+    "verseCount": 12,
+    "firstVerse": "16:43",
+    "lastVerse": "16:54"
+  },
+  {
+    "page": 273,
+    "startGlobalAyah": 1956,
+    "endGlobalAyah": 1965,
+    "verseCount": 10,
+    "firstVerse": "16:55",
+    "lastVerse": "16:64"
+  },
+  {
+    "page": 274,
+    "startGlobalAyah": 1966,
+    "endGlobalAyah": 1973,
+    "verseCount": 8,
+    "firstVerse": "16:65",
+    "lastVerse": "16:72"
+  },
+  {
+    "page": 275,
+    "startGlobalAyah": 1974,
+    "endGlobalAyah": 1980,
+    "verseCount": 7,
+    "firstVerse": "16:73",
+    "lastVerse": "16:79"
+  },
+  {
+    "page": 276,
+    "startGlobalAyah": 1981,
+    "endGlobalAyah": 1988,
+    "verseCount": 8,
+    "firstVerse": "16:80",
+    "lastVerse": "16:87"
+  },
+  {
+    "page": 277,
+    "startGlobalAyah": 1989,
+    "endGlobalAyah": 1994,
+    "verseCount": 6,
+    "firstVerse": "16:88",
+    "lastVerse": "16:93"
+  },
+  {
+    "page": 278,
+    "startGlobalAyah": 1995,
+    "endGlobalAyah": 2003,
+    "verseCount": 9,
+    "firstVerse": "16:94",
+    "lastVerse": "16:102"
+  },
+  {
+    "page": 279,
+    "startGlobalAyah": 2004,
+    "endGlobalAyah": 2011,
+    "verseCount": 8,
+    "firstVerse": "16:103",
+    "lastVerse": "16:110"
+  },
+  {
+    "page": 280,
+    "startGlobalAyah": 2012,
+    "endGlobalAyah": 2019,
+    "verseCount": 8,
+    "firstVerse": "16:111",
+    "lastVerse": "16:118"
+  },
+  {
+    "page": 281,
+    "startGlobalAyah": 2020,
+    "endGlobalAyah": 2029,
+    "verseCount": 10,
+    "firstVerse": "16:119",
+    "lastVerse": "16:128"
+  },
+  {
+    "page": 282,
+    "startGlobalAyah": 2030,
+    "endGlobalAyah": 2036,
+    "verseCount": 7,
+    "firstVerse": "17:1",
+    "lastVerse": "17:7"
+  },
+  {
+    "page": 283,
+    "startGlobalAyah": 2037,
+    "endGlobalAyah": 2046,
+    "verseCount": 10,
+    "firstVerse": "17:8",
+    "lastVerse": "17:17"
+  },
+  {
+    "page": 284,
+    "startGlobalAyah": 2047,
+    "endGlobalAyah": 2056,
+    "verseCount": 10,
+    "firstVerse": "17:18",
+    "lastVerse": "17:27"
+  },
+  {
+    "page": 285,
+    "startGlobalAyah": 2057,
+    "endGlobalAyah": 2067,
+    "verseCount": 11,
+    "firstVerse": "17:28",
+    "lastVerse": "17:38"
+  },
+  {
+    "page": 286,
+    "startGlobalAyah": 2068,
+    "endGlobalAyah": 2078,
+    "verseCount": 11,
+    "firstVerse": "17:39",
+    "lastVerse": "17:49"
+  },
+  {
+    "page": 287,
+    "startGlobalAyah": 2079,
+    "endGlobalAyah": 2087,
+    "verseCount": 9,
+    "firstVerse": "17:50",
+    "lastVerse": "17:58"
+  },
+  {
+    "page": 288,
+    "startGlobalAyah": 2088,
+    "endGlobalAyah": 2095,
+    "verseCount": 8,
+    "firstVerse": "17:59",
+    "lastVerse": "17:66"
+  },
+  {
+    "page": 289,
+    "startGlobalAyah": 2096,
+    "endGlobalAyah": 2104,
+    "verseCount": 9,
+    "firstVerse": "17:67",
+    "lastVerse": "17:75"
+  },
+  {
+    "page": 290,
+    "startGlobalAyah": 2105,
+    "endGlobalAyah": 2115,
+    "verseCount": 11,
+    "firstVerse": "17:76",
+    "lastVerse": "17:86"
+  },
+  {
+    "page": 291,
+    "startGlobalAyah": 2116,
+    "endGlobalAyah": 2125,
+    "verseCount": 10,
+    "firstVerse": "17:87",
+    "lastVerse": "17:96"
+  },
+  {
+    "page": 292,
+    "startGlobalAyah": 2126,
+    "endGlobalAyah": 2133,
+    "verseCount": 8,
+    "firstVerse": "17:97",
+    "lastVerse": "17:104"
+  },
+  {
+    "page": 293,
+    "startGlobalAyah": 2134,
+    "endGlobalAyah": 2144,
+    "verseCount": 11,
+    "firstVerse": "17:105",
+    "lastVerse": "18:4"
+  },
+  {
+    "page": 294,
+    "startGlobalAyah": 2145,
+    "endGlobalAyah": 2155,
+    "verseCount": 11,
+    "firstVerse": "18:5",
+    "lastVerse": "18:15"
+  },
+  {
+    "page": 295,
+    "startGlobalAyah": 2156,
+    "endGlobalAyah": 2160,
+    "verseCount": 5,
+    "firstVerse": "18:16",
+    "lastVerse": "18:20"
+  },
+  {
+    "page": 296,
+    "startGlobalAyah": 2161,
+    "endGlobalAyah": 2167,
+    "verseCount": 7,
+    "firstVerse": "18:21",
+    "lastVerse": "18:27"
+  },
+  {
+    "page": 297,
+    "startGlobalAyah": 2168,
+    "endGlobalAyah": 2174,
+    "verseCount": 7,
+    "firstVerse": "18:28",
+    "lastVerse": "18:34"
+  },
+  {
+    "page": 298,
+    "startGlobalAyah": 2175,
+    "endGlobalAyah": 2185,
+    "verseCount": 11,
+    "firstVerse": "18:35",
+    "lastVerse": "18:45"
+  },
+  {
+    "page": 299,
+    "startGlobalAyah": 2186,
+    "endGlobalAyah": 2193,
+    "verseCount": 8,
+    "firstVerse": "18:46",
+    "lastVerse": "18:53"
+  },
+  {
+    "page": 300,
+    "startGlobalAyah": 2194,
+    "endGlobalAyah": 2201,
+    "verseCount": 8,
+    "firstVerse": "18:54",
+    "lastVerse": "18:61"
+  },
+  {
+    "page": 301,
+    "startGlobalAyah": 2202,
+    "endGlobalAyah": 2214,
+    "verseCount": 13,
+    "firstVerse": "18:62",
+    "lastVerse": "18:74"
+  },
+  {
+    "page": 302,
+    "startGlobalAyah": 2215,
+    "endGlobalAyah": 2223,
+    "verseCount": 9,
+    "firstVerse": "18:75",
+    "lastVerse": "18:83"
+  },
+  {
+    "page": 303,
+    "startGlobalAyah": 2224,
+    "endGlobalAyah": 2237,
+    "verseCount": 14,
+    "firstVerse": "18:84",
+    "lastVerse": "18:97"
+  },
+  {
+    "page": 304,
+    "startGlobalAyah": 2238,
+    "endGlobalAyah": 2250,
+    "verseCount": 13,
+    "firstVerse": "18:98",
+    "lastVerse": "18:110"
+  },
+  {
+    "page": 305,
+    "startGlobalAyah": 2251,
+    "endGlobalAyah": 2261,
+    "verseCount": 11,
+    "firstVerse": "19:1",
+    "lastVerse": "19:11"
+  },
+  {
+    "page": 306,
+    "startGlobalAyah": 2262,
+    "endGlobalAyah": 2275,
+    "verseCount": 14,
+    "firstVerse": "19:12",
+    "lastVerse": "19:25"
+  },
+  {
+    "page": 307,
+    "startGlobalAyah": 2276,
+    "endGlobalAyah": 2288,
+    "verseCount": 13,
+    "firstVerse": "19:26",
+    "lastVerse": "19:38"
+  },
+  {
+    "page": 308,
+    "startGlobalAyah": 2289,
+    "endGlobalAyah": 2301,
+    "verseCount": 13,
+    "firstVerse": "19:39",
+    "lastVerse": "19:51"
+  },
+  {
+    "page": 309,
+    "startGlobalAyah": 2302,
+    "endGlobalAyah": 2314,
+    "verseCount": 13,
+    "firstVerse": "19:52",
+    "lastVerse": "19:64"
+  },
+  {
+    "page": 310,
+    "startGlobalAyah": 2315,
+    "endGlobalAyah": 2326,
+    "verseCount": 12,
+    "firstVerse": "19:65",
+    "lastVerse": "19:76"
+  },
+  {
+    "page": 311,
+    "startGlobalAyah": 2327,
+    "endGlobalAyah": 2345,
+    "verseCount": 19,
+    "firstVerse": "19:77",
+    "lastVerse": "19:95"
+  },
+  {
+    "page": 312,
+    "startGlobalAyah": 2346,
+    "endGlobalAyah": 2360,
+    "verseCount": 15,
+    "firstVerse": "19:96",
+    "lastVerse": "20:12"
+  },
+  {
+    "page": 313,
+    "startGlobalAyah": 2361,
+    "endGlobalAyah": 2385,
+    "verseCount": 25,
+    "firstVerse": "20:13",
+    "lastVerse": "20:37"
+  },
+  {
+    "page": 314,
+    "startGlobalAyah": 2386,
+    "endGlobalAyah": 2399,
+    "verseCount": 14,
+    "firstVerse": "20:38",
+    "lastVerse": "20:51"
+  },
+  {
+    "page": 315,
+    "startGlobalAyah": 2400,
+    "endGlobalAyah": 2412,
+    "verseCount": 13,
+    "firstVerse": "20:52",
+    "lastVerse": "20:64"
+  },
+  {
+    "page": 316,
+    "startGlobalAyah": 2413,
+    "endGlobalAyah": 2424,
+    "verseCount": 12,
+    "firstVerse": "20:65",
+    "lastVerse": "20:76"
+  },
+  {
+    "page": 317,
+    "startGlobalAyah": 2425,
+    "endGlobalAyah": 2435,
+    "verseCount": 11,
+    "firstVerse": "20:77",
+    "lastVerse": "20:87"
+  },
+  {
+    "page": 318,
+    "startGlobalAyah": 2436,
+    "endGlobalAyah": 2446,
+    "verseCount": 11,
+    "firstVerse": "20:88",
+    "lastVerse": "20:98"
+  },
+  {
+    "page": 319,
+    "startGlobalAyah": 2447,
+    "endGlobalAyah": 2461,
+    "verseCount": 15,
+    "firstVerse": "20:99",
+    "lastVerse": "20:113"
+  },
+  {
+    "page": 320,
+    "startGlobalAyah": 2462,
+    "endGlobalAyah": 2473,
+    "verseCount": 12,
+    "firstVerse": "20:114",
+    "lastVerse": "20:125"
+  },
+  {
+    "page": 321,
+    "startGlobalAyah": 2474,
+    "endGlobalAyah": 2483,
+    "verseCount": 10,
+    "firstVerse": "20:126",
+    "lastVerse": "20:135"
+  },
+  {
+    "page": 322,
+    "startGlobalAyah": 2484,
+    "endGlobalAyah": 2493,
+    "verseCount": 10,
+    "firstVerse": "21:1",
+    "lastVerse": "21:10"
+  },
+  {
+    "page": 323,
+    "startGlobalAyah": 2494,
+    "endGlobalAyah": 2507,
+    "verseCount": 14,
+    "firstVerse": "21:11",
+    "lastVerse": "21:24"
+  },
+  {
+    "page": 324,
+    "startGlobalAyah": 2508,
+    "endGlobalAyah": 2518,
+    "verseCount": 11,
+    "firstVerse": "21:25",
+    "lastVerse": "21:35"
+  },
+  {
+    "page": 325,
+    "startGlobalAyah": 2519,
+    "endGlobalAyah": 2527,
+    "verseCount": 9,
+    "firstVerse": "21:36",
+    "lastVerse": "21:44"
+  },
+  {
+    "page": 326,
+    "startGlobalAyah": 2528,
+    "endGlobalAyah": 2540,
+    "verseCount": 13,
+    "firstVerse": "21:45",
+    "lastVerse": "21:57"
+  },
+  {
+    "page": 327,
+    "startGlobalAyah": 2541,
+    "endGlobalAyah": 2555,
+    "verseCount": 15,
+    "firstVerse": "21:58",
+    "lastVerse": "21:72"
+  },
+  {
+    "page": 328,
+    "startGlobalAyah": 2556,
+    "endGlobalAyah": 2564,
+    "verseCount": 9,
+    "firstVerse": "21:73",
+    "lastVerse": "21:81"
+  },
+  {
+    "page": 329,
+    "startGlobalAyah": 2565,
+    "endGlobalAyah": 2573,
+    "verseCount": 9,
+    "firstVerse": "21:82",
+    "lastVerse": "21:90"
+  },
+  {
+    "page": 330,
+    "startGlobalAyah": 2574,
+    "endGlobalAyah": 2584,
+    "verseCount": 11,
+    "firstVerse": "21:91",
+    "lastVerse": "21:101"
+  },
+  {
+    "page": 331,
+    "startGlobalAyah": 2585,
+    "endGlobalAyah": 2595,
+    "verseCount": 11,
+    "firstVerse": "21:102",
+    "lastVerse": "21:112"
+  },
+  {
+    "page": 332,
+    "startGlobalAyah": 2596,
+    "endGlobalAyah": 2600,
+    "verseCount": 5,
+    "firstVerse": "22:1",
+    "lastVerse": "22:5"
+  },
+  {
+    "page": 333,
+    "startGlobalAyah": 2601,
+    "endGlobalAyah": 2610,
+    "verseCount": 10,
+    "firstVerse": "22:6",
+    "lastVerse": "22:15"
+  },
+  {
+    "page": 334,
+    "startGlobalAyah": 2611,
+    "endGlobalAyah": 2618,
+    "verseCount": 8,
+    "firstVerse": "22:16",
+    "lastVerse": "22:23"
+  },
+  {
+    "page": 335,
+    "startGlobalAyah": 2619,
+    "endGlobalAyah": 2625,
+    "verseCount": 7,
+    "firstVerse": "22:24",
+    "lastVerse": "22:30"
+  },
+  {
+    "page": 336,
+    "startGlobalAyah": 2626,
+    "endGlobalAyah": 2633,
+    "verseCount": 8,
+    "firstVerse": "22:31",
+    "lastVerse": "22:38"
+  },
+  {
+    "page": 337,
+    "startGlobalAyah": 2634,
+    "endGlobalAyah": 2641,
+    "verseCount": 8,
+    "firstVerse": "22:39",
+    "lastVerse": "22:46"
+  },
+  {
+    "page": 338,
+    "startGlobalAyah": 2642,
+    "endGlobalAyah": 2650,
+    "verseCount": 9,
+    "firstVerse": "22:47",
+    "lastVerse": "22:55"
+  },
+  {
+    "page": 339,
+    "startGlobalAyah": 2651,
+    "endGlobalAyah": 2659,
+    "verseCount": 9,
+    "firstVerse": "22:56",
+    "lastVerse": "22:64"
+  },
+  {
+    "page": 340,
+    "startGlobalAyah": 2660,
+    "endGlobalAyah": 2667,
+    "verseCount": 8,
+    "firstVerse": "22:65",
+    "lastVerse": "22:72"
+  },
+  {
+    "page": 341,
+    "startGlobalAyah": 2668,
+    "endGlobalAyah": 2673,
+    "verseCount": 6,
+    "firstVerse": "22:73",
+    "lastVerse": "22:78"
+  },
+  {
+    "page": 342,
+    "startGlobalAyah": 2674,
+    "endGlobalAyah": 2690,
+    "verseCount": 17,
+    "firstVerse": "23:1",
+    "lastVerse": "23:17"
+  },
+  {
+    "page": 343,
+    "startGlobalAyah": 2691,
+    "endGlobalAyah": 2700,
+    "verseCount": 10,
+    "firstVerse": "23:18",
+    "lastVerse": "23:27"
+  },
+  {
+    "page": 344,
+    "startGlobalAyah": 2701,
+    "endGlobalAyah": 2715,
+    "verseCount": 15,
+    "firstVerse": "23:28",
+    "lastVerse": "23:42"
+  },
+  {
+    "page": 345,
+    "startGlobalAyah": 2716,
+    "endGlobalAyah": 2732,
+    "verseCount": 17,
+    "firstVerse": "23:43",
+    "lastVerse": "23:59"
+  },
+  {
+    "page": 346,
+    "startGlobalAyah": 2733,
+    "endGlobalAyah": 2747,
+    "verseCount": 15,
+    "firstVerse": "23:60",
+    "lastVerse": "23:74"
+  },
+  {
+    "page": 347,
+    "startGlobalAyah": 2748,
+    "endGlobalAyah": 2762,
+    "verseCount": 15,
+    "firstVerse": "23:75",
+    "lastVerse": "23:89"
+  },
+  {
+    "page": 348,
+    "startGlobalAyah": 2763,
+    "endGlobalAyah": 2777,
+    "verseCount": 15,
+    "firstVerse": "23:90",
+    "lastVerse": "23:104"
+  },
+  {
+    "page": 349,
+    "startGlobalAyah": 2778,
+    "endGlobalAyah": 2791,
+    "verseCount": 14,
+    "firstVerse": "23:105",
+    "lastVerse": "23:118"
+  },
+  {
+    "page": 350,
+    "startGlobalAyah": 2792,
+    "endGlobalAyah": 2801,
+    "verseCount": 10,
+    "firstVerse": "24:1",
+    "lastVerse": "24:10"
+  },
+  {
+    "page": 351,
+    "startGlobalAyah": 2802,
+    "endGlobalAyah": 2811,
+    "verseCount": 10,
+    "firstVerse": "24:11",
+    "lastVerse": "24:20"
+  },
+  {
+    "page": 352,
+    "startGlobalAyah": 2812,
+    "endGlobalAyah": 2818,
+    "verseCount": 7,
+    "firstVerse": "24:21",
+    "lastVerse": "24:27"
+  },
+  {
+    "page": 353,
+    "startGlobalAyah": 2819,
+    "endGlobalAyah": 2822,
+    "verseCount": 4,
+    "firstVerse": "24:28",
+    "lastVerse": "24:31"
+  },
+  {
+    "page": 354,
+    "startGlobalAyah": 2823,
+    "endGlobalAyah": 2827,
+    "verseCount": 5,
+    "firstVerse": "24:32",
+    "lastVerse": "24:36"
+  },
+  {
+    "page": 355,
+    "startGlobalAyah": 2828,
+    "endGlobalAyah": 2834,
+    "verseCount": 7,
+    "firstVerse": "24:37",
+    "lastVerse": "24:43"
+  },
+  {
+    "page": 356,
+    "startGlobalAyah": 2835,
+    "endGlobalAyah": 2844,
+    "verseCount": 10,
+    "firstVerse": "24:44",
+    "lastVerse": "24:53"
+  },
+  {
+    "page": 357,
+    "startGlobalAyah": 2845,
+    "endGlobalAyah": 2849,
+    "verseCount": 5,
+    "firstVerse": "24:54",
+    "lastVerse": "24:58"
+  },
+  {
+    "page": 358,
+    "startGlobalAyah": 2850,
+    "endGlobalAyah": 2852,
+    "verseCount": 3,
+    "firstVerse": "24:59",
+    "lastVerse": "24:61"
+  },
+  {
+    "page": 359,
+    "startGlobalAyah": 2853,
+    "endGlobalAyah": 2857,
+    "verseCount": 5,
+    "firstVerse": "24:62",
+    "lastVerse": "25:2"
+  },
+  {
+    "page": 360,
+    "startGlobalAyah": 2858,
+    "endGlobalAyah": 2866,
+    "verseCount": 9,
+    "firstVerse": "25:3",
+    "lastVerse": "25:11"
+  },
+  {
+    "page": 361,
+    "startGlobalAyah": 2867,
+    "endGlobalAyah": 2875,
+    "verseCount": 9,
+    "firstVerse": "25:12",
+    "lastVerse": "25:20"
+  },
+  {
+    "page": 362,
+    "startGlobalAyah": 2876,
+    "endGlobalAyah": 2887,
+    "verseCount": 12,
+    "firstVerse": "25:21",
+    "lastVerse": "25:32"
+  },
+  {
+    "page": 363,
+    "startGlobalAyah": 2888,
+    "endGlobalAyah": 2898,
+    "verseCount": 11,
+    "firstVerse": "25:33",
+    "lastVerse": "25:43"
+  },
+  {
+    "page": 364,
+    "startGlobalAyah": 2899,
+    "endGlobalAyah": 2910,
+    "verseCount": 12,
+    "firstVerse": "25:44",
+    "lastVerse": "25:55"
+  },
+  {
+    "page": 365,
+    "startGlobalAyah": 2911,
+    "endGlobalAyah": 2922,
+    "verseCount": 12,
+    "firstVerse": "25:56",
+    "lastVerse": "25:67"
+  },
+  {
+    "page": 366,
+    "startGlobalAyah": 2923,
+    "endGlobalAyah": 2932,
+    "verseCount": 10,
+    "firstVerse": "25:68",
+    "lastVerse": "25:77"
+  },
+  {
+    "page": 367,
+    "startGlobalAyah": 2933,
+    "endGlobalAyah": 2951,
+    "verseCount": 19,
+    "firstVerse": "26:1",
+    "lastVerse": "26:19"
+  },
+  {
+    "page": 368,
+    "startGlobalAyah": 2952,
+    "endGlobalAyah": 2971,
+    "verseCount": 20,
+    "firstVerse": "26:20",
+    "lastVerse": "26:39"
+  },
+  {
+    "page": 369,
+    "startGlobalAyah": 2972,
+    "endGlobalAyah": 2992,
+    "verseCount": 21,
+    "firstVerse": "26:40",
+    "lastVerse": "26:60"
+  },
+  {
+    "page": 370,
+    "startGlobalAyah": 2993,
+    "endGlobalAyah": 3015,
+    "verseCount": 23,
+    "firstVerse": "26:61",
+    "lastVerse": "26:83"
+  },
+  {
+    "page": 371,
+    "startGlobalAyah": 3016,
+    "endGlobalAyah": 3043,
+    "verseCount": 28,
+    "firstVerse": "26:84",
+    "lastVerse": "26:111"
+  },
+  {
+    "page": 372,
+    "startGlobalAyah": 3044,
+    "endGlobalAyah": 3068,
+    "verseCount": 25,
+    "firstVerse": "26:112",
+    "lastVerse": "26:136"
+  },
+  {
+    "page": 373,
+    "startGlobalAyah": 3069,
+    "endGlobalAyah": 3091,
+    "verseCount": 23,
+    "firstVerse": "26:137",
+    "lastVerse": "26:159"
+  },
+  {
+    "page": 374,
+    "startGlobalAyah": 3092,
+    "endGlobalAyah": 3115,
+    "verseCount": 24,
+    "firstVerse": "26:160",
+    "lastVerse": "26:183"
+  },
+  {
+    "page": 375,
+    "startGlobalAyah": 3116,
+    "endGlobalAyah": 3138,
+    "verseCount": 23,
+    "firstVerse": "26:184",
+    "lastVerse": "26:206"
+  },
+  {
+    "page": 376,
+    "startGlobalAyah": 3139,
+    "endGlobalAyah": 3159,
+    "verseCount": 21,
+    "firstVerse": "26:207",
+    "lastVerse": "26:227"
+  },
+  {
+    "page": 377,
+    "startGlobalAyah": 3160,
+    "endGlobalAyah": 3172,
+    "verseCount": 13,
+    "firstVerse": "27:1",
+    "lastVerse": "27:13"
+  },
+  {
+    "page": 378,
+    "startGlobalAyah": 3173,
+    "endGlobalAyah": 3181,
+    "verseCount": 9,
+    "firstVerse": "27:14",
+    "lastVerse": "27:22"
+  },
+  {
+    "page": 379,
+    "startGlobalAyah": 3182,
+    "endGlobalAyah": 3194,
+    "verseCount": 13,
+    "firstVerse": "27:23",
+    "lastVerse": "27:35"
+  },
+  {
+    "page": 380,
+    "startGlobalAyah": 3195,
+    "endGlobalAyah": 3203,
+    "verseCount": 9,
+    "firstVerse": "27:36",
+    "lastVerse": "27:44"
+  },
+  {
+    "page": 381,
+    "startGlobalAyah": 3204,
+    "endGlobalAyah": 3214,
+    "verseCount": 11,
+    "firstVerse": "27:45",
+    "lastVerse": "27:55"
+  },
+  {
+    "page": 382,
+    "startGlobalAyah": 3215,
+    "endGlobalAyah": 3222,
+    "verseCount": 8,
+    "firstVerse": "27:56",
+    "lastVerse": "27:63"
+  },
+  {
+    "page": 383,
+    "startGlobalAyah": 3223,
+    "endGlobalAyah": 3235,
+    "verseCount": 13,
+    "firstVerse": "27:64",
+    "lastVerse": "27:76"
+  },
+  {
+    "page": 384,
+    "startGlobalAyah": 3236,
+    "endGlobalAyah": 3247,
+    "verseCount": 12,
+    "firstVerse": "27:77",
+    "lastVerse": "27:88"
+  },
+  {
+    "page": 385,
+    "startGlobalAyah": 3248,
+    "endGlobalAyah": 3257,
+    "verseCount": 10,
+    "firstVerse": "27:89",
+    "lastVerse": "28:5"
+  },
+  {
+    "page": 386,
+    "startGlobalAyah": 3258,
+    "endGlobalAyah": 3265,
+    "verseCount": 8,
+    "firstVerse": "28:6",
+    "lastVerse": "28:13"
+  },
+  {
+    "page": 387,
+    "startGlobalAyah": 3266,
+    "endGlobalAyah": 3273,
+    "verseCount": 8,
+    "firstVerse": "28:14",
+    "lastVerse": "28:21"
+  },
+  {
+    "page": 388,
+    "startGlobalAyah": 3274,
+    "endGlobalAyah": 3280,
+    "verseCount": 7,
+    "firstVerse": "28:22",
+    "lastVerse": "28:28"
+  },
+  {
+    "page": 389,
+    "startGlobalAyah": 3281,
+    "endGlobalAyah": 3287,
+    "verseCount": 7,
+    "firstVerse": "28:29",
+    "lastVerse": "28:35"
+  },
+  {
+    "page": 390,
+    "startGlobalAyah": 3288,
+    "endGlobalAyah": 3295,
+    "verseCount": 8,
+    "firstVerse": "28:36",
+    "lastVerse": "28:43"
+  },
+  {
+    "page": 391,
+    "startGlobalAyah": 3296,
+    "endGlobalAyah": 3302,
+    "verseCount": 7,
+    "firstVerse": "28:44",
+    "lastVerse": "28:50"
+  },
+  {
+    "page": 392,
+    "startGlobalAyah": 3303,
+    "endGlobalAyah": 3311,
+    "verseCount": 9,
+    "firstVerse": "28:51",
+    "lastVerse": "28:59"
+  },
+  {
+    "page": 393,
+    "startGlobalAyah": 3312,
+    "endGlobalAyah": 3322,
+    "verseCount": 11,
+    "firstVerse": "28:60",
+    "lastVerse": "28:70"
+  },
+  {
+    "page": 394,
+    "startGlobalAyah": 3323,
+    "endGlobalAyah": 3329,
+    "verseCount": 7,
+    "firstVerse": "28:71",
+    "lastVerse": "28:77"
+  },
+  {
+    "page": 395,
+    "startGlobalAyah": 3330,
+    "endGlobalAyah": 3336,
+    "verseCount": 7,
+    "firstVerse": "28:78",
+    "lastVerse": "28:84"
+  },
+  {
+    "page": 396,
+    "startGlobalAyah": 3337,
+    "endGlobalAyah": 3346,
+    "verseCount": 10,
+    "firstVerse": "28:85",
+    "lastVerse": "29:6"
+  },
+  {
+    "page": 397,
+    "startGlobalAyah": 3347,
+    "endGlobalAyah": 3354,
+    "verseCount": 8,
+    "firstVerse": "29:7",
+    "lastVerse": "29:14"
+  },
+  {
+    "page": 398,
+    "startGlobalAyah": 3355,
+    "endGlobalAyah": 3363,
+    "verseCount": 9,
+    "firstVerse": "29:15",
+    "lastVerse": "29:23"
+  },
+  {
+    "page": 399,
+    "startGlobalAyah": 3364,
+    "endGlobalAyah": 3370,
+    "verseCount": 7,
+    "firstVerse": "29:24",
+    "lastVerse": "29:30"
+  },
+  {
+    "page": 400,
+    "startGlobalAyah": 3371,
+    "endGlobalAyah": 3378,
+    "verseCount": 8,
+    "firstVerse": "29:31",
+    "lastVerse": "29:38"
+  },
+  {
+    "page": 401,
+    "startGlobalAyah": 3379,
+    "endGlobalAyah": 3385,
+    "verseCount": 7,
+    "firstVerse": "29:39",
+    "lastVerse": "29:45"
+  },
+  {
+    "page": 402,
+    "startGlobalAyah": 3386,
+    "endGlobalAyah": 3392,
+    "verseCount": 7,
+    "firstVerse": "29:46",
+    "lastVerse": "29:52"
+  },
+  {
+    "page": 403,
+    "startGlobalAyah": 3393,
+    "endGlobalAyah": 3403,
+    "verseCount": 11,
+    "firstVerse": "29:53",
+    "lastVerse": "29:63"
+  },
+  {
+    "page": 404,
+    "startGlobalAyah": 3404,
+    "endGlobalAyah": 3414,
+    "verseCount": 11,
+    "firstVerse": "29:64",
+    "lastVerse": "30:5"
+  },
+  {
+    "page": 405,
+    "startGlobalAyah": 3415,
+    "endGlobalAyah": 3424,
+    "verseCount": 10,
+    "firstVerse": "30:6",
+    "lastVerse": "30:15"
+  },
+  {
+    "page": 406,
+    "startGlobalAyah": 3425,
+    "endGlobalAyah": 3433,
+    "verseCount": 9,
+    "firstVerse": "30:16",
+    "lastVerse": "30:24"
+  },
+  {
+    "page": 407,
+    "startGlobalAyah": 3434,
+    "endGlobalAyah": 3441,
+    "verseCount": 8,
+    "firstVerse": "30:25",
+    "lastVerse": "30:32"
+  },
+  {
+    "page": 408,
+    "startGlobalAyah": 3442,
+    "endGlobalAyah": 3450,
+    "verseCount": 9,
+    "firstVerse": "30:33",
+    "lastVerse": "30:41"
+  },
+  {
+    "page": 409,
+    "startGlobalAyah": 3451,
+    "endGlobalAyah": 3459,
+    "verseCount": 9,
+    "firstVerse": "30:42",
+    "lastVerse": "30:50"
+  },
+  {
+    "page": 410,
+    "startGlobalAyah": 3460,
+    "endGlobalAyah": 3469,
+    "verseCount": 10,
+    "firstVerse": "30:51",
+    "lastVerse": "30:60"
+  },
+  {
+    "page": 411,
+    "startGlobalAyah": 3470,
+    "endGlobalAyah": 3480,
+    "verseCount": 11,
+    "firstVerse": "31:1",
+    "lastVerse": "31:11"
+  },
+  {
+    "page": 412,
+    "startGlobalAyah": 3481,
+    "endGlobalAyah": 3488,
+    "verseCount": 8,
+    "firstVerse": "31:12",
+    "lastVerse": "31:19"
+  },
+  {
+    "page": 413,
+    "startGlobalAyah": 3489,
+    "endGlobalAyah": 3497,
+    "verseCount": 9,
+    "firstVerse": "31:20",
+    "lastVerse": "31:28"
+  },
+  {
+    "page": 414,
+    "startGlobalAyah": 3498,
+    "endGlobalAyah": 3503,
+    "verseCount": 6,
+    "firstVerse": "31:29",
+    "lastVerse": "31:34"
+  },
+  {
+    "page": 415,
+    "startGlobalAyah": 3504,
+    "endGlobalAyah": 3514,
+    "verseCount": 11,
+    "firstVerse": "32:1",
+    "lastVerse": "32:11"
+  },
+  {
+    "page": 416,
+    "startGlobalAyah": 3515,
+    "endGlobalAyah": 3523,
+    "verseCount": 9,
+    "firstVerse": "32:12",
+    "lastVerse": "32:20"
+  },
+  {
+    "page": 417,
+    "startGlobalAyah": 3524,
+    "endGlobalAyah": 3533,
+    "verseCount": 10,
+    "firstVerse": "32:21",
+    "lastVerse": "32:30"
+  },
+  {
+    "page": 418,
+    "startGlobalAyah": 3534,
+    "endGlobalAyah": 3539,
+    "verseCount": 6,
+    "firstVerse": "33:1",
+    "lastVerse": "33:6"
+  },
+  {
+    "page": 419,
+    "startGlobalAyah": 3540,
+    "endGlobalAyah": 3548,
+    "verseCount": 9,
+    "firstVerse": "33:7",
+    "lastVerse": "33:15"
+  },
+  {
+    "page": 420,
+    "startGlobalAyah": 3549,
+    "endGlobalAyah": 3555,
+    "verseCount": 7,
+    "firstVerse": "33:16",
+    "lastVerse": "33:22"
+  },
+  {
+    "page": 421,
+    "startGlobalAyah": 3556,
+    "endGlobalAyah": 3563,
+    "verseCount": 8,
+    "firstVerse": "33:23",
+    "lastVerse": "33:30"
+  },
+  {
+    "page": 422,
+    "startGlobalAyah": 3564,
+    "endGlobalAyah": 3568,
+    "verseCount": 5,
+    "firstVerse": "33:31",
+    "lastVerse": "33:35"
+  },
+  {
+    "page": 423,
+    "startGlobalAyah": 3569,
+    "endGlobalAyah": 3576,
+    "verseCount": 8,
+    "firstVerse": "33:36",
+    "lastVerse": "33:43"
+  },
+  {
+    "page": 424,
+    "startGlobalAyah": 3577,
+    "endGlobalAyah": 3583,
+    "verseCount": 7,
+    "firstVerse": "33:44",
+    "lastVerse": "33:50"
+  },
+  {
+    "page": 425,
+    "startGlobalAyah": 3584,
+    "endGlobalAyah": 3587,
+    "verseCount": 4,
+    "firstVerse": "33:51",
+    "lastVerse": "33:54"
+  },
+  {
+    "page": 426,
+    "startGlobalAyah": 3588,
+    "endGlobalAyah": 3595,
+    "verseCount": 8,
+    "firstVerse": "33:55",
+    "lastVerse": "33:62"
+  },
+  {
+    "page": 427,
+    "startGlobalAyah": 3596,
+    "endGlobalAyah": 3606,
+    "verseCount": 11,
+    "firstVerse": "33:63",
+    "lastVerse": "33:73"
+  },
+  {
+    "page": 428,
+    "startGlobalAyah": 3607,
+    "endGlobalAyah": 3613,
+    "verseCount": 7,
+    "firstVerse": "34:1",
+    "lastVerse": "34:7"
+  },
+  {
+    "page": 429,
+    "startGlobalAyah": 3614,
+    "endGlobalAyah": 3620,
+    "verseCount": 7,
+    "firstVerse": "34:8",
+    "lastVerse": "34:14"
+  },
+  {
+    "page": 430,
+    "startGlobalAyah": 3621,
+    "endGlobalAyah": 3628,
+    "verseCount": 8,
+    "firstVerse": "34:15",
+    "lastVerse": "34:22"
+  },
+  {
+    "page": 431,
+    "startGlobalAyah": 3629,
+    "endGlobalAyah": 3637,
+    "verseCount": 9,
+    "firstVerse": "34:23",
+    "lastVerse": "34:31"
+  },
+  {
+    "page": 432,
+    "startGlobalAyah": 3638,
+    "endGlobalAyah": 3645,
+    "verseCount": 8,
+    "firstVerse": "34:32",
+    "lastVerse": "34:39"
+  },
+  {
+    "page": 433,
+    "startGlobalAyah": 3646,
+    "endGlobalAyah": 3654,
+    "verseCount": 9,
+    "firstVerse": "34:40",
+    "lastVerse": "34:48"
+  },
+  {
+    "page": 434,
+    "startGlobalAyah": 3655,
+    "endGlobalAyah": 3663,
+    "verseCount": 9,
+    "firstVerse": "34:49",
+    "lastVerse": "35:3"
+  },
+  {
+    "page": 435,
+    "startGlobalAyah": 3664,
+    "endGlobalAyah": 3671,
+    "verseCount": 8,
+    "firstVerse": "35:4",
+    "lastVerse": "35:11"
+  },
+  {
+    "page": 436,
+    "startGlobalAyah": 3672,
+    "endGlobalAyah": 3678,
+    "verseCount": 7,
+    "firstVerse": "35:12",
+    "lastVerse": "35:18"
+  },
+  {
+    "page": 437,
+    "startGlobalAyah": 3679,
+    "endGlobalAyah": 3690,
+    "verseCount": 12,
+    "firstVerse": "35:19",
+    "lastVerse": "35:30"
+  },
+  {
+    "page": 438,
+    "startGlobalAyah": 3691,
+    "endGlobalAyah": 3698,
+    "verseCount": 8,
+    "firstVerse": "35:31",
+    "lastVerse": "35:38"
+  },
+  {
+    "page": 439,
+    "startGlobalAyah": 3699,
+    "endGlobalAyah": 3704,
+    "verseCount": 6,
+    "firstVerse": "35:39",
+    "lastVerse": "35:44"
+  },
+  {
+    "page": 440,
+    "startGlobalAyah": 3705,
+    "endGlobalAyah": 3717,
+    "verseCount": 13,
+    "firstVerse": "35:45",
+    "lastVerse": "36:12"
+  },
+  {
+    "page": 441,
+    "startGlobalAyah": 3718,
+    "endGlobalAyah": 3732,
+    "verseCount": 15,
+    "firstVerse": "36:13",
+    "lastVerse": "36:27"
+  },
+  {
+    "page": 442,
+    "startGlobalAyah": 3733,
+    "endGlobalAyah": 3745,
+    "verseCount": 13,
+    "firstVerse": "36:28",
+    "lastVerse": "36:40"
+  },
+  {
+    "page": 443,
+    "startGlobalAyah": 3746,
+    "endGlobalAyah": 3759,
+    "verseCount": 14,
+    "firstVerse": "36:41",
+    "lastVerse": "36:54"
+  },
+  {
+    "page": 444,
+    "startGlobalAyah": 3760,
+    "endGlobalAyah": 3775,
+    "verseCount": 16,
+    "firstVerse": "36:55",
+    "lastVerse": "36:70"
+  },
+  {
+    "page": 445,
+    "startGlobalAyah": 3776,
+    "endGlobalAyah": 3788,
+    "verseCount": 13,
+    "firstVerse": "36:71",
+    "lastVerse": "36:83"
+  },
+  {
+    "page": 446,
+    "startGlobalAyah": 3789,
+    "endGlobalAyah": 3812,
+    "verseCount": 24,
+    "firstVerse": "37:1",
+    "lastVerse": "37:24"
+  },
+  {
+    "page": 447,
+    "startGlobalAyah": 3813,
+    "endGlobalAyah": 3839,
+    "verseCount": 27,
+    "firstVerse": "37:25",
+    "lastVerse": "37:51"
+  },
+  {
+    "page": 448,
+    "startGlobalAyah": 3840,
+    "endGlobalAyah": 3864,
+    "verseCount": 25,
+    "firstVerse": "37:52",
+    "lastVerse": "37:76"
+  },
+  {
+    "page": 449,
+    "startGlobalAyah": 3865,
+    "endGlobalAyah": 3890,
+    "verseCount": 26,
+    "firstVerse": "37:77",
+    "lastVerse": "37:102"
+  },
+  {
+    "page": 450,
+    "startGlobalAyah": 3891,
+    "endGlobalAyah": 3914,
+    "verseCount": 24,
+    "firstVerse": "37:103",
+    "lastVerse": "37:126"
+  },
+  {
+    "page": 451,
+    "startGlobalAyah": 3915,
+    "endGlobalAyah": 3941,
+    "verseCount": 27,
+    "firstVerse": "37:127",
+    "lastVerse": "37:153"
+  },
+  {
+    "page": 452,
+    "startGlobalAyah": 3942,
+    "endGlobalAyah": 3970,
+    "verseCount": 29,
+    "firstVerse": "37:154",
+    "lastVerse": "37:182"
+  },
+  {
+    "page": 453,
+    "startGlobalAyah": 3971,
+    "endGlobalAyah": 3986,
+    "verseCount": 16,
+    "firstVerse": "38:1",
+    "lastVerse": "38:16"
+  },
+  {
+    "page": 454,
+    "startGlobalAyah": 3987,
+    "endGlobalAyah": 3996,
+    "verseCount": 10,
+    "firstVerse": "38:17",
+    "lastVerse": "38:26"
+  },
+  {
+    "page": 455,
+    "startGlobalAyah": 3997,
+    "endGlobalAyah": 4012,
+    "verseCount": 16,
+    "firstVerse": "38:27",
+    "lastVerse": "38:42"
+  },
+  {
+    "page": 456,
+    "startGlobalAyah": 4013,
+    "endGlobalAyah": 4031,
+    "verseCount": 19,
+    "firstVerse": "38:43",
+    "lastVerse": "38:61"
+  },
+  {
+    "page": 457,
+    "startGlobalAyah": 4032,
+    "endGlobalAyah": 4053,
+    "verseCount": 22,
+    "firstVerse": "38:62",
+    "lastVerse": "38:83"
+  },
+  {
+    "page": 458,
+    "startGlobalAyah": 4054,
+    "endGlobalAyah": 4063,
+    "verseCount": 10,
+    "firstVerse": "38:84",
+    "lastVerse": "39:5"
+  },
+  {
+    "page": 459,
+    "startGlobalAyah": 4064,
+    "endGlobalAyah": 4068,
+    "verseCount": 5,
+    "firstVerse": "39:6",
+    "lastVerse": "39:10"
+  },
+  {
+    "page": 460,
+    "startGlobalAyah": 4069,
+    "endGlobalAyah": 4079,
+    "verseCount": 11,
+    "firstVerse": "39:11",
+    "lastVerse": "39:21"
+  },
+  {
+    "page": 461,
+    "startGlobalAyah": 4080,
+    "endGlobalAyah": 4089,
+    "verseCount": 10,
+    "firstVerse": "39:22",
+    "lastVerse": "39:31"
+  },
+  {
+    "page": 462,
+    "startGlobalAyah": 4090,
+    "endGlobalAyah": 4098,
+    "verseCount": 9,
+    "firstVerse": "39:32",
+    "lastVerse": "39:40"
+  },
+  {
+    "page": 463,
+    "startGlobalAyah": 4099,
+    "endGlobalAyah": 4105,
+    "verseCount": 7,
+    "firstVerse": "39:41",
+    "lastVerse": "39:47"
+  },
+  {
+    "page": 464,
+    "startGlobalAyah": 4106,
+    "endGlobalAyah": 4114,
+    "verseCount": 9,
+    "firstVerse": "39:48",
+    "lastVerse": "39:56"
+  },
+  {
+    "page": 465,
+    "startGlobalAyah": 4115,
+    "endGlobalAyah": 4125,
+    "verseCount": 11,
+    "firstVerse": "39:57",
+    "lastVerse": "39:67"
+  },
+  {
+    "page": 466,
+    "startGlobalAyah": 4126,
+    "endGlobalAyah": 4132,
+    "verseCount": 7,
+    "firstVerse": "39:68",
+    "lastVerse": "39:74"
+  },
+  {
+    "page": 467,
+    "startGlobalAyah": 4133,
+    "endGlobalAyah": 4140,
+    "verseCount": 8,
+    "firstVerse": "39:75",
+    "lastVerse": "40:7"
+  },
+  {
+    "page": 468,
+    "startGlobalAyah": 4141,
+    "endGlobalAyah": 4149,
+    "verseCount": 9,
+    "firstVerse": "40:8",
+    "lastVerse": "40:16"
+  },
+  {
+    "page": 469,
+    "startGlobalAyah": 4150,
+    "endGlobalAyah": 4158,
+    "verseCount": 9,
+    "firstVerse": "40:17",
+    "lastVerse": "40:25"
+  },
+  {
+    "page": 470,
+    "startGlobalAyah": 4159,
+    "endGlobalAyah": 4166,
+    "verseCount": 8,
+    "firstVerse": "40:26",
+    "lastVerse": "40:33"
+  },
+  {
+    "page": 471,
+    "startGlobalAyah": 4167,
+    "endGlobalAyah": 4173,
+    "verseCount": 7,
+    "firstVerse": "40:34",
+    "lastVerse": "40:40"
+  },
+  {
+    "page": 472,
+    "startGlobalAyah": 4174,
+    "endGlobalAyah": 4182,
+    "verseCount": 9,
+    "firstVerse": "40:41",
+    "lastVerse": "40:49"
+  },
+  {
+    "page": 473,
+    "startGlobalAyah": 4183,
+    "endGlobalAyah": 4191,
+    "verseCount": 9,
+    "firstVerse": "40:50",
+    "lastVerse": "40:58"
+  },
+  {
+    "page": 474,
+    "startGlobalAyah": 4192,
+    "endGlobalAyah": 4199,
+    "verseCount": 8,
+    "firstVerse": "40:59",
+    "lastVerse": "40:66"
+  },
+  {
+    "page": 475,
+    "startGlobalAyah": 4200,
+    "endGlobalAyah": 4210,
+    "verseCount": 11,
+    "firstVerse": "40:67",
+    "lastVerse": "40:77"
+  },
+  {
+    "page": 476,
+    "startGlobalAyah": 4211,
+    "endGlobalAyah": 4218,
+    "verseCount": 8,
+    "firstVerse": "40:78",
+    "lastVerse": "40:85"
+  },
+  {
+    "page": 477,
+    "startGlobalAyah": 4219,
+    "endGlobalAyah": 4229,
+    "verseCount": 11,
+    "firstVerse": "41:1",
+    "lastVerse": "41:11"
+  },
+  {
+    "page": 478,
+    "startGlobalAyah": 4230,
+    "endGlobalAyah": 4238,
+    "verseCount": 9,
+    "firstVerse": "41:12",
+    "lastVerse": "41:20"
+  },
+  {
+    "page": 479,
+    "startGlobalAyah": 4239,
+    "endGlobalAyah": 4247,
+    "verseCount": 9,
+    "firstVerse": "41:21",
+    "lastVerse": "41:29"
+  },
+  {
+    "page": 480,
+    "startGlobalAyah": 4248,
+    "endGlobalAyah": 4256,
+    "verseCount": 9,
+    "firstVerse": "41:30",
+    "lastVerse": "41:38"
+  },
+  {
+    "page": 481,
+    "startGlobalAyah": 4257,
+    "endGlobalAyah": 4264,
+    "verseCount": 8,
+    "firstVerse": "41:39",
+    "lastVerse": "41:46"
+  },
+  {
+    "page": 482,
+    "startGlobalAyah": 4265,
+    "endGlobalAyah": 4272,
+    "verseCount": 8,
+    "firstVerse": "41:47",
+    "lastVerse": "41:54"
+  },
+  {
+    "page": 483,
+    "startGlobalAyah": 4273,
+    "endGlobalAyah": 4282,
+    "verseCount": 10,
+    "firstVerse": "42:1",
+    "lastVerse": "42:10"
+  },
+  {
+    "page": 484,
+    "startGlobalAyah": 4283,
+    "endGlobalAyah": 4287,
+    "verseCount": 5,
+    "firstVerse": "42:11",
+    "lastVerse": "42:15"
+  },
+  {
+    "page": 485,
+    "startGlobalAyah": 4288,
+    "endGlobalAyah": 4294,
+    "verseCount": 7,
+    "firstVerse": "42:16",
+    "lastVerse": "42:22"
+  },
+  {
+    "page": 486,
+    "startGlobalAyah": 4295,
+    "endGlobalAyah": 4303,
+    "verseCount": 9,
+    "firstVerse": "42:23",
+    "lastVerse": "42:31"
+  },
+  {
+    "page": 487,
+    "startGlobalAyah": 4304,
+    "endGlobalAyah": 4316,
+    "verseCount": 13,
+    "firstVerse": "42:32",
+    "lastVerse": "42:44"
+  },
+  {
+    "page": 488,
+    "startGlobalAyah": 4317,
+    "endGlobalAyah": 4323,
+    "verseCount": 7,
+    "firstVerse": "42:45",
+    "lastVerse": "42:51"
+  },
+  {
+    "page": 489,
+    "startGlobalAyah": 4324,
+    "endGlobalAyah": 4335,
+    "verseCount": 12,
+    "firstVerse": "42:52",
+    "lastVerse": "43:10"
+  },
+  {
+    "page": 490,
+    "startGlobalAyah": 4336,
+    "endGlobalAyah": 4347,
+    "verseCount": 12,
+    "firstVerse": "43:11",
+    "lastVerse": "43:22"
+  },
+  {
+    "page": 491,
+    "startGlobalAyah": 4348,
+    "endGlobalAyah": 4358,
+    "verseCount": 11,
+    "firstVerse": "43:23",
+    "lastVerse": "43:33"
+  },
+  {
+    "page": 492,
+    "startGlobalAyah": 4359,
+    "endGlobalAyah": 4372,
+    "verseCount": 14,
+    "firstVerse": "43:34",
+    "lastVerse": "43:47"
+  },
+  {
+    "page": 493,
+    "startGlobalAyah": 4373,
+    "endGlobalAyah": 4385,
+    "verseCount": 13,
+    "firstVerse": "43:48",
+    "lastVerse": "43:60"
+  },
+  {
+    "page": 494,
+    "startGlobalAyah": 4386,
+    "endGlobalAyah": 4398,
+    "verseCount": 13,
+    "firstVerse": "43:61",
+    "lastVerse": "43:73"
+  },
+  {
+    "page": 495,
+    "startGlobalAyah": 4399,
+    "endGlobalAyah": 4414,
+    "verseCount": 16,
+    "firstVerse": "43:74",
+    "lastVerse": "43:89"
+  },
+  {
+    "page": 496,
+    "startGlobalAyah": 4415,
+    "endGlobalAyah": 4432,
+    "verseCount": 18,
+    "firstVerse": "44:1",
+    "lastVerse": "44:18"
+  },
+  {
+    "page": 497,
+    "startGlobalAyah": 4433,
+    "endGlobalAyah": 4453,
+    "verseCount": 21,
+    "firstVerse": "44:19",
+    "lastVerse": "44:39"
+  },
+  {
+    "page": 498,
+    "startGlobalAyah": 4454,
+    "endGlobalAyah": 4473,
+    "verseCount": 20,
+    "firstVerse": "44:40",
+    "lastVerse": "44:59"
+  },
+  {
+    "page": 499,
+    "startGlobalAyah": 4474,
+    "endGlobalAyah": 4486,
+    "verseCount": 13,
+    "firstVerse": "45:1",
+    "lastVerse": "45:13"
+  },
+  {
+    "page": 500,
+    "startGlobalAyah": 4487,
+    "endGlobalAyah": 4495,
+    "verseCount": 9,
+    "firstVerse": "45:14",
+    "lastVerse": "45:22"
+  },
+  {
+    "page": 501,
+    "startGlobalAyah": 4496,
+    "endGlobalAyah": 4505,
+    "verseCount": 10,
+    "firstVerse": "45:23",
+    "lastVerse": "45:32"
+  },
+  {
+    "page": 502,
+    "startGlobalAyah": 4506,
+    "endGlobalAyah": 4515,
+    "verseCount": 10,
+    "firstVerse": "45:33",
+    "lastVerse": "46:5"
+  },
+  {
+    "page": 503,
+    "startGlobalAyah": 4516,
+    "endGlobalAyah": 4524,
+    "verseCount": 9,
+    "firstVerse": "46:6",
+    "lastVerse": "46:14"
+  },
+  {
+    "page": 504,
+    "startGlobalAyah": 4525,
+    "endGlobalAyah": 4530,
+    "verseCount": 6,
+    "firstVerse": "46:15",
+    "lastVerse": "46:20"
+  },
+  {
+    "page": 505,
+    "startGlobalAyah": 4531,
+    "endGlobalAyah": 4538,
+    "verseCount": 8,
+    "firstVerse": "46:21",
+    "lastVerse": "46:28"
+  },
+  {
+    "page": 506,
+    "startGlobalAyah": 4539,
+    "endGlobalAyah": 4545,
+    "verseCount": 7,
+    "firstVerse": "46:29",
+    "lastVerse": "46:35"
+  },
+  {
+    "page": 507,
+    "startGlobalAyah": 4546,
+    "endGlobalAyah": 4556,
+    "verseCount": 11,
+    "firstVerse": "47:1",
+    "lastVerse": "47:11"
+  },
+  {
+    "page": 508,
+    "startGlobalAyah": 4557,
+    "endGlobalAyah": 4564,
+    "verseCount": 8,
+    "firstVerse": "47:12",
+    "lastVerse": "47:19"
+  },
+  {
+    "page": 509,
+    "startGlobalAyah": 4565,
+    "endGlobalAyah": 4574,
+    "verseCount": 10,
+    "firstVerse": "47:20",
+    "lastVerse": "47:29"
+  },
+  {
+    "page": 510,
+    "startGlobalAyah": 4575,
+    "endGlobalAyah": 4583,
+    "verseCount": 9,
+    "firstVerse": "47:30",
+    "lastVerse": "47:38"
+  },
+  {
+    "page": 511,
+    "startGlobalAyah": 4584,
+    "endGlobalAyah": 4592,
+    "verseCount": 9,
+    "firstVerse": "48:1",
+    "lastVerse": "48:9"
+  },
+  {
+    "page": 512,
+    "startGlobalAyah": 4593,
+    "endGlobalAyah": 4598,
+    "verseCount": 6,
+    "firstVerse": "48:10",
+    "lastVerse": "48:15"
+  },
+  {
+    "page": 513,
+    "startGlobalAyah": 4599,
+    "endGlobalAyah": 4606,
+    "verseCount": 8,
+    "firstVerse": "48:16",
+    "lastVerse": "48:23"
+  },
+  {
+    "page": 514,
+    "startGlobalAyah": 4607,
+    "endGlobalAyah": 4611,
+    "verseCount": 5,
+    "firstVerse": "48:24",
+    "lastVerse": "48:28"
+  },
+  {
+    "page": 515,
+    "startGlobalAyah": 4612,
+    "endGlobalAyah": 4616,
+    "verseCount": 5,
+    "firstVerse": "48:29",
+    "lastVerse": "49:4"
+  },
+  {
+    "page": 516,
+    "startGlobalAyah": 4617,
+    "endGlobalAyah": 4623,
+    "verseCount": 7,
+    "firstVerse": "49:5",
+    "lastVerse": "49:11"
+  },
+  {
+    "page": 517,
+    "startGlobalAyah": 4624,
+    "endGlobalAyah": 4630,
+    "verseCount": 7,
+    "firstVerse": "49:12",
+    "lastVerse": "49:18"
+  },
+  {
+    "page": 518,
+    "startGlobalAyah": 4631,
+    "endGlobalAyah": 4645,
+    "verseCount": 15,
+    "firstVerse": "50:1",
+    "lastVerse": "50:15"
+  },
+  {
+    "page": 519,
+    "startGlobalAyah": 4646,
+    "endGlobalAyah": 4665,
+    "verseCount": 20,
+    "firstVerse": "50:16",
+    "lastVerse": "50:35"
+  },
+  {
+    "page": 520,
+    "startGlobalAyah": 4666,
+    "endGlobalAyah": 4681,
+    "verseCount": 16,
+    "firstVerse": "50:36",
+    "lastVerse": "51:6"
+  },
+  {
+    "page": 521,
+    "startGlobalAyah": 4682,
+    "endGlobalAyah": 4705,
+    "verseCount": 24,
+    "firstVerse": "51:7",
+    "lastVerse": "51:30"
+  },
+  {
+    "page": 522,
+    "startGlobalAyah": 4706,
+    "endGlobalAyah": 4726,
+    "verseCount": 21,
+    "firstVerse": "51:31",
+    "lastVerse": "51:51"
+  },
+  {
+    "page": 523,
+    "startGlobalAyah": 4727,
+    "endGlobalAyah": 4749,
+    "verseCount": 23,
+    "firstVerse": "51:52",
+    "lastVerse": "52:14"
+  },
+  {
+    "page": 524,
+    "startGlobalAyah": 4750,
+    "endGlobalAyah": 4766,
+    "verseCount": 17,
+    "firstVerse": "52:15",
+    "lastVerse": "52:31"
+  },
+  {
+    "page": 525,
+    "startGlobalAyah": 4767,
+    "endGlobalAyah": 4784,
+    "verseCount": 18,
+    "firstVerse": "52:32",
+    "lastVerse": "52:49"
+  },
+  {
+    "page": 526,
+    "startGlobalAyah": 4785,
+    "endGlobalAyah": 4810,
+    "verseCount": 26,
+    "firstVerse": "53:1",
+    "lastVerse": "53:26"
+  },
+  {
+    "page": 527,
+    "startGlobalAyah": 4811,
+    "endGlobalAyah": 4828,
+    "verseCount": 18,
+    "firstVerse": "53:27",
+    "lastVerse": "53:44"
+  },
+  {
+    "page": 528,
+    "startGlobalAyah": 4829,
+    "endGlobalAyah": 4852,
+    "verseCount": 24,
+    "firstVerse": "53:45",
+    "lastVerse": "54:6"
+  },
+  {
+    "page": 529,
+    "startGlobalAyah": 4853,
+    "endGlobalAyah": 4873,
+    "verseCount": 21,
+    "firstVerse": "54:7",
+    "lastVerse": "54:27"
+  },
+  {
+    "page": 530,
+    "startGlobalAyah": 4874,
+    "endGlobalAyah": 4895,
+    "verseCount": 22,
+    "firstVerse": "54:28",
+    "lastVerse": "54:49"
+  },
+  {
+    "page": 531,
+    "startGlobalAyah": 4896,
+    "endGlobalAyah": 4919,
+    "verseCount": 24,
+    "firstVerse": "54:50",
+    "lastVerse": "55:18"
+  },
+  {
+    "page": 532,
+    "startGlobalAyah": 4920,
+    "endGlobalAyah": 4942,
+    "verseCount": 23,
+    "firstVerse": "55:19",
+    "lastVerse": "55:41"
+  },
+  {
+    "page": 533,
+    "startGlobalAyah": 4943,
+    "endGlobalAyah": 4970,
+    "verseCount": 28,
+    "firstVerse": "55:42",
+    "lastVerse": "55:69"
+  },
+  {
+    "page": 534,
+    "startGlobalAyah": 4971,
+    "endGlobalAyah": 4995,
+    "verseCount": 25,
+    "firstVerse": "55:70",
+    "lastVerse": "56:16"
+  },
+  {
+    "page": 535,
+    "startGlobalAyah": 4996,
+    "endGlobalAyah": 5029,
+    "verseCount": 34,
+    "firstVerse": "56:17",
+    "lastVerse": "56:50"
+  },
+  {
+    "page": 536,
+    "startGlobalAyah": 5030,
+    "endGlobalAyah": 5055,
+    "verseCount": 26,
+    "firstVerse": "56:51",
+    "lastVerse": "56:76"
+  },
+  {
+    "page": 537,
+    "startGlobalAyah": 5056,
+    "endGlobalAyah": 5078,
+    "verseCount": 23,
+    "firstVerse": "56:77",
+    "lastVerse": "57:3"
+  },
+  {
+    "page": 538,
+    "startGlobalAyah": 5079,
+    "endGlobalAyah": 5086,
+    "verseCount": 8,
+    "firstVerse": "57:4",
+    "lastVerse": "57:11"
+  },
+  {
+    "page": 539,
+    "startGlobalAyah": 5087,
+    "endGlobalAyah": 5093,
+    "verseCount": 7,
+    "firstVerse": "57:12",
+    "lastVerse": "57:18"
+  },
+  {
+    "page": 540,
+    "startGlobalAyah": 5094,
+    "endGlobalAyah": 5099,
+    "verseCount": 6,
+    "firstVerse": "57:19",
+    "lastVerse": "57:24"
+  },
+  {
+    "page": 541,
+    "startGlobalAyah": 5100,
+    "endGlobalAyah": 5104,
+    "verseCount": 5,
+    "firstVerse": "57:25",
+    "lastVerse": "57:29"
+  },
+  {
+    "page": 542,
+    "startGlobalAyah": 5105,
+    "endGlobalAyah": 5110,
+    "verseCount": 6,
+    "firstVerse": "58:1",
+    "lastVerse": "58:6"
+  },
+  {
+    "page": 543,
+    "startGlobalAyah": 5111,
+    "endGlobalAyah": 5115,
+    "verseCount": 5,
+    "firstVerse": "58:7",
+    "lastVerse": "58:11"
+  },
+  {
+    "page": 544,
+    "startGlobalAyah": 5116,
+    "endGlobalAyah": 5125,
+    "verseCount": 10,
+    "firstVerse": "58:12",
+    "lastVerse": "58:21"
+  },
+  {
+    "page": 545,
+    "startGlobalAyah": 5126,
+    "endGlobalAyah": 5129,
+    "verseCount": 4,
+    "firstVerse": "58:22",
+    "lastVerse": "59:3"
+  },
+  {
+    "page": 546,
+    "startGlobalAyah": 5130,
+    "endGlobalAyah": 5135,
+    "verseCount": 6,
+    "firstVerse": "59:4",
+    "lastVerse": "59:9"
+  },
+  {
+    "page": 547,
+    "startGlobalAyah": 5136,
+    "endGlobalAyah": 5142,
+    "verseCount": 7,
+    "firstVerse": "59:10",
+    "lastVerse": "59:16"
+  },
+  {
+    "page": 548,
+    "startGlobalAyah": 5143,
+    "endGlobalAyah": 5150,
+    "verseCount": 8,
+    "firstVerse": "59:17",
+    "lastVerse": "59:24"
+  },
+  {
+    "page": 549,
+    "startGlobalAyah": 5151,
+    "endGlobalAyah": 5155,
+    "verseCount": 5,
+    "firstVerse": "60:1",
+    "lastVerse": "60:5"
+  },
+  {
+    "page": 550,
+    "startGlobalAyah": 5156,
+    "endGlobalAyah": 5161,
+    "verseCount": 6,
+    "firstVerse": "60:6",
+    "lastVerse": "60:11"
+  },
+  {
+    "page": 551,
+    "startGlobalAyah": 5162,
+    "endGlobalAyah": 5168,
+    "verseCount": 7,
+    "firstVerse": "60:12",
+    "lastVerse": "61:5"
+  },
+  {
+    "page": 552,
+    "startGlobalAyah": 5169,
+    "endGlobalAyah": 5177,
+    "verseCount": 9,
+    "firstVerse": "61:6",
+    "lastVerse": "61:14"
+  },
+  {
+    "page": 553,
+    "startGlobalAyah": 5178,
+    "endGlobalAyah": 5185,
+    "verseCount": 8,
+    "firstVerse": "62:1",
+    "lastVerse": "62:8"
+  },
+  {
+    "page": 554,
+    "startGlobalAyah": 5186,
+    "endGlobalAyah": 5192,
+    "verseCount": 7,
+    "firstVerse": "62:9",
+    "lastVerse": "63:4"
+  },
+  {
+    "page": 555,
+    "startGlobalAyah": 5193,
+    "endGlobalAyah": 5199,
+    "verseCount": 7,
+    "firstVerse": "63:5",
+    "lastVerse": "63:11"
+  },
+  {
+    "page": 556,
+    "startGlobalAyah": 5200,
+    "endGlobalAyah": 5208,
+    "verseCount": 9,
+    "firstVerse": "64:1",
+    "lastVerse": "64:9"
+  },
+  {
+    "page": 557,
+    "startGlobalAyah": 5209,
+    "endGlobalAyah": 5217,
+    "verseCount": 9,
+    "firstVerse": "64:10",
+    "lastVerse": "64:18"
+  },
+  {
+    "page": 558,
+    "startGlobalAyah": 5218,
+    "endGlobalAyah": 5222,
+    "verseCount": 5,
+    "firstVerse": "65:1",
+    "lastVerse": "65:5"
+  },
+  {
+    "page": 559,
+    "startGlobalAyah": 5223,
+    "endGlobalAyah": 5229,
+    "verseCount": 7,
+    "firstVerse": "65:6",
+    "lastVerse": "65:12"
+  },
+  {
+    "page": 560,
+    "startGlobalAyah": 5230,
+    "endGlobalAyah": 5236,
+    "verseCount": 7,
+    "firstVerse": "66:1",
+    "lastVerse": "66:7"
+  },
+  {
+    "page": 561,
+    "startGlobalAyah": 5237,
+    "endGlobalAyah": 5241,
+    "verseCount": 5,
+    "firstVerse": "66:8",
+    "lastVerse": "66:12"
+  },
+  {
+    "page": 562,
+    "startGlobalAyah": 5242,
+    "endGlobalAyah": 5253,
+    "verseCount": 12,
+    "firstVerse": "67:1",
+    "lastVerse": "67:12"
+  },
+  {
+    "page": 563,
+    "startGlobalAyah": 5254,
+    "endGlobalAyah": 5267,
+    "verseCount": 14,
+    "firstVerse": "67:13",
+    "lastVerse": "67:26"
+  },
+  {
+    "page": 564,
+    "startGlobalAyah": 5268,
+    "endGlobalAyah": 5287,
+    "verseCount": 20,
+    "firstVerse": "67:27",
+    "lastVerse": "68:16"
+  },
+  {
+    "page": 565,
+    "startGlobalAyah": 5288,
+    "endGlobalAyah": 5313,
+    "verseCount": 26,
+    "firstVerse": "68:17",
+    "lastVerse": "68:42"
+  },
+  {
+    "page": 566,
+    "startGlobalAyah": 5314,
+    "endGlobalAyah": 5331,
+    "verseCount": 18,
+    "firstVerse": "68:43",
+    "lastVerse": "69:8"
+  },
+  {
+    "page": 567,
+    "startGlobalAyah": 5332,
+    "endGlobalAyah": 5358,
+    "verseCount": 27,
+    "firstVerse": "69:9",
+    "lastVerse": "69:35"
+  },
+  {
+    "page": 568,
+    "startGlobalAyah": 5359,
+    "endGlobalAyah": 5385,
+    "verseCount": 27,
+    "firstVerse": "69:36",
+    "lastVerse": "70:10"
+  },
+  {
+    "page": 569,
+    "startGlobalAyah": 5386,
+    "endGlobalAyah": 5415,
+    "verseCount": 30,
+    "firstVerse": "70:11",
+    "lastVerse": "70:40"
+  },
+  {
+    "page": 570,
+    "startGlobalAyah": 5416,
+    "endGlobalAyah": 5429,
+    "verseCount": 14,
+    "firstVerse": "70:41",
+    "lastVerse": "71:10"
+  },
+  {
+    "page": 571,
+    "startGlobalAyah": 5430,
+    "endGlobalAyah": 5447,
+    "verseCount": 18,
+    "firstVerse": "71:11",
+    "lastVerse": "71:28"
+  },
+  {
+    "page": 572,
+    "startGlobalAyah": 5448,
+    "endGlobalAyah": 5460,
+    "verseCount": 13,
+    "firstVerse": "72:1",
+    "lastVerse": "72:13"
+  },
+  {
+    "page": 573,
+    "startGlobalAyah": 5461,
+    "endGlobalAyah": 5475,
+    "verseCount": 15,
+    "firstVerse": "72:14",
+    "lastVerse": "72:28"
+  },
+  {
+    "page": 574,
+    "startGlobalAyah": 5476,
+    "endGlobalAyah": 5494,
+    "verseCount": 19,
+    "firstVerse": "73:1",
+    "lastVerse": "73:19"
+  },
+  {
+    "page": 575,
+    "startGlobalAyah": 5495,
+    "endGlobalAyah": 5513,
+    "verseCount": 19,
+    "firstVerse": "73:20",
+    "lastVerse": "74:18"
+  },
+  {
+    "page": 576,
+    "startGlobalAyah": 5514,
+    "endGlobalAyah": 5542,
+    "verseCount": 29,
+    "firstVerse": "74:19",
+    "lastVerse": "74:47"
+  },
+  {
+    "page": 577,
+    "startGlobalAyah": 5543,
+    "endGlobalAyah": 5570,
+    "verseCount": 28,
+    "firstVerse": "74:48",
+    "lastVerse": "75:19"
+  },
+  {
+    "page": 578,
+    "startGlobalAyah": 5571,
+    "endGlobalAyah": 5596,
+    "verseCount": 26,
+    "firstVerse": "75:20",
+    "lastVerse": "76:5"
+  },
+  {
+    "page": 579,
+    "startGlobalAyah": 5597,
+    "endGlobalAyah": 5616,
+    "verseCount": 20,
+    "firstVerse": "76:6",
+    "lastVerse": "76:25"
+  },
+  {
+    "page": 580,
+    "startGlobalAyah": 5617,
+    "endGlobalAyah": 5641,
+    "verseCount": 25,
+    "firstVerse": "76:26",
+    "lastVerse": "77:19"
+  },
+  {
+    "page": 581,
+    "startGlobalAyah": 5642,
+    "endGlobalAyah": 5672,
+    "verseCount": 31,
+    "firstVerse": "77:20",
+    "lastVerse": "77:50"
+  },
+  {
+    "page": 582,
+    "startGlobalAyah": 5673,
+    "endGlobalAyah": 5702,
+    "verseCount": 30,
+    "firstVerse": "78:1",
+    "lastVerse": "78:30"
+  },
+  {
+    "page": 583,
+    "startGlobalAyah": 5703,
+    "endGlobalAyah": 5728,
+    "verseCount": 26,
+    "firstVerse": "78:31",
+    "lastVerse": "79:16"
+  },
+  {
+    "page": 584,
+    "startGlobalAyah": 5729,
+    "endGlobalAyah": 5758,
+    "verseCount": 30,
+    "firstVerse": "79:17",
+    "lastVerse": "79:46"
+  },
+  {
+    "page": 585,
+    "startGlobalAyah": 5759,
+    "endGlobalAyah": 5798,
+    "verseCount": 40,
+    "firstVerse": "80:1",
+    "lastVerse": "80:40"
+  },
+  {
+    "page": 586,
+    "startGlobalAyah": 5799,
+    "endGlobalAyah": 5829,
+    "verseCount": 31,
+    "firstVerse": "80:41",
+    "lastVerse": "81:29"
+  },
+  {
+    "page": 587,
+    "startGlobalAyah": 5830,
+    "endGlobalAyah": 5852,
+    "verseCount": 23,
+    "firstVerse": "82:1",
+    "lastVerse": "83:4"
+  },
+  {
+    "page": 588,
+    "startGlobalAyah": 5853,
+    "endGlobalAyah": 5881,
+    "verseCount": 29,
+    "firstVerse": "83:5",
+    "lastVerse": "83:33"
+  },
+  {
+    "page": 589,
+    "startGlobalAyah": 5882,
+    "endGlobalAyah": 5908,
+    "verseCount": 27,
+    "firstVerse": "83:34",
+    "lastVerse": "84:24"
+  },
+  {
+    "page": 590,
+    "startGlobalAyah": 5909,
+    "endGlobalAyah": 5931,
+    "verseCount": 23,
+    "firstVerse": "84:25",
+    "lastVerse": "85:22"
+  },
+  {
+    "page": 591,
+    "startGlobalAyah": 5932,
+    "endGlobalAyah": 5958,
+    "verseCount": 27,
+    "firstVerse": "86:1",
+    "lastVerse": "87:10"
+  },
+  {
+    "page": 592,
+    "startGlobalAyah": 5959,
+    "endGlobalAyah": 5989,
+    "verseCount": 31,
+    "firstVerse": "87:11",
+    "lastVerse": "88:22"
+  },
+  {
+    "page": 593,
+    "startGlobalAyah": 5990,
+    "endGlobalAyah": 6015,
+    "verseCount": 26,
+    "firstVerse": "88:23",
+    "lastVerse": "89:22"
+  },
+  {
+    "page": 594,
+    "startGlobalAyah": 6016,
+    "endGlobalAyah": 6041,
+    "verseCount": 26,
+    "firstVerse": "89:23",
+    "lastVerse": "90:18"
+  },
+  {
+    "page": 595,
+    "startGlobalAyah": 6042,
+    "endGlobalAyah": 6067,
+    "verseCount": 26,
+    "firstVerse": "90:19",
+    "lastVerse": "92:9"
+  },
+  {
+    "page": 596,
+    "startGlobalAyah": 6068,
+    "endGlobalAyah": 6092,
+    "verseCount": 25,
+    "firstVerse": "92:10",
+    "lastVerse": "94:2"
+  },
+  {
+    "page": 597,
+    "startGlobalAyah": 6093,
+    "endGlobalAyah": 6118,
+    "verseCount": 26,
+    "firstVerse": "94:3",
+    "lastVerse": "96:12"
+  },
+  {
+    "page": 598,
+    "startGlobalAyah": 6119,
+    "endGlobalAyah": 6135,
+    "verseCount": 17,
+    "firstVerse": "96:13",
+    "lastVerse": "98:5"
+  },
+  {
+    "page": 599,
+    "startGlobalAyah": 6136,
+    "endGlobalAyah": 6151,
+    "verseCount": 16,
+    "firstVerse": "98:6",
+    "lastVerse": "100:5"
+  },
+  {
+    "page": 600,
+    "startGlobalAyah": 6152,
+    "endGlobalAyah": 6176,
+    "verseCount": 25,
+    "firstVerse": "100:6",
+    "lastVerse": "102:8"
+  },
+  {
+    "page": 601,
+    "startGlobalAyah": 6177,
+    "endGlobalAyah": 6193,
+    "verseCount": 17,
+    "firstVerse": "103:1",
+    "lastVerse": "105:5"
+  },
+  {
+    "page": 602,
+    "startGlobalAyah": 6194,
+    "endGlobalAyah": 6207,
+    "verseCount": 14,
+    "firstVerse": "106:1",
+    "lastVerse": "108:3"
+  },
+  {
+    "page": 603,
+    "startGlobalAyah": 6208,
+    "endGlobalAyah": 6221,
+    "verseCount": 14,
+    "firstVerse": "109:1",
+    "lastVerse": "111:5"
+  },
+  {
+    "page": 604,
+    "startGlobalAyah": 6222,
+    "endGlobalAyah": 6236,
+    "verseCount": 15,
+    "firstVerse": "112:1",
+    "lastVerse": "114:6"
+  }
+]

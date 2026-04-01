@@ -1,0 +1,579 @@
+@import "tailwindcss";
+
+@theme {
+  /* Topic colors */
+  --color-topic-blue: #3498DB;
+  --color-topic-green: #27AE60;
+  --color-topic-brown: #8E6B3D;
+  --color-topic-yellow: #F1C40F;
+  --color-topic-purple: #8E44AD;
+  --color-topic-orange: #E67E22;
+  --color-topic-red: #E74C3C;
+
+  /* Topic background - lighter variants */
+  --color-topic-blue-bg: #EBF5FB;
+  --color-topic-green-bg: #E8F8F0;
+  --color-topic-brown-bg: #F5EDE3;
+  --color-topic-yellow-bg: #FEF9E7;
+  --color-topic-purple-bg: #F4ECF7;
+  --color-topic-orange-bg: #FDF2E9;
+  --color-topic-red-bg: #FDEDEC;
+
+  /* Fonts */
+  --font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
+  --font-ui: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+}
+
+/* App colors as plain custom properties so dark mode can override them */
+:root {
+  --color-mushaf-bg: #FFF8F0;
+  --color-mushaf-paper: #FFFDF8;
+  --color-mushaf-border: #E8D5B7;
+  --color-mushaf-gold: #C9A96E;
+  --color-mushaf-text: #2C1810;
+}
+
+@layer base {
+  html {
+    direction: rtl;
+    font-family: var(--font-ui);
+  }
+
+  body {
+    background-color: var(--color-mushaf-bg);
+    color: var(--color-mushaf-text);
+  }
+}
+
+@layer components {
+  .verse-text {
+    font-family: var(--font-arabic);
+    line-height: 2.6;
+    font-size: 1.35rem;
+    text-align: justify;
+    text-align-last: center;
+    word-spacing: 0.08em;
+  }
+
+  @media (min-width: 640px) {
+    .verse-text {
+      font-size: 1.65rem;
+      line-height: 2.8;
+    }
+  }
+
+  .verse-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    color: var(--color-mushaf-gold);
+    margin: 0 0.15rem;
+    font-family: var(--font-ui);
+    vertical-align: middle;
+    direction: ltr;
+    position: relative;
+    background: radial-gradient(circle, transparent 55%, var(--color-mushaf-gold) 56%, var(--color-mushaf-gold) 60%, transparent 61%),
+                radial-gradient(circle, transparent 70%, var(--color-mushaf-gold) 71%, var(--color-mushaf-gold) 73%, transparent 74%);
+  }
+
+  .verse-number::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+      /* 8-point star outer hints */
+      conic-gradient(
+        from 0deg,
+        transparent 0deg, var(--color-mushaf-gold) 2deg, transparent 4deg,
+        transparent 41deg, var(--color-mushaf-gold) 43deg, transparent 45deg,
+        transparent 86deg, var(--color-mushaf-gold) 88deg, transparent 90deg,
+        transparent 131deg, var(--color-mushaf-gold) 133deg, transparent 135deg,
+        transparent 176deg, var(--color-mushaf-gold) 178deg, transparent 180deg,
+        transparent 221deg, var(--color-mushaf-gold) 223deg, transparent 225deg,
+        transparent 266deg, var(--color-mushaf-gold) 268deg, transparent 270deg,
+        transparent 311deg, var(--color-mushaf-gold) 313deg, transparent 315deg,
+        transparent 356deg, var(--color-mushaf-gold) 358deg, transparent 360deg
+      );
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @media (min-width: 640px) {
+    .verse-number {
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  /* ─── Ornate Page Frame ─── */
+  .page-frame {
+    background: var(--color-mushaf-paper);
+    border: 3px solid var(--color-mushaf-gold);
+    border-radius: 4px;
+    box-shadow:
+      0 0 0 1px var(--color-mushaf-border),
+      0 0 0 6px var(--color-mushaf-paper),
+      0 0 0 7px var(--color-mushaf-gold),
+      0 0 0 10px var(--color-mushaf-paper),
+      0 0 0 11px var(--color-mushaf-border),
+      0 8px 32px rgba(0,0,0,0.12);
+    position: relative;
+  }
+
+  .page-frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--color-mushaf-gold);
+    border-radius: 2px;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  /* ─── Corner Ornaments ─── */
+  .page-corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    opacity: 0.6;
+  }
+  .page-corner::before,
+  .page-corner::after {
+    content: '';
+    position: absolute;
+    background: var(--color-mushaf-gold);
+  }
+  .page-corner::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  .page-corner::after {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: rotate(45deg);
+  }
+  .page-corner.top-start { top: 4px; inset-inline-start: 4px; }
+  .page-corner.top-end { top: 4px; inset-inline-end: 4px; }
+  .page-corner.bottom-start { bottom: 4px; inset-inline-start: 4px; }
+  .page-corner.bottom-end { bottom: 4px; inset-inline-end: 4px; }
+
+  .topic-dot {
+    display: inline-block;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    margin-inline-end: 0.35rem;
+  }
+
+  /* ─── Decorative Surah Header Banner ─── */
+  .surah-header {
+    font-family: var(--font-arabic);
+    text-align: center;
+    padding: 0.65rem 2rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 1rem auto;
+    max-width: 22rem;
+    position: relative;
+    background:
+      linear-gradient(135deg, var(--color-mushaf-gold) 0%, #D4AF37 40%, var(--color-mushaf-gold) 100%);
+    border-radius: 4px;
+    border: 1.5px solid var(--color-mushaf-gold);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    letter-spacing: 0.04em;
+  }
+
+  .surah-header::before,
+  .surah-header::after {
+    content: '❁';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    opacity: 0.7;
+    color: white;
+  }
+  .surah-header::before { inset-inline-start: 0.6rem; }
+  .surah-header::after { inset-inline-end: 0.6rem; }
+
+  @media (min-width: 640px) {
+    .surah-header {
+      padding: 0.8rem 2.5rem;
+      font-size: 1.3rem;
+      max-width: 24rem;
+    }
+    .surah-header::before,
+    .surah-header::after {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* ─── Decorative Page Number ─── */
+  .page-number-ornament {
+    text-align: center;
+    font-family: var(--font-ui);
+    color: var(--color-mushaf-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0 3rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-number-ornament::before,
+  .page-number-ornament::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    height: 1px;
+    background: linear-gradient(to var(--direction, left), var(--color-mushaf-gold), transparent);
+  }
+  .page-number-ornament::before {
+    inset-inline-end: 0;
+    --direction: left;
+  }
+  .page-number-ornament::after {
+    inset-inline-start: 0;
+    --direction: right;
+  }
+
+  /* ─── Bottom Page Ornament ─── */
+  .page-bottom-ornament {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-mushaf-border);
+    color: var(--color-mushaf-gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    opacity: 0.6;
+  }
+
+  /* ─── Verse Action Popover ─── */
+  .verse-popover {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    gap: 2px;
+    padding: 4px 6px;
+    border-radius: 10px;
+    background: var(--color-mushaf-paper);
+    border: 1.5px solid var(--color-mushaf-gold);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 0 0 1px var(--color-mushaf-border);
+    z-index: 50;
+    white-space: nowrap;
+    animation: popover-in 0.15s ease-out;
+  }
+  .verse-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--color-mushaf-gold);
+  }
+  .verse-popover-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.15s, transform 0.1s;
+    color: var(--color-mushaf-text);
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  .verse-popover-btn:hover {
+    background: var(--color-mushaf-gold)/20;
+    transform: scale(1.15);
+  }
+  .verse-popover-btn.active {
+    color: var(--color-mushaf-gold);
+  }
+  @keyframes popover-in {
+    from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  .bismillah {
+    font-family: var(--font-arabic);
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--color-mushaf-text);
+    padding: 0.75rem 0 0.5rem;
+    letter-spacing: 0.06em;
+    position: relative;
+  }
+
+  @media (min-width: 640px) {
+    .bismillah {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-mushaf-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-mushaf-gold); }
+
+/* Dark mode — auto (system preference) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-mushaf-bg: #1A1410;
+    --color-mushaf-paper: #231D16;
+    --color-mushaf-border: #3D3127;
+    --color-mushaf-gold: #C9A96E;
+    --color-mushaf-text: #E8D5B7;
+    --heatmap-0: #161b22;
+    --heatmap-1: #0e4429;
+    --heatmap-2: #006d32;
+    --heatmap-3: #26a641;
+    --heatmap-4: #39d353;
+  }
+}
+
+/* Dark mode — manual toggle */
+:root[data-theme="dark"] {
+  --color-mushaf-bg: #1A1410;
+  --color-mushaf-paper: #231D16;
+  --color-mushaf-border: #3D3127;
+  --color-mushaf-gold: #C9A96E;
+  --color-mushaf-text: #E8D5B7;
+  --heatmap-0: #161b22;
+  --heatmap-1: #0e4429;
+  --heatmap-2: #006d32;
+  --heatmap-3: #26a641;
+  --heatmap-4: #39d353;
+}
+
+/* ─── Smart Night Mode ─── */
+/* When data-night is active, topic colors shift to WCAG-compliant night variants */
+:root[data-night="true"] {
+  /* Night-adapted app colors — deeper, warmer dark */
+  --color-mushaf-bg: #12100C;
+  --color-mushaf-paper: #1A1510;
+  --color-mushaf-border: #2D251D;
+  --color-mushaf-gold: #B89A5C;
+  --color-mushaf-text: #D8C8AA;
+
+  /* Reduced brightness for less eye strain at night */
+  --night-filter: brightness(0.92);
+}
+
+/* Night topic color overrides via CSS custom properties */
+:root[data-night="true"] .verse-transition {
+  filter: var(--night-filter, none);
+}
+
+/* Night mode indicator glow */
+:root[data-night="true"] .page-frame {
+  box-shadow:
+    0 0 0 1px var(--color-mushaf-border),
+    0 0 0 6px var(--color-mushaf-paper),
+    0 0 0 7px var(--color-mushaf-gold),
+    0 0 0 10px var(--color-mushaf-paper),
+    0 0 0 11px var(--color-mushaf-border),
+    0 8px 32px rgba(0,0,0,0.4),
+    inset 0 0 60px rgba(0,0,0,0.1);
+}
+
+/* Smooth transitions when entering/exiting night mode */
+:root {
+  transition: --color-mushaf-bg 0.8s ease,
+              --color-mushaf-paper 0.8s ease,
+              --color-mushaf-border 0.8s ease,
+              --color-mushaf-text 0.8s ease;
+}
+body {
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+/* Smooth color transitions for topic backgrounds */
+@layer components {
+  .verse-transition {
+    transition: background-color 0.3s ease, opacity 0.2s ease, filter 0.5s ease;
+  }
+}
+
+/* Swipe hint animation */
+@keyframes swipe-hint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8px); }
+}
+
+.swipe-hint {
+  animation: swipe-hint 2s ease-in-out infinite;
+}
+
+/* ─── Safe area padding for notched devices ─── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Skip Navigation Link ─── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-mushaf-gold);
+  color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ─── Screen-reader only (visually hidden, still in DOM) ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Focus Visible — strong keyboard focus ring ─── */
+:root[data-focus-highlight="true"] *:focus-visible {
+  outline: 3px solid var(--color-mushaf-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 6px rgba(201, 169, 110, 0.25);
+}
+
+/* ─── Dyslexia Mode ─── */
+:root[data-dyslexia="true"] .verse-text {
+  letter-spacing: 0.06em;
+  word-spacing: 0.25em;
+}
+
+:root[data-dyslexia="true"] body {
+  letter-spacing: 0.03em;
+  word-spacing: 0.15em;
+}
+
+/* ─── Font Size Overrides ─── */
+:root[data-font-size="large"] .verse-text {
+  font-size: 2rem;
+}
+:root[data-font-size="xlarge"] .verse-text {
+  font-size: 2.5rem;
+}
+:root[data-font-size="large"] .verse-number {
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 0.95rem;
+}
+:root[data-font-size="xlarge"] .verse-number {
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 1.1rem;
+}
+
+/* ─── Line Spacing Overrides ─── */
+:root[data-line-spacing="wide"] .verse-text {
+  line-height: 3;
+}
+:root[data-line-spacing="xwide"] .verse-text {
+  line-height: 3.8;
+}
+
+/* ─── High Contrast Mode ─── */
+:root[data-high-contrast="true"] {
+  --color-mushaf-text: #000000;
+  --color-mushaf-bg: #FFFFFF;
+  --color-mushaf-paper: #FFFFFF;
+  --color-mushaf-border: #333333;
+  --color-mushaf-gold: #8B6914;
+}
+:root[data-high-contrast="true"][data-theme="dark"],
+:root[data-high-contrast="true"][data-night="true"] {
+  --color-mushaf-text: #FFFFFF;
+  --color-mushaf-bg: #000000;
+  --color-mushaf-paper: #0A0A0A;
+  --color-mushaf-border: #CCCCCC;
+  --color-mushaf-gold: #FFD700;
+}
+
+/* High contrast topic colors (WCAG AAA ≥7:1) */
+:root[data-high-contrast="true"] {
+  --color-topic-blue: #0B5394;
+  --color-topic-green: #0B6623;
+  --color-topic-brown: #5C3317;
+  --color-topic-yellow: #7A6200;
+  --color-topic-purple: #4A0082;
+  --color-topic-orange: #8B4000;
+  --color-topic-red: #8B0000;
+}
+
+/* ─── Reduced Motion ─── */
+:root[data-reduced-motion="true"] *,
+:root[data-reduced-motion="true"] *::before,
+:root[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-reduced-motion="false"]) *,
+  :root:not([data-reduced-motion="false"]) *::before,
+  :root:not([data-reduced-motion="false"]) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Forced Colors (Windows High Contrast) ─── */
+@media (forced-colors: active) {
+  .verse-text {
+    forced-color-adjust: none;
+  }
+  .verse-number {
+    border-color: ButtonText;
+    color: ButtonText;
+  }
+  .surah-header {
+    background: Highlight;
+    color: HighlightText;
+  }
+  button:focus-visible {
+    outline: 2px solid Highlight;
+  }
+}

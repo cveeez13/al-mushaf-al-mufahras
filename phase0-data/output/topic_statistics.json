@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "generated": "2026-03-31",
+    "total_verses": 6236,
+    "total_pages": 604,
+    "total_surahs": 114,
+    "total_juz": 30
+  },
+  "classification_methods": {
+    "keyword_good": 933,
+    "surah+keyword": 470,
+    "keyword_weak": 1385,
+    "surah_theme": 1854,
+    "keyword_strong": 448,
+    "context_propagation": 1146
+  },
+  "confidence_levels": {
+    "medium": 3257,
+    "low": 2531,
+    "high": 448
+  },
+  "topics": [
+    {
+      "id": 1,
+      "color": "blue",
+      "hex": "#3498DB",
+      "name_ar": "دلائل قدرة الله وعظمته",
+      "name_en": "Signs of Allah's Power & Greatness",
+      "verse_count": 1129,
+      "percentage": 18.1,
+      "surah_count": 74,
+      "page_count": 278,
+      "confidence_breakdown": {
+        "high": 58,
+        "medium": 583,
+        "low": 488
+      }
+    },
+    {
+      "id": 2,
+      "color": "green",
+      "hex": "#27AE60",
+      "name_ar": "السيرة النبوية، صفات المؤمنين، الجنة",
+      "name_en": "Seerah, Believers, Paradise",
+      "verse_count": 762,
+      "percentage": 12.2,
+      "surah_count": 80,
+      "page_count": 211,
+      "confidence_breakdown": {
+        "high": 27,
+        "medium": 358,
+        "low": 377
+      }
+    },
+    {
+      "id": 3,
+      "color": "brown",
+      "hex": "#8E6B3D",
+      "name_ar": "آيات الأحكام والفقه",
+      "name_en": "Rulings & Jurisprudence (Fiqh)",
+      "verse_count": 484,
+      "percentage": 7.8,
+      "surah_count": 28,
+      "page_count": 137,
+      "confidence_breakdown": {
+        "high": 40,
+        "medium": 370,
+        "low": 74
+      }
+    },
+    {
+      "id": 4,
+      "color": "yellow",
+      "hex": "#F1C40F",
+      "name_ar": "قصص الأنبياء والأمم السابقة",
+      "name_en": "Stories of Prophets & Past Nations",
+      "verse_count": 1866,
+      "percentage": 29.9,
+      "surah_count": 61,
+      "page_count": 297,
+      "confidence_breakdown": {
+        "high": 229,
+        "medium": 893,
+        "low": 744
+      }
+    },
+    {
+      "id": 5,
+      "color": "purple",
+      "hex": "#8E44AD",
+      "name_ar": "مكانة القرآن ورد الشبهات",
+      "name_en": "Status of Quran & Refuting Doubts",
+      "verse_count": 246,
+      "percentage": 3.9,
+      "surah_count": 30,
+      "page_count": 55,
+      "confidence_breakdown": {
+        "high": 0,
+        "medium": 206,
+        "low": 40
+      }
+    },
+    {
+      "id": 6,
+      "color": "orange",
+      "hex": "#E67E22",
+      "name_ar": "اليوم الآخر، الموت، البعث، الحساب",
+      "name_en": "Afterlife, Death, Resurrection, Judgment",
+      "verse_count": 968,
+      "percentage": 15.5,
+      "surah_count": 67,
+      "page_count": 166,
+      "confidence_breakdown": {
+        "high": 74,
+        "medium": 533,
+        "low": 361
+      }
+    },
+    {
+      "id": 7,
+      "color": "red",
+      "hex": "#E74C3C",
+      "name_ar": "أوصاف النار وعذاب الكافرين",
+      "name_en": "Hellfire & Punishment of Disbelievers",
+      "verse_count": 781,
+      "percentage": 12.5,
+      "surah_count": 78,
+      "page_count": 198,
+      "confidence_breakdown": {
+        "high": 20,
+        "medium": 314,
+        "low": 447
+      }
+    }
+  ]
+}
