@@ -33,3 +33,4 @@ phase0-data/checkpoints/
 # SQLite WAL files
 *.sqlite-shm
 *.sqlite-wal
+.vercel

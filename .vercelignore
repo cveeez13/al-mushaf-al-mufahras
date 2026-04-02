@@ -1,0 +1,7 @@
+node_modules
+phase0-data
+.next
+out
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
