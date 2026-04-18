@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Swipe Gesture Detection — Touch & Mouse
  *

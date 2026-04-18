@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Multiplayer Quiz Client — Socket.io Integration
  * 

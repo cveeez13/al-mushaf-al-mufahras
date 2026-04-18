@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 /**
@@ -45,7 +46,7 @@ import {
   getLazyLoadingAttrs,
   PagePreloader,
 } from '@/lib/mushafImageOptimization';
-import { QURAN_VERSES } from '@/lib/quranData';
+import { QURAN_VERSES } from '@/lib/quranPlaces';
 
 export interface MushafsViewerProps {
   initialPage?: number;

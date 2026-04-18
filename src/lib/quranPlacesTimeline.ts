@@ -210,7 +210,7 @@ export function getPlaceNarrative(placeId: string): PlaceNarrative | null {
 
   // Determine story type
   let storyType: 'solo' | 'part-of-cycle' | 'crossroads' = 'solo';
-  const sameEraPla ces = QURAN_PLACES.filter(p => p.era === place.era && p.id !== placeId);
+  const sameEraPlaces = QURAN_PLACES.filter(p => p.era === place.era && p.id !== placeId);
   const sameTopic = QURAN_PLACES.filter(p => p.topicId === place.topicId && p.id !== placeId);
 
   if (sameEraPlaces.length > 2) storyType = 'part-of-cycle';

@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import type { NotificationSchedule, UserBehavior } from '../KHATMA_EXPORTS.tsx';
 /**
  * Khatma Planner Enhancement — Integration Quick Start
  *

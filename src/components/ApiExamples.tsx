@@ -34,7 +34,7 @@ export function QuranTopicsViewer() {
 
     try {
       const response = await client.topics.list(page, 10);
-      setTopics(response.data.items);
+      setTopics((response as any)?.items ?? []);
     } catch (err: any) {
       setError(err.message || 'Failed to load topics');
     } finally {
@@ -51,7 +51,7 @@ export function QuranTopicsViewer() {
 
     try {
       const response = await client.topics.getVerses(topicId, 1, 50);
-      setTopicVerses(response.data.items);
+      setTopicVerses((response as any)?.items ?? []);
     } catch (err: any) {
       setError(err.message || 'Failed to load verses');
     } finally {
@@ -159,7 +159,7 @@ export function QuranSearch() {
     setLoading(true);
     try {
       const response = await client.search.search(query, 'all', 1);
-      setResults(response.data.items);
+      setResults((response as any)?.items ?? []);
     } finally {
       setLoading(false);
     }

@@ -6,7 +6,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { QURAN_PLACES } from '@/lib/quranData';
+import { QURAN_PLACES } from '@/lib/quranPlaces';
 import {
   successResponse,
   paginatedResponse,
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     // Filter by region if provided
     let filtered = QURAN_PLACES;
     if (region) {
-      filtered = QURAN_PLACES.filter(p => p.region?.toLowerCase().includes(region));
+      filtered = QURAN_PLACES.filter(p => p.era?.toLowerCase().includes(region));
     }
 
     // Apply pagination

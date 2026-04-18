@@ -5,7 +5,9 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { QURAN_VERSES, QURAN_PLACES, TOPIC_COLORS } from '@/lib/quranData';
+import { QURAN_PLACES } from '@/lib/quranPlaces';
+import { TOPIC_COLORS } from '@/lib/mushafOverlays';
+import { getAllVerses } from '@/lib/data';
 import {
   successResponse,
   paginatedResponse,
@@ -20,6 +22,7 @@ export const dynamic = 'force-dynamic';
  * Full-text search across topics, places, and verses
  */
 export async function GET(request: NextRequest) {
+
   try {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get('q')?.toLowerCase() || '';
@@ -31,6 +34,7 @@ export async function GET(request: NextRequest) {
     }
 
     let results: any[] = [];
+    const verses = await getAllVerses();
 
     // Search topics
     if (type === 'all' || type === 'topics') {
@@ -47,8 +51,7 @@ export async function GET(request: NextRequest) {
           name_ar: value.ar,
           name_en: value.en,
           color: value.color,
-          verseCount: QURAN_VERSES.filter(v => v.topics?.includes(key as any))
-            .length,
+          verseCount: verses.filter(v => v.topic?.id === Number(key)).length,
         }));
       results.push(...topicResults);
     }
@@ -59,7 +62,7 @@ export async function GET(request: NextRequest) {
         p =>
           p.name_ar?.includes(query) ||
           p.name_en?.toLowerCase().includes(query) ||
-          p.region?.toLowerCase().includes(query)
+          p.era?.toLowerCase().includes(query)
       ).map(p => ({
         type: 'place',
         ...p,
@@ -69,18 +72,16 @@ export async function GET(request: NextRequest) {
 
     // Search verses (text and translations)
     if (type === 'all' || type === 'verses') {
-      const verseResults = QURAN_VERSES.filter(
+      const verseResults = verses.filter(
         v =>
-          v.text?.includes(query) ||
-          v.surahName?.toLowerCase().includes(query)
+          v.text?.includes(query)
       )
         .slice(0, 50) // Limit verse results
         .map(v => ({
           type: 'verse',
-          surah: v.surahNumber,
-          ayah: v.verseNumber,
+          surah: v.surah,
+          ayah: v.ayah,
           text: v.text?.substring(0, 100),
-          surahName: v.surahName,
         }));
       results.push(...verseResults);
     }

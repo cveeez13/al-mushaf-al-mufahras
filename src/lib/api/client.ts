@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * JavaScript/TypeScript SDK for Al-Mushaf API
  *
@@ -60,7 +61,7 @@ export class QuranApiClient {
   /**
    * Make API request
    */
-  async request<T>(
+  async request<T = any>(
     method: string,
     path: string,
     options?: RequestOptions

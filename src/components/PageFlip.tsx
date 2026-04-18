@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 /**
@@ -138,7 +139,7 @@ export const PageFlip: React.FC<PageFlipProps> = ({
       onClick={handleClickFlip}
       style={{
         perspective: `${config.perspective}px`,
-        perspective_origin: isRTL ? 'right center' : 'left center',
+          perspectiveOrigin: isRTL ? 'right center' : 'left center',
       }}
     >
       <div

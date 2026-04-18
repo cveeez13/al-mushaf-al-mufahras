@@ -15,7 +15,7 @@ import { useI18n } from '@/lib/i18n';
 import { generateOpenApiSpec } from '@/lib/api/openapi';
 
 export default function ApiDocsPage() {
-  const { t, isRTL } = useI18n();
+  const { t, isRtl } = useI18n();
   const [activeTab, setActiveTab] = useState<
     'docs' | 'swagger' | 'examples' | 'keys'
   >('docs');
@@ -69,7 +69,7 @@ export default function ApiDocsPage() {
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 ${isRTL ? 'rtl' : 'ltr'}`}>
+    <div className={`min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 ${isRtl ? 'rtl' : 'ltr'}`}>
       {/* Header */}
       <div className="bg-black/40 border-b border-gray-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-6">

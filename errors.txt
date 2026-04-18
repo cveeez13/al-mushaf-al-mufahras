@@ -1,0 +1,110 @@
+﻿src/components/KhatamaSmartDashboard.tsx(186,55): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatamaSmartDashboard.tsx(187,51): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatamaSmartDashboard.tsx(216,70): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatamaSmartDashboard.tsx(218,44): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatamaSmartDashboard.tsx(230,30): error TS2551: Property 'isCompleted' does not exist on type 'DaySchedule'. Did you mean 'completed'?
+src/components/KhatmaVisualizations.tsx(67,21): error TS2551: Property 'isCompleted' does not exist on type 'DaySchedule'. Did you mean 'completed'?
+src/components/KhatmaVisualizations.tsx(69,18): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatmaVisualizations.tsx(136,13): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatmaVisualizations.tsx(137,23): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatmaVisualizations.tsx(137,51): error TS2339: Property 'topicId' does not exist on type 'DaySchedule'.
+src/components/KhatmaVisualizations.tsx(171,55): error TS18048: 'percent' is possibly 'undefined'.
+src/components/KhatmaVisualizations.tsx(417,48): error TS2551: Property 'isCompleted' does not exist on type 'DaySchedule'. Did you mean 'completed'?
+src/components/KhatmaVisualizations.tsx(418,49): error TS2551: Property 'isCompleted' does not exist on type 'DaySchedule'. Did you mean 'completed'?
+src/components/MushafsViewer.tsx(48,10): error TS2305: Module '"@/lib/quranPlaces"' has no exported member 'QURAN_VERSES'.
+src/components/MushafsViewer.tsx(73,14): error TS2339: Property 'isRTL' does not exist on type 'I18nContextType'.
+src/components/MushafsViewer.tsx(183,42): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/components/MushafsViewer.tsx(184,51): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/components/MushafsViewer.tsx(199,24): error TS2345: Argument of type '"chooseMushaf"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/MushafsViewer.tsx(294,57): error TS2345: Argument of type '"overlay"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/MushafsViewer.tsx(300,39): error TS2345: Argument of type '"none"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/MushafsViewer.tsx(346,60): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/components/MushafsViewer.tsx(354,31): error TS7006: Parameter 'verse' implicitly has an 'any' type.
+src/components/MushafsViewer.tsx(441,20): error TS2345: Argument of type '"previous"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/MushafsViewer.tsx(443,16): error TS2345: Argument of type '"previous"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/MushafsViewer.tsx(465,20): error TS2345: Argument of type '"next"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/MushafsViewer.tsx(467,14): error TS2345: Argument of type '"next"' is not assignable to parameter of type '"page" | "verses" | "tabIndex" | "menu" | "progress" | "appTitle" | "tabMushaf" | "tabSearch" | "tabTopics" | "tabBookmarks" | "tabStats" | "tabTafsir" | "tabQuiz" | "tabQiraat" | ... 55 more ... | "topic7"'.
+src/components/QuranPlacesMapEnhanced.tsx(5,10): error TS2305: Module '"@/lib/types"' has no exported member 'QURAN_PLACES'.
+src/components/QuranPlacesMapEnhanced.tsx(5,32): error TS2305: Module '"@/lib/types"' has no exported member 'ERAS_ORDERED'.
+src/components/QuranPlacesMapEnhanced.tsx(69,5): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/components/QuranPlacesMapEnhanced.tsx(132,43): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+src/components/QuranPlacesMapEnhanced.tsx(132,48): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/components/QuranPlacesMapEnhanced.tsx(139,35): error TS7006: Parameter 'place' implicitly has an 'any' type.
+src/components/QuranPlacesMapEnhanced.tsx(292,44): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/components/QuranPlacesMapEnhanced.tsx(293,44): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/components/ReflectionsSocialHub.tsx(378,13): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(379,13): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(380,16): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(417,12): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(423,12): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(529,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(530,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(531,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(532,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(533,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(640,12): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(645,37): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(646,38): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(647,34): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/ReflectionsSocialHub.tsx(695,12): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ar: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ar: string; en: string; }'.
+src/components/TimelineSlider.tsx(149,11): error TS2322: Type 'RefObject<HTMLDivElement | null>' is not assignable to type 'Ref<HTMLInputElement> | undefined'.
+  Type 'RefObject<HTMLDivElement | null>' is not assignable to type 'RefObject<HTMLInputElement | null>'.
+    Type 'HTMLDivElement | null' is not assignable to type 'HTMLInputElement | null'.
+      Type 'HTMLDivElement' is missing the following properties from type 'HTMLInputElement': accept, alt, autocomplete, capture, and 54 more.
+src/lib/api/client.ts(127,43): error TS2345: Argument of type '{ page: number; pageSize: number; search: string | undefined; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(131,24): error TS2554: Expected 2-3 arguments, but got 1.
+src/lib/api/client.ts(135,56): error TS2345: Argument of type '{ page: number; pageSize: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(146,43): error TS2345: Argument of type '{ page: number; pageSize: number; region: string | undefined; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(150,24): error TS2554: Expected 2-3 arguments, but got 1.
+src/lib/api/client.ts(154,56): error TS2345: Argument of type '{ page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(165,24): error TS2554: Expected 2-3 arguments, but got 1.
+src/lib/api/client.ts(169,52): error TS2345: Argument of type '{ page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(173,50): error TS2345: Argument of type '{ q: string; page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(191,43): error TS2345: Argument of type '{ q: string; type: "places" | "all" | "topics" | "verses"; page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(195,43): error TS2345: Argument of type '{ q: string; type: string; page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(203,43): error TS2345: Argument of type '{ q: string; type: string; page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(211,43): error TS2345: Argument of type '{ q: string; type: string; page: number; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(226,46): error TS2345: Argument of type '{ name: string; description: string | undefined; }' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(230,24): error TS2554: Expected 2-3 arguments, but got 1.
+src/lib/api/client.ts(234,55): error TS2345: Argument of type '{}' is not assignable to parameter of type 'string'.
+src/lib/api/client.ts(238,24): error TS2554: Expected 2-3 arguments, but got 1.
+src/lib/api/middleware.ts(199,12): error TS2349: This expression is not callable.
+  Type 'Promise<(req: NextRequest) => Promise<NextResponse<unknown>>>' has no call signatures.
+src/lib/llmTafsir.ts(455,21): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ 'gemini-2.0-flash': { name: string; costPer1kPrompt: number; costPer1kCompletion: number; contextWindow: number; recommended: boolean; }; 'gemini-1.5-pro': { name: string; costPer1kPrompt: number; costPer1kCompletion: number; contextWindow: number; recommended: boolean; }; } | { ...; }'.
+src/lib/mapboxQuranPlaces.ts(139,5): error TS2353: Object literal may only specify known properties, and 'filter' does not exist in type 'MapboxLayer'.
+src/lib/mapboxQuranPlaces.ts(163,5): error TS2353: Object literal may only specify known properties, and 'filter' does not exist in type 'MapboxLayer'.
+src/lib/mapboxQuranPlaces.ts(227,5): error TS2353: Object literal may only specify known properties, and 'filter' does not exist in type 'MapboxLayer'.
+src/lib/mapboxQuranPlaces.ts(247,5): error TS2353: Object literal may only specify known properties, and 'filter' does not exist in type 'MapboxLayer'.
+src/lib/multiplayerQuizSocket.ts(385,27): error TS2341: Property 'uri' is private and only accessible within class 'Manager<ListenEvents, EmitEvents>'.
+src/lib/reflectionsCommunity.ts(10,15): error TS2440: Import declaration conflicts with local declaration of 'Reflection'.
+src/lib/reflectionsCommunity.ts(522,17): error TS2339: Property 'authorId' does not exist on type 'Reflection'.
+src/lib/reflectionsCommunity.ts(528,22): error TS2339: Property 'topicColor' does not exist on type 'Reflection'.
+src/lib/reflectionsCommunity.ts(528,54): error TS2339: Property 'topicColor' does not exist on type 'Reflection'.
+src/lib/reflectionsCommunity.ts(558,19): error TS2339: Property 'topicColor' does not exist on type 'Reflection'.
+src/lib/reflectionsCommunity.ts(558,48): error TS2339: Property 'topicColor' does not exist on type 'Reflection'.
+src/lib/swipeDetector.ts(169,35): error TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
+src/lib/swipeDetector.ts(171,3): error TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
+src/lib/swMessageHandler.ts(175,7): error TS2353: Object literal may only specify known properties, and 'actions' does not exist in type 'NotificationOptions'.
+src/lib/swMessageHandler.ts(222,10): error TS2552: Cannot find name 'NotificationEvent'. Did you mean 'NotificationEventMap'?
+src/lib/swMessageHandler.ts(253,54): error TS2552: Cannot find name 'NotificationEvent'. Did you mean 'NotificationEventMap'?
+src/lib/useAiTafsirLLM.ts(265,20): error TS2345: Argument of type '(prev: LLMTafsirState) => { text: string; sources: TafsirSource[]; isStreaming: boolean; error: string | null; cost: number; tokensUsed: { prompt: number; completion: number; total: number; }; cached: boolean; }' is not assignable to parameter of type 'SetStateAction<LLMTafsirState>'.
+  Type '(prev: LLMTafsirState) => { text: string; sources: TafsirSource[]; isStreaming: boolean; error: string | null; cost: number; tokensUsed: { prompt: number; completion: number; total: number; }; cached: boolean; }' is not assignable to type '(prevState: LLMTafsirState) => LLMTafsirState'.
+    Call signature return types '{ text: string; sources: TafsirSource[]; isStreaming: boolean; error: string | null; cost: number; tokensUsed: { prompt: number; completion: number; total: number; }; cached: boolean; }' and 'LLMTafsirState' are incompatible.
+      The types of 'sources' are incompatible between these types.
+        Type 'TafsirSource[]' is not assignable to type 'string[]'.
+          Type 'TafsirSource' is not assignable to type 'string'.

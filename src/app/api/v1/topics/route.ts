@@ -7,7 +7,8 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { TOPIC_COLORS, QURAN_VERSES } from '@/lib/quranData';
+import { TOPIC_COLORS } from '@/lib/mushafOverlays';
+import { getAllVerses } from '@/lib/data';
 import {
   successResponse,
   paginatedResponse,
@@ -28,12 +29,13 @@ export async function GET(request: NextRequest, context: any) {
     const search = searchParams.get('search')?.toLowerCase() || '';
 
     // Build topics array
+    const verses = await getAllVerses();
     const topics = Object.entries(TOPIC_COLORS).map(([key, value]) => ({
       id: key,
       name_ar: value.ar,
       name_en: value.en,
       color: value.color,
-      verseCount: QURAN_VERSES.filter(v => v.topics?.includes(key as any)).length,
+      verseCount: verses.filter(v => v.topic?.id === Number(key)).length,
     }));
 
     // Apply search filter
@@ -85,8 +87,8 @@ export async function GET_TOPIC(request: NextRequest, context: any) {
     }
 
     const [key, value] = topicEntry;
-    const verseCount = QURAN_VERSES.filter(v => v.topics?.includes(key as any))
-      .length;
+    const verses = await getAllVerses();
+    const verseCount = verses.filter(v => v.topic?.id === Number(key)).length;
 
     const topic = {
       id: key,

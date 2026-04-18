@@ -17,10 +17,12 @@ export interface UseLLMTafsirOptions {
   apiKey: string;
   baseUrl?: string; // Default: current origin
   onChunk?: (text: string) => void;
-  onComplete?: (fullText: string, cost: number, sources: string[]) => void;
+  onComplete?: (fullText: string, cost: number, sources: TafsirSource[]) => void;
   onError?: (error: string) => void;
   onQuotaWarning?: (remaining: number) => void;
 }
+
+import type { TafsirSource } from '@/lib/aiTafsir';
 
 export interface LLMTafsirState {
   text: string;
@@ -28,7 +30,7 @@ export interface LLMTafsirState {
   error: string | null;
   cost: number;
   tokensUsed: { prompt: number; completion: number; total: number };
-  sources: string[];
+  sources: TafsirSource[];
   cached: boolean;
 }
 
@@ -76,7 +78,7 @@ export function useAiTafsirLLM(options: UseLLMTafsirOptions) {
 
         let fullText = '';
         let totalCost = 0;
-        let sources: string[] = [];
+        let sources: TafsirSource[] = [];
 
         eventSource.addEventListener('chunk', (event: any) => {
           try {
@@ -255,7 +257,7 @@ export function useAiTafsirFallback() {
       try {
         const verseText = `[Verse ${surah}:${ayah}]`; // Would be actual verse text in real impl
         let fullText = '';
-        const sources: string[] = [];
+        const sources: TafsirSource[] = [];
 
         for await (const chunk of streamAiTafsir(surah, ayah, verseText, dialect)) {
           if (!streamRef.current) break;
@@ -278,7 +280,7 @@ export function useAiTafsirFallback() {
           ...prev,
           isStreaming: false,
           text: response.text,
-          sources: response.sources.map(s => s.name_ar),
+          sources: response.sources,
           cached: response.cached,
         }));
       } catch (error) {

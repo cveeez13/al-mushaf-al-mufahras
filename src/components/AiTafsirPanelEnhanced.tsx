@@ -208,7 +208,7 @@ export function AiTafsirPanelEnhanced(props: EnhancedAiTafsirPanelProps) {
           <div className="flex flex-wrap gap-1">
             {hook.sources.map((source, i) => (
               <span key={i} className="rounded-full bg-[var(--color-mushaf-border)]/30 px-2 py-1 text-[10px]">
-                {source}
+                {source.name_ar}
               </span>
             ))}
           </div>
