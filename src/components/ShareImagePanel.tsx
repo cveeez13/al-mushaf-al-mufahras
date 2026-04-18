@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { SURAH_NAMES, TOPICS } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
 import {
@@ -33,11 +33,11 @@ export default function ShareImagePanel({
   const [sharing, setSharing] = useState(false);
   const [canShare, setCanShare] = useState(false);
 
-  const verseData: ShareVerseData = {
+  const verseData: ShareVerseData = useMemo(() => ({
     surah, ayah, text,
     topic_color: topicColor,
     topic_id: topicId,
-  };
+  }), [surah, ayah, text, topicColor, topicId]);
 
   const topicHex = Object.values(TOPICS).find(t => t.color === topicColor)?.hex || '#B8860B';
 
@@ -53,7 +53,7 @@ export default function ShareImagePanel({
     // Create scaled preview
     const url = canvas.toDataURL('image/png');
     setPreviewUrl(url);
-  }, [template, surah, ayah, text, topicColor, topicId]);
+  }, [template, verseData]);
 
   useEffect(() => {
     renderPreview();

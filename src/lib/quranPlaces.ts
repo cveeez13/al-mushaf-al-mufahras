@@ -25,6 +25,22 @@ export interface VerseRef {
   snippet_en: string;
 }
 
+interface GeoJsonPoint {
+  type: 'Point';
+  coordinates: [number, number];
+}
+
+interface GeoJsonFeature {
+  type: 'Feature';
+  geometry: GeoJsonPoint;
+  properties: Record<string, unknown>;
+}
+
+interface GeoJsonFeatureCollection {
+  type: 'FeatureCollection';
+  features: GeoJsonFeature[];
+}
+
 export type PlaceEra =
   | 'creation'      // آدم، نوح
   | 'ibrahim'       // إبراهيم، لوط، إسماعيل
@@ -516,7 +532,7 @@ export function getPlaceById(id: string): QuranPlace | undefined {
 }
 
 /** Convert places to GeoJSON FeatureCollection */
-export function toGeoJSON(places: QuranPlace[]): GeoJSON.FeatureCollection {
+export function toGeoJSON(places: QuranPlace[]): GeoJsonFeatureCollection {
   return {
     type: 'FeatureCollection',
     features: places.map(p => ({
@@ -536,21 +552,4 @@ export function toGeoJSON(places: QuranPlace[]): GeoJSON.FeatureCollection {
       },
     })),
   };
-}
-
-// GeoJSON types (minimal, avoids extra dependency)
-declare namespace GeoJSON {
-  interface FeatureCollection {
-    type: 'FeatureCollection';
-    features: Feature[];
-  }
-  interface Feature {
-    type: 'Feature';
-    geometry: Point;
-    properties: Record<string, unknown>;
-  }
-  interface Point {
-    type: 'Point';
-    coordinates: [number, number];
-  }
 }

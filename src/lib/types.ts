@@ -55,33 +55,33 @@ export interface JuzInfo {
 }
 
 export const TOPICS: Record<number, Topic> = {
-  1: { id: 1, color: 'blue', hex: '#3498DB', name_ar: 'دلائل قدرة الله وعظمته', name_en: "Signs of Allah's Power & Greatness" },
-  2: { id: 2, color: 'green', hex: '#27AE60', name_ar: 'السيرة النبوية، صفات المؤمنين، الجنة', name_en: 'Seerah, Believers, Paradise' },
-  3: { id: 3, color: 'brown', hex: '#8E6B3D', name_ar: 'آيات الأحكام والفقه', name_en: 'Rulings & Jurisprudence (Fiqh)' },
-  4: { id: 4, color: 'yellow', hex: '#F1C40F', name_ar: 'قصص الأنبياء والأمم السابقة', name_en: 'Stories of Prophets & Past Nations' },
-  5: { id: 5, color: 'purple', hex: '#8E44AD', name_ar: 'مكانة القرآن ورد الشبهات', name_en: 'Status of Quran & Refuting Doubts' },
-  6: { id: 6, color: 'orange', hex: '#E67E22', name_ar: 'اليوم الآخر، الموت، البعث، الحساب', name_en: 'Afterlife, Death, Resurrection, Judgment' },
-  7: { id: 7, color: 'red', hex: '#E74C3C', name_ar: 'أوصاف النار وعذاب الكافرين', name_en: 'Hellfire & Punishment of Disbelievers' },
+  1: { id: 1, color: 'olive', hex: '#7C8E3E', name_ar: 'دلائل قدرة الله وعظمته', name_en: "Signs of Allah's Power & Greatness" },
+  2: { id: 2, color: 'sky', hex: '#5BA3CF', name_ar: 'السيرة النبوية، صفات المؤمنين، الجنة', name_en: 'Seerah, Believers, Paradise' },
+  3: { id: 3, color: 'gold', hex: '#C9A43E', name_ar: 'آيات الأحكام والفقه', name_en: 'Rulings & Jurisprudence (Fiqh)' },
+  4: { id: 4, color: 'pink', hex: '#D4839B', name_ar: 'قصص الأنبياء والأمم السابقة', name_en: 'Stories of Prophets & Past Nations' },
+  5: { id: 5, color: 'purple', hex: '#9B8EC4', name_ar: 'مكانة القرآن ورد الشبهات', name_en: 'Status of Quran & Refuting Doubts' },
+  6: { id: 6, color: 'turquoise', hex: '#4DBDB5', name_ar: 'اليوم الآخر، الموت، البعث، الحساب', name_en: 'Afterlife, Death, Resurrection, Judgment' },
+  7: { id: 7, color: 'orange', hex: '#D4854A', name_ar: 'أوصاف النار وعذاب الكافرين', name_en: 'Hellfire & Punishment of Disbelievers' },
 };
 
 export const TOPIC_BG: Record<string, string> = {
-  blue: 'bg-topic-blue-bg',
-  green: 'bg-topic-green-bg',
-  brown: 'bg-topic-brown-bg',
-  yellow: 'bg-topic-yellow-bg',
+  olive: 'bg-topic-olive-bg',
+  sky: 'bg-topic-sky-bg',
+  gold: 'bg-topic-gold-bg',
+  pink: 'bg-topic-pink-bg',
   purple: 'bg-topic-purple-bg',
+  turquoise: 'bg-topic-turquoise-bg',
   orange: 'bg-topic-orange-bg',
-  red: 'bg-topic-red-bg',
 };
 
 export const TOPIC_HEX_BG: Record<string, string> = {
-  blue: '#EBF5FB',
-  green: '#E8F8F0',
-  brown: '#F5EDE3',
-  yellow: '#FEF9E7',
-  purple: '#F4ECF7',
-  orange: '#FDF2E9',
-  red: '#FDEDEC',
+  olive: '#F0F3E3',
+  sky: '#E8F2FA',
+  gold: '#F9F3E1',
+  pink: '#FAEEF2',
+  purple: '#F0EDF7',
+  turquoise: '#E5F6F5',
+  orange: '#FAF0E8',
 };
 
 export const SURAH_NAMES: Record<number, string> = {

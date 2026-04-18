@@ -36,13 +36,13 @@ interface NightModeConfig {
  *   red:    #E88080 → 5.0:1 ✓
  */
 const NIGHT_TOPIC_COLORS: Record<string, string> = {
-  blue:   '#6CB4E0',
-  green:  '#5DBF8A',
-  brown:  '#C4A678',
-  yellow: '#E8D576',
-  purple: '#B87FCE',
-  orange: '#E8A86B',
-  red:    '#E88080',
+  olive:     '#8FA360',
+  sky:       '#6CB4E0',
+  gold:      '#D4B65C',
+  pink:      '#D9A0B5',
+  purple:    '#B0A3D4',
+  turquoise: '#6DCEC7',
+  orange:    '#D9996B',
 };
 
 /**
@@ -50,13 +50,13 @@ const NIGHT_TOPIC_COLORS: Record<string, string> = {
  * that don't strain eyes in the dark but maintain color coding.
  */
 const NIGHT_TOPIC_BG: Record<string, string> = {
-  blue:   '#1A2530',
-  green:  '#1A2820',
-  brown:  '#251E16',
-  yellow: '#25231A',
-  purple: '#221A28',
-  orange: '#251D16',
-  red:    '#251A1A',
+  olive:     '#1E2218',
+  sky:       '#1A2530',
+  gold:      '#25231A',
+  pink:      '#251A20',
+  purple:    '#221A28',
+  turquoise: '#1A2625',
+  orange:    '#251D16',
 };
 
 const STORAGE_KEY = 'mushaf-night-mode';

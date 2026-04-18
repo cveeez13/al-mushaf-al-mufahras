@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest';
 // Test the i18n translations dictionary and logic without React context
 describe('i18n translations', () => {
   const translations = {
-    appTitle: { ar: 'المصحف المفهرس', en: 'Al-Mushaf Al-Mufahras' },
+    appTitle: { ar: 'المصحف المفهرس بالمواضيع', en: 'Al-Mushaf Al-Mufahras' },
     tabMushaf: { ar: 'المصحف', en: 'Mushaf' },
     tabIndex: { ar: 'الفهرس', en: 'Index' },
     tabSearch: { ar: 'البحث', en: 'Search' },

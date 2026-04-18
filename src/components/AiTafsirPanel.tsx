@@ -1,20 +1,27 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useI18n } from '@/lib/i18n';
-import { SURAH_NAMES, TOPICS } from '@/lib/types';
+import { SURAH_NAMES } from '@/lib/types';
 import {
-  type Dialect, type AiTafsirResponse, type TafsirSource, type StreamChunk,
-  DISCLAIMER_AR, DISCLAIMER_EN, TAFSIR_SOURCES,
-  generateAiTafsir, streamAiTafsir,
-  getCacheStats, clearTafsirCache,
-  getSeededVerseKeys, hasSeededTafsir,
+  type Dialect,
+  type AiTafsirResponse,
+  type TafsirSource,
+  DISCLAIMER_AR,
+  DISCLAIMER_EN,
+  TAFSIR_SOURCES,
+  generateAiTafsir,
+  streamAiTafsir,
+  getCacheStats,
+  clearTafsirCache,
+  getSeededVerseKeys,
+  hasSeededTafsir,
   validateGuardrails,
 } from '@/lib/aiTafsir';
+import { useTafsirTts } from '@/lib/useTafsirTts';
 
 interface AiTafsirPanelProps {
   onGoToPage?: (page: number) => void;
-  /** Pre-selected verse context from MushafViewer */
   verseContext?: {
     surah: number;
     ayah: number;
@@ -24,16 +31,14 @@ interface AiTafsirPanelProps {
   };
 }
 
-export default function AiTafsirPanel({ onGoToPage, verseContext }: AiTafsirPanelProps) {
+export default function AiTafsirPanel({ verseContext }: AiTafsirPanelProps) {
   const { lang } = useI18n();
   const ar = lang === 'ar';
 
-  // Verse selection state
   const [surah, setSurah] = useState(verseContext?.surah ?? 1);
   const [ayah, setAyah] = useState(verseContext?.ayah ?? 1);
   const [verseText, setVerseText] = useState(verseContext?.text ?? '');
 
-  // AI tafsir state
   const [dialect, setDialect] = useState<Dialect>('egyptian');
   const [response, setResponse] = useState<AiTafsirResponse | null>(null);
   const [streamText, setStreamText] = useState('');
@@ -41,54 +46,98 @@ export default function AiTafsirPanel({ onGoToPage, verseContext }: AiTafsirPane
   const [streamSources, setStreamSources] = useState<TafsirSource[]>([]);
   const [showDisclaimer, setShowDisclaimer] = useState(true);
 
-  // UI state
   const [copied, setCopied] = useState(false);
   const [cacheStats, setCacheStats] = useState(getCacheStats());
+  const [ttsMessage, setTtsMessage] = useState('');
 
   const streamRef = useRef(false);
   const textContainerRef = useRef<HTMLDivElement>(null);
 
-  // Update verse from context
-  useEffect(() => {
-    if (verseContext) {
-      setSurah(verseContext.surah);
-      setAyah(verseContext.ayah);
-      setVerseText(verseContext.text);
-      // Auto-generate when verse context arrives
-      setResponse(null);
-      setStreamText('');
-    }
-  }, [verseContext]);
+  const {
+    provider,
+    isSupported: ttsSupported,
+    voices,
+    selectedVoiceId,
+    setSelectedVoice,
+    rate: ttsRate,
+    setRate: setTtsRate,
+    pitch: ttsPitch,
+    setPitch: setTtsPitch,
+    isSpeaking,
+    isPaused,
+    speak,
+    stop: stopTts,
+    pause: pauseTts,
+    resume: resumeTts,
+  } = useTafsirTts();
 
-  // Auto-scroll during streaming
+  useEffect(() => {
+    if (!verseContext) return;
+    setSurah(verseContext.surah);
+    setAyah(verseContext.ayah);
+    setVerseText(verseContext.text);
+    setResponse(null);
+    setStreamText('');
+    setStreamSources([]);
+    stopTts();
+  }, [stopTts, verseContext]);
+
   useEffect(() => {
     if (isStreaming && textContainerRef.current) {
       textContainerRef.current.scrollTop = textContainerRef.current.scrollHeight;
     }
   }, [streamText, isStreaming]);
 
-  // ───── Generate tafsir ─────
+  useEffect(() => () => stopTts(), [stopTts]);
+
+  useEffect(() => {
+    stopTts();
+  }, [surah, ayah, dialect, stopTts]);
+
+  useEffect(() => {
+    if (!ttsMessage) return;
+    const timer = window.setTimeout(() => setTtsMessage(''), 2500);
+    return () => window.clearTimeout(timer);
+  }, [ttsMessage]);
+
+  const speakableText = useMemo(() => {
+    if (!streamText.trim()) return '';
+    const sourceNames = streamSources.map((src) => (ar ? src.name_ar : src.name_en)).join('، ');
+    return sourceNames
+      ? `${streamText}\n\n${ar ? 'المصادر المعتمدة' : 'Sources'}: ${sourceNames}`
+      : streamText;
+  }, [ar, streamSources, streamText]);
+
+  const seededKeys = getSeededVerseKeys();
+  const surahName = SURAH_NAMES[surah] || `${surah}`;
+  const verseKey = `${surah}:${ayah}`;
+  const isSeeded = hasSeededTafsir(verseKey);
+  const topicColor = verseContext?.topicColor;
+
+  const resetGeneratedState = useCallback(() => {
+    setResponse(null);
+    setStreamText('');
+    setStreamSources([]);
+    stopTts();
+  }, [stopTts]);
 
   const handleGenerate = useCallback(async () => {
     if (isStreaming) return;
 
-    setResponse(null);
-    setStreamText('');
-    setStreamSources([]);
+    resetGeneratedState();
     setIsStreaming(true);
     streamRef.current = true;
 
     try {
       const gen = streamAiTafsir(surah, ayah, verseText, dialect);
       for await (const chunk of gen) {
-        if (!streamRef.current) break; // cancelled
+        if (!streamRef.current) break;
         setStreamText(chunk.text);
         if (chunk.done && chunk.sources) {
           setStreamSources(chunk.sources);
         }
       }
 
-      // Get cached response for metadata
       const full = generateAiTafsir(surah, ayah, verseText, dialect);
       setResponse(full);
       setCacheStats(getCacheStats());
@@ -96,7 +145,7 @@ export default function AiTafsirPanel({ onGoToPage, verseContext }: AiTafsirPane
       setIsStreaming(false);
       streamRef.current = false;
     }
-  }, [surah, ayah, verseText, dialect, isStreaming]);
+  }, [ayah, dialect, isStreaming, resetGeneratedState, surah, verseText]);
 
   const handleStop = useCallback(() => {
     streamRef.current = false;
@@ -111,224 +160,315 @@ export default function AiTafsirPanel({ onGoToPage, verseContext }: AiTafsirPane
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
-  }, [streamText, ar]);
+  }, [ar, streamText]);
 
   const handleClearCache = useCallback(() => {
     clearTafsirCache();
     setCacheStats(getCacheStats());
   }, []);
 
-  // ───── Seeded verse quick picks ─────
-  const seededKeys = getSeededVerseKeys();
-  const surahName = SURAH_NAMES[surah] || `${surah}`;
-  const verseKey = `${surah}:${ayah}`;
-  const isSeeded = hasSeededTafsir(verseKey);
-  const topicColor = verseContext?.topicColor;
+  const handleSpeak = useCallback(() => {
+    if (!ttsSupported) {
+      setTtsMessage(ar ? 'المتصفح لا يدعم القراءة الصوتية هنا.' : 'This browser does not support TTS here.');
+      return;
+    }
+    if (!speakableText.trim()) {
+      setTtsMessage(ar ? 'ولّد الشرح أولًا ثم استمع إليه.' : 'Generate the tafsir first, then listen to it.');
+      return;
+    }
+    const started = speak(speakableText);
+    if (!started) {
+      setTtsMessage(ar ? 'تعذر تشغيل الشرح الصوتي.' : 'Unable to start tafsir audio.');
+    }
+  }, [ar, speak, speakableText, ttsSupported]);
+
+  const guardrailResult = streamText && !isStreaming ? validateGuardrails(streamText) : null;
 
   return (
-    <div className="p-4 max-w-2xl mx-auto">
-      {/* Header */}
-      <h2 className="text-lg font-bold text-[var(--color-mushaf-gold)] mb-1 text-center font-[var(--font-arabic)]">
-        {ar ? '🤖 اشرحلي ببساطة' : '🤖 Explain Simply'}
+    <div className="mx-auto max-w-2xl p-4">
+      <h2 className="mb-1 text-center font-[var(--font-arabic)] text-lg font-bold text-[var(--color-mushaf-gold)]">
+        {ar ? 'اشرحلي ببساطة' : 'Explain Simply'}
       </h2>
-      <p className="text-xs text-center text-[var(--color-mushaf-text)]/50 mb-4">
-        {ar ? 'تفسير مبسّط مستند لتفاسير العلماء المعتمدة' : 'Simplified tafsir based on classical scholarly sources'}
+      <p className="mb-4 text-center text-xs text-[var(--color-mushaf-text)]/50">
+        {ar
+          ? 'تفسير مبسط مع شرح صوتي اختياري مستند إلى التفاسير المعتمدة'
+          : 'Simplified tafsir with optional spoken playback based on trusted sources'}
       </p>
 
-      {/* Disclaimer Banner */}
       {showDisclaimer && (
-        <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 relative">
+        <div className="relative mb-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3">
           <button
             onClick={() => setShowDisclaimer(false)}
-            className="absolute top-2 left-2 text-amber-500/50 hover:text-amber-500 text-xs"
+            className="absolute left-2 top-2 text-xs text-amber-500/50 transition-colors hover:text-amber-500"
             aria-label={ar ? 'إغلاق' : 'Close'}
-          >✕</button>
-          <div className="text-xs text-amber-700 dark:text-amber-400 font-[var(--font-arabic)] leading-relaxed pr-4" dir="rtl">
+          >
+            ×
+          </button>
+          <div className="pr-4 text-xs leading-relaxed text-amber-700 dark:text-amber-400" dir="rtl">
             {ar ? DISCLAIMER_AR : DISCLAIMER_EN}
           </div>
         </div>
       )}
 
-      {/* Verse Selection */}
-      <div className="page-frame rounded-xl p-4 mb-4">
-        {/* Current verse display */}
+      <div className="page-frame mb-4 rounded-xl p-4">
         {verseText ? (
           <div
-            className="p-3 rounded-lg mb-3 text-center"
+            className="mb-3 rounded-lg p-3 text-center"
             style={{
               backgroundColor: topicColor ? `${topicColor}15` : 'var(--color-mushaf-border)',
               borderRight: topicColor ? `3px solid ${topicColor}` : undefined,
             }}
           >
-            <div className="text-xs text-[var(--color-mushaf-text)]/50 mb-1">
+            <div className="mb-1 text-xs text-[var(--color-mushaf-text)]/50">
               {surahName} : {ayah}
             </div>
             <div className="font-[var(--font-arabic)] text-sm leading-loose" dir="rtl">
-              {verseText.length > 150 ? verseText.slice(0, 150) + '…' : verseText}
+              {verseText.length > 150 ? `${verseText.slice(0, 150)}...` : verseText}
             </div>
           </div>
         ) : (
-          <div className="text-center text-sm text-[var(--color-mushaf-text)]/40 mb-3 py-4">
-            {ar ? 'اضغط على آية في المصحف أو اختر من الأمثلة' : 'Click a verse in Mushaf or pick from examples'}
+          <div className="mb-3 py-4 text-center text-sm text-[var(--color-mushaf-text)]/40">
+            {ar ? 'اختر آية من المصحف أو من الأمثلة الجاهزة.' : 'Pick a verse from the Mushaf or use a quick example.'}
           </div>
         )}
 
-        {/* Manual verse input */}
-        <div className="flex gap-2 mb-3">
+        <div className="mb-3 flex gap-2">
           <div className="flex-1">
-            <label className="text-[10px] text-[var(--color-mushaf-text)]/50 mb-0.5 block">
+            <label className="mb-0.5 block text-[10px] text-[var(--color-mushaf-text)]/50">
               {ar ? 'السورة' : 'Surah'}
             </label>
             <input
               type="number"
-              min={1} max={114}
+              min={1}
+              max={114}
               value={surah}
-              onChange={e => setSurah(Math.max(1, Math.min(114, Number(e.target.value))))}
-              className="w-full px-2 py-1.5 rounded-lg bg-[var(--color-mushaf-border)]/20 border border-[var(--color-mushaf-border)] text-sm text-center"
+              onChange={(e) => setSurah(Math.max(1, Math.min(114, Number(e.target.value))))}
+              className="w-full rounded-lg border border-[var(--color-mushaf-border)] bg-[var(--color-mushaf-border)]/20 px-2 py-1.5 text-center text-sm"
             />
           </div>
           <div className="flex-1">
-            <label className="text-[10px] text-[var(--color-mushaf-text)]/50 mb-0.5 block">
+            <label className="mb-0.5 block text-[10px] text-[var(--color-mushaf-text)]/50">
               {ar ? 'الآية' : 'Ayah'}
             </label>
             <input
               type="number"
-              min={1} max={286}
+              min={1}
+              max={286}
               value={ayah}
-              onChange={e => setAyah(Math.max(1, Number(e.target.value)))}
-              className="w-full px-2 py-1.5 rounded-lg bg-[var(--color-mushaf-border)]/20 border border-[var(--color-mushaf-border)] text-sm text-center"
+              onChange={(e) => setAyah(Math.max(1, Number(e.target.value)))}
+              className="w-full rounded-lg border border-[var(--color-mushaf-border)] bg-[var(--color-mushaf-border)]/20 px-2 py-1.5 text-center text-sm"
             />
           </div>
         </div>
 
-        {/* Quick picks: seeded verses */}
         <div className="mb-3">
-          <label className="text-[10px] text-[var(--color-mushaf-text)]/50 mb-1 block">
-            {ar ? 'أمثلة جاهزة' : 'Quick Examples'}
+          <label className="mb-1 block text-[10px] text-[var(--color-mushaf-text)]/50">
+            {ar ? 'أمثلة جاهزة' : 'Quick examples'}
           </label>
           <div className="flex flex-wrap gap-1.5">
-            {seededKeys.map(key => {
-              const [s, a] = key.split(':').map(Number);
-              const name = SURAH_NAMES[s] || `${s}`;
+            {seededKeys.map((key) => {
+              const [exampleSurah, exampleAyah] = key.split(':').map(Number);
+              const exampleName = SURAH_NAMES[exampleSurah] || `${exampleSurah}`;
               return (
                 <button
                   key={key}
-                  onClick={() => { setSurah(s); setAyah(a); setVerseText(''); setResponse(null); setStreamText(''); }}
-                  className={`px-3 py-1.5 rounded-lg text-xs transition-colors ${
+                  onClick={() => {
+                    setSurah(exampleSurah);
+                    setAyah(exampleAyah);
+                    setVerseText('');
+                    resetGeneratedState();
+                  }}
+                  className={`rounded-lg px-3 py-1.5 text-xs transition-colors ${
                     verseKey === key
                       ? 'bg-[var(--color-mushaf-gold)] text-white'
                       : 'bg-[var(--color-mushaf-border)]/20 hover:bg-[var(--color-mushaf-border)]/40'
                   }`}
                 >
-                  {name}:{a}
+                  {exampleName}:{exampleAyah}
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Dialect toggle */}
-        <div className="flex gap-2 mb-3">
+        <div className="mb-3 flex gap-2">
           <button
-            onClick={() => { setDialect('egyptian'); setResponse(null); setStreamText(''); }}
-            className={`flex-1 py-2 rounded-lg text-xs font-medium transition-colors ${
+            onClick={() => {
+              setDialect('egyptian');
+              resetGeneratedState();
+            }}
+            className={`flex-1 rounded-lg py-2 text-xs font-medium transition-colors ${
               dialect === 'egyptian'
                 ? 'bg-[var(--color-mushaf-gold)] text-white'
                 : 'bg-[var(--color-mushaf-border)]/20 hover:bg-[var(--color-mushaf-border)]/40'
             }`}
           >
-            🇪🇬 {ar ? 'عامية مصرية' : 'Egyptian Arabic'}
+            {ar ? 'عامية مصرية' : 'Egyptian Arabic'}
           </button>
           <button
-            onClick={() => { setDialect('msa'); setResponse(null); setStreamText(''); }}
-            className={`flex-1 py-2 rounded-lg text-xs font-medium transition-colors ${
+            onClick={() => {
+              setDialect('msa');
+              resetGeneratedState();
+            }}
+            className={`flex-1 rounded-lg py-2 text-xs font-medium transition-colors ${
               dialect === 'msa'
                 ? 'bg-[var(--color-mushaf-gold)] text-white'
                 : 'bg-[var(--color-mushaf-border)]/20 hover:bg-[var(--color-mushaf-border)]/40'
             }`}
           >
-            📝 {ar ? 'فصحى مبسطة' : 'Simple MSA'}
+            {ar ? 'فصحى مبسطة' : 'Simple MSA'}
           </button>
         </div>
 
-        {/* Generate button */}
         <button
           onClick={isStreaming ? handleStop : handleGenerate}
-          className={`w-full py-2.5 rounded-xl font-bold text-sm transition-all ${
-            isStreaming
-              ? 'bg-red-500 text-white hover:bg-red-600'
-              : 'bg-[var(--color-mushaf-gold)] text-white hover:opacity-90'
+          className={`w-full rounded-xl py-2.5 text-sm font-bold text-white transition-all ${
+            isStreaming ? 'bg-red-500 hover:bg-red-600' : 'bg-[var(--color-mushaf-gold)] hover:opacity-90'
           }`}
         >
-          {isStreaming
-            ? (ar ? '⏹ إيقاف' : '⏹ Stop')
-            : (ar ? '🤖 اشرحلي ببساطة' : '🤖 Explain Simply')}
+          {isStreaming ? (ar ? 'إيقاف التوليد' : 'Stop generating') : ar ? 'اشرحلي ببساطة' : 'Explain simply'}
         </button>
 
         {isSeeded && !response && !isStreaming && (
-          <div className="text-center text-[10px] text-[var(--color-topic-green)] mt-1">
-            ✨ {ar ? 'تفسير مفصّل متاح لهذه الآية' : 'Detailed tafsir available for this verse'}
+          <div className="mt-1 text-center text-[10px] text-[var(--color-topic-green)]">
+            {ar ? 'يوجد شرح مفصل محفوظ لهذه الآية.' : 'A richer pre-seeded explanation is available for this verse.'}
           </div>
         )}
       </div>
 
-      {/* Streaming Response */}
       {(streamText || isStreaming) && (
-        <div className="page-frame rounded-xl overflow-hidden mb-4">
-          {/* Response header */}
-          <div className="px-4 py-2.5 bg-[var(--color-mushaf-border)]/20 border-b border-[var(--color-mushaf-border)] flex items-center justify-between">
+        <div className="page-frame mb-4 overflow-hidden rounded-xl">
+          <div className="flex items-center justify-between border-b border-[var(--color-mushaf-border)] bg-[var(--color-mushaf-border)]/20 px-4 py-2.5">
             <div className="flex items-center gap-2">
-              <span className="text-sm">🤖</span>
+              <span className="text-sm">AI</span>
               <span className="text-xs font-medium">
-                {ar ? 'التفسير المبسّط' : 'Simplified Tafsir'}
+                {ar ? 'التفسير المبسط' : 'Simplified tafsir'}
               </span>
               {response?.cached && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--color-topic-blue)]/20 text-[var(--color-topic-blue)]">
-                  {ar ? 'مُخزّن' : 'Cached'}
+                <span className="rounded bg-[var(--color-topic-blue)]/20 px-1.5 py-0.5 text-[10px] text-[var(--color-topic-blue)]">
+                  {ar ? 'مخزن مؤقتًا' : 'Cached'}
                 </span>
               )}
             </div>
             <div className="flex items-center gap-2">
               {isStreaming && (
-                <span className="text-[10px] text-[var(--color-mushaf-gold)] animate-pulse">
+                <span className="animate-pulse text-[10px] text-[var(--color-mushaf-gold)]">
                   {ar ? 'جارٍ التوليد...' : 'Generating...'}
                 </span>
               )}
               {streamText && !isStreaming && (
                 <button
                   onClick={handleCopy}
-                  className="text-[10px] px-2 py-0.5 rounded bg-[var(--color-mushaf-border)]/20 hover:bg-[var(--color-mushaf-border)]/40 transition-colors"
+                  className="rounded bg-[var(--color-mushaf-border)]/20 px-2 py-0.5 text-[10px] transition-colors hover:bg-[var(--color-mushaf-border)]/40"
                 >
-                  {copied ? '✓' : '📋'} {ar ? (copied ? 'تم النسخ' : 'نسخ') : (copied ? 'Copied' : 'Copy')}
+                  {ar ? (copied ? 'تم النسخ' : 'نسخ') : copied ? 'Copied' : 'Copy'}
                 </button>
               )}
             </div>
           </div>
 
-          {/* Streaming text body */}
-          <div
-            ref={textContainerRef}
-            className="p-4 max-h-[400px] overflow-y-auto"
-          >
-            <div className="font-[var(--font-arabic)] text-sm leading-[2] whitespace-pre-wrap" dir="rtl">
+          {streamText && !isStreaming && (
+            <div className="border-b border-[var(--color-mushaf-border)]/50 bg-[var(--color-mushaf-border)]/10 px-4 py-3">
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                <button
+                  onClick={handleSpeak}
+                  disabled={!ttsSupported}
+                  className="rounded-lg bg-[var(--color-mushaf-gold)] px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isSpeaking && !isPaused
+                    ? ar ? 'إعادة تشغيل الشرح' : 'Replay tafsir'
+                    : ar ? 'استمع للشرح' : 'Listen to tafsir'}
+                </button>
+                <button
+                  onClick={isPaused ? resumeTts : pauseTts}
+                  disabled={!isSpeaking}
+                  className="rounded-lg bg-[var(--color-mushaf-border)]/30 px-3 py-1.5 text-xs transition-colors hover:bg-[var(--color-mushaf-border)]/50 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isPaused ? (ar ? 'استكمال' : 'Resume') : ar ? 'إيقاف مؤقت' : 'Pause'}
+                </button>
+                <button
+                  onClick={stopTts}
+                  disabled={!isSpeaking && !isPaused}
+                  className="rounded-lg bg-[var(--color-mushaf-border)]/30 px-3 py-1.5 text-xs transition-colors hover:bg-[var(--color-mushaf-border)]/50 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {ar ? 'إيقاف الصوت' : 'Stop audio'}
+                </button>
+                <span className="text-[10px] text-[var(--color-mushaf-text)]/50">
+                  {ar ? 'المزوّد' : 'Provider'}: {provider}
+                </span>
+              </div>
+
+              <div className="grid gap-3 md:grid-cols-3">
+                <label className="flex flex-col gap-1 text-[10px] text-[var(--color-mushaf-text)]/55">
+                  <span>{ar ? 'الصوت' : 'Voice'}</span>
+                  <select
+                    value={selectedVoiceId}
+                    onChange={(e) => setSelectedVoice(e.target.value)}
+                    disabled={!ttsSupported || voices.length === 0}
+                    className="rounded-lg border border-[var(--color-mushaf-border)] bg-[var(--color-background)] px-2 py-2 text-xs"
+                  >
+                    {voices.length === 0 ? (
+                      <option value="">{ar ? 'لا توجد أصوات متاحة' : 'No voices available'}</option>
+                    ) : (
+                      voices.map((voice) => (
+                        <option key={voice.id} value={voice.id}>
+                          {voice.name} ({voice.lang})
+                        </option>
+                      ))
+                    )}
+                  </select>
+                </label>
+
+                <label className="flex flex-col gap-1 text-[10px] text-[var(--color-mushaf-text)]/55">
+                  <span>{ar ? 'السرعة' : 'Speed'}: {ttsRate.toFixed(2)}x</span>
+                  <input
+                    type="range"
+                    min="0.7"
+                    max="1.25"
+                    step="0.05"
+                    value={ttsRate}
+                    onChange={(e) => setTtsRate(Number(e.target.value))}
+                  />
+                </label>
+
+                <label className="flex flex-col gap-1 text-[10px] text-[var(--color-mushaf-text)]/55">
+                  <span>{ar ? 'حدة الصوت' : 'Pitch'}: {ttsPitch.toFixed(2)}</span>
+                  <input
+                    type="range"
+                    min="0.8"
+                    max="1.2"
+                    step="0.05"
+                    value={ttsPitch}
+                    onChange={(e) => setTtsPitch(Number(e.target.value))}
+                  />
+                </label>
+              </div>
+
+              <div className="mt-2 min-h-4 text-[10px] text-[var(--color-topic-blue)]">
+                {ttsMessage || (!ttsSupported ? (ar ? 'الشرح الصوتي يعتمد على دعم المتصفح لـ Web Speech API.' : 'Spoken playback depends on Web Speech API support in the browser.') : '')}
+              </div>
+            </div>
+          )}
+
+          <div ref={textContainerRef} className="max-h-[400px] overflow-y-auto p-4">
+            <div className="whitespace-pre-wrap font-[var(--font-arabic)] text-sm leading-[2]" dir="rtl">
               {streamText}
               {isStreaming && (
-                <span className="inline-block w-2 h-4 bg-[var(--color-mushaf-gold)] animate-pulse align-middle mr-1" />
+                <span className="mr-1 inline-block h-4 w-2 animate-pulse align-middle bg-[var(--color-mushaf-gold)]" />
               )}
             </div>
           </div>
 
-          {/* Sources */}
           {streamSources.length > 0 && !isStreaming && (
-            <div className="px-4 py-2.5 bg-[var(--color-mushaf-border)]/10 border-t border-[var(--color-mushaf-border)]">
-              <div className="text-[10px] text-[var(--color-mushaf-text)]/50 mb-1">
-                {ar ? '📚 المصادر المعتمدة:' : '📚 Sources:'}
+            <div className="border-t border-[var(--color-mushaf-border)] bg-[var(--color-mushaf-border)]/10 px-4 py-2.5">
+              <div className="mb-1 text-[10px] text-[var(--color-mushaf-text)]/50">
+                {ar ? 'المصادر المعتمدة:' : 'Sources:'}
               </div>
               <div className="flex flex-wrap gap-2">
-                {streamSources.map(src => (
+                {streamSources.map((src) => (
                   <span
                     key={src.id}
-                    className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--color-mushaf-gold)]/10 text-[var(--color-mushaf-gold)]"
+                    className="rounded-full bg-[var(--color-mushaf-gold)]/10 px-2 py-0.5 text-[10px] text-[var(--color-mushaf-gold)]"
                   >
                     {ar ? src.name_ar : src.name_en}
                   </span>
@@ -337,77 +477,86 @@ export default function AiTafsirPanel({ onGoToPage, verseContext }: AiTafsirPane
             </div>
           )}
 
-          {/* Guardrails status */}
-          {streamText && !isStreaming && (
-            <div className="px-4 py-2 border-t border-[var(--color-mushaf-border)]/50">
-              {(() => {
-                const result = validateGuardrails(streamText);
-                return (
-                  <div className={`text-[10px] flex items-center gap-1 ${
-                    result.safe ? 'text-[var(--color-topic-green)]' : 'text-red-500'
-                  }`}>
-                    {result.safe ? '✅' : '⚠️'}
-                    {result.safe
-                      ? (ar ? 'المحتوى مطابق للضوابط الشرعية' : 'Content passes guardrails')
-                      : (ar ? `تنبيه: ${result.reason}` : `Warning: ${result.reason}`)}
-                  </div>
-                );
-              })()}
+          {guardrailResult && (
+            <div className="border-t border-[var(--color-mushaf-border)]/50 px-4 py-2">
+              <div
+                className={`flex items-center gap-1 text-[10px] ${
+                  guardrailResult.safe ? 'text-[var(--color-topic-green)]' : 'text-red-500'
+                }`}
+              >
+                <span>{guardrailResult.safe ? 'OK' : '!'}</span>
+                <span>
+                  {guardrailResult.safe
+                    ? ar ? 'المحتوى اجتاز ضوابط العرض.' : 'Content passed display guardrails.'
+                    : ar ? `تنبيه: ${guardrailResult.reason}` : `Warning: ${guardrailResult.reason}`}
+                </span>
+              </div>
             </div>
           )}
         </div>
       )}
 
-      {/* Prompt Engineering Info */}
       {!streamText && !isStreaming && (
-        <div className="page-frame rounded-xl p-4 mb-4">
-          <h3 className="text-xs font-semibold text-[var(--color-mushaf-gold)] mb-2">
-            {ar ? '🛡️ ضمانات المحتوى' : '🛡️ Content Guardrails'}
+        <div className="page-frame mb-4 rounded-xl p-4">
+          <h3 className="mb-2 text-xs font-semibold text-[var(--color-mushaf-gold)]">
+            {ar ? 'ضمانات المحتوى' : 'Content guardrails'}
           </h3>
           <div className="space-y-1.5 text-[11px] text-[var(--color-mushaf-text)]/60" dir="rtl">
             <div className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">✓</span>
-              <span>{ar ? 'يعتمد فقط على التفاسير المعتمدة (ابن كثير، السعدي، التفسير الميسر)' : 'Based only on trusted tafsirs (Ibn Kathir, Al-Sa\'di, Al-Muyassar)'}</span>
+              <span className="mt-0.5 text-green-500">✓</span>
+              <span>
+                {ar
+                  ? 'يعتمد على التفاسير المعتمدة مثل ابن كثير والسعدي والتفسير الميسر.'
+                  : 'Uses trusted tafsirs such as Ibn Kathir, Al-Saadi, and Al-Muyassar.'}
+              </span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">✓</span>
-              <span>{ar ? 'لا يخترع أحاديث أو أقوال غير موثقة' : 'No fabricated hadith or unverified quotes'}</span>
+              <span className="mt-0.5 text-green-500">✓</span>
+              <span>
+                {ar
+                  ? 'لا يصدر فتاوى، بل يقدم شرحًا مساعدًا للفهم.'
+                  : 'Does not issue fatwas; it is an aid for understanding.'}
+              </span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">✓</span>
-              <span>{ar ? 'لا يُصدر فتاوى — مساعدة للفهم فقط' : 'No fatwa issuing — understanding aid only'}</span>
+              <span className="mt-0.5 text-green-500">✓</span>
+              <span>
+                {ar
+                  ? 'يمكن تشغيل الشرح صوتيًا بصوت المتصفح واختيار السرعة والصوت المناسب.'
+                  : 'The explanation can be played back with browser TTS, with selectable voice and speed.'}
+              </span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">✓</span>
-              <span>{ar ? 'يذكر المصدر بوضوح في كل نقطة' : 'Clear source attribution for every point'}</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">✓</span>
-              <span>{ar ? 'التخزين المؤقت يوفّر الاستجابات الفورية' : 'Response caching for instant repeat queries'}</span>
+              <span className="mt-0.5 text-green-500">✓</span>
+              <span>
+                {ar
+                  ? 'التخزين المؤقت يسرّع إعادة فتح نفس الآية مرة أخرى.'
+                  : 'Caching makes repeat verse explanations instant.'}
+              </span>
             </div>
           </div>
         </div>
       )}
 
-      {/* Cache & available sources info */}
       <div className="page-frame rounded-xl p-4">
-        <div className="flex items-center justify-between mb-2">
+        <div className="mb-2 flex items-center justify-between">
           <h3 className="text-xs font-semibold text-[var(--color-mushaf-text)]/60">
-            {ar ? '💾 التخزين المؤقت' : '💾 Cache'}
+            {ar ? 'التخزين المؤقت' : 'Cache'}
           </h3>
           {cacheStats.count > 0 && (
             <button
               onClick={handleClearCache}
-              className="text-[10px] text-red-400 hover:text-red-500"
+              className="text-[10px] text-red-400 transition-colors hover:text-red-500"
             >
               {ar ? 'مسح' : 'Clear'}
             </button>
           )}
         </div>
+
         <div className="grid grid-cols-3 gap-3 text-center">
           <div>
             <div className="text-lg font-bold text-[var(--color-mushaf-gold)]">{cacheStats.count}</div>
-            <div className="text-[10px] text-[var(--color-mushaf-text)]/40">{ar ? 'تفسيرات مخزّنة' : 'Cached'}</div>
+            <div className="text-[10px] text-[var(--color-mushaf-text)]/40">{ar ? 'عناصر مخزنة' : 'Cached items'}</div>
           </div>
           <div>
             <div className="text-lg font-bold text-[var(--color-topic-blue)]">{cacheStats.sizeKB}</div>
@@ -419,17 +568,13 @@ export default function AiTafsirPanel({ onGoToPage, verseContext }: AiTafsirPane
           </div>
         </div>
 
-        {/* Source list */}
-        <div className="mt-3 pt-3 border-t border-[var(--color-mushaf-border)]/30">
-          <div className="text-[10px] text-[var(--color-mushaf-text)]/40 mb-1">
-            {ar ? 'المصادر المعتمدة:' : 'Trusted Sources:'}
+        <div className="mt-3 border-t border-[var(--color-mushaf-border)]/30 pt-3">
+          <div className="mb-1 text-[10px] text-[var(--color-mushaf-text)]/40">
+            {ar ? 'المراجع الأساسية:' : 'Trusted references:'}
           </div>
           <div className="flex flex-wrap gap-1">
-            {TAFSIR_SOURCES.map(src => (
-              <span
-                key={src.id}
-                className="text-[10px] px-2 py-0.5 rounded bg-[var(--color-mushaf-border)]/15"
-              >
+            {TAFSIR_SOURCES.map((src) => (
+              <span key={src.id} className="rounded bg-[var(--color-mushaf-border)]/15 px-2 py-0.5 text-[10px]">
                 {ar ? src.author_ar : src.author_en}
               </span>
             ))}

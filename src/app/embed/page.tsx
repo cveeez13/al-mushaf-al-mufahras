@@ -1,34 +1,89 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { SURAH_NAMES, TOPICS } from '@/lib/types';
-import type { Verse } from '@/lib/types';
-import { getDailyVerseIndex } from '@/lib/recommendations';
+import { useEffect, useMemo, useState } from 'react';
+import { SURAH_NAMES, TOPICS, type Verse } from '@/lib/types';
+import {
+  emptyRecommendationFeedback,
+  getRecommendations,
+  type RecommendedVerse,
+} from '@/lib/recommendations';
+import type { ReadingStats } from '@/lib/useReadingStats';
 
-/**
- * Standalone embeddable Verse-of-the-Day page.
- * Works without app context — fetches data directly.
- * Embed via: <iframe src="/embed" width="100%" height="280" frameborder="0"></iframe>
- */
+type EmbedMode = 'daily' | 'recommendations' | 'hybrid';
+
+const EMPTY_STATS: ReadingStats = {
+  pages_visited: [],
+  total_pages_read: 0,
+  last_page: 1,
+  last_read_date: '',
+  streak_days: 0,
+  daily_history: {},
+  page_visit_counts: {},
+  daily_visit_counts: {},
+};
+
+function readConfig(): { mode: EmbedMode; count: number } {
+  if (typeof window === 'undefined') return { mode: 'hybrid', count: 4 };
+  const params = new URLSearchParams(window.location.search);
+  const rawMode = params.get('mode');
+  const mode: EmbedMode =
+    rawMode === 'daily' || rawMode === 'recommendations' || rawMode === 'hybrid'
+      ? rawMode
+      : 'hybrid';
+  const count = Math.max(1, Math.min(6, Number(params.get('count')) || 4));
+  return { mode, count };
+}
+
 export default function EmbedPage() {
-  const [verse, setVerse] = useState<Verse | null>(null);
+  const [items, setItems] = useState<RecommendedVerse[]>([]);
   const [loading, setLoading] = useState(true);
+  const [config, setConfig] = useState(() => readConfig());
 
   useEffect(() => {
+    setConfig(readConfig());
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
     (async () => {
       try {
         const res = await fetch('/data/topics_master.json');
         const data = await res.json();
         const verses: Verse[] = data.verses;
-        const date = new Date().toISOString().split('T')[0];
-        const idx = getDailyVerseIndex(date, verses.length);
-        setVerse(verses[idx]);
+        const recommendations = getRecommendations(
+          EMPTY_STATS,
+          verses,
+          Math.max(2, config.count + 1),
+          undefined,
+          emptyRecommendationFeedback()
+        );
+
+        if (cancelled) return;
+        setItems(recommendations);
       } catch {
-        // Silently fail
+        if (!cancelled) setItems([]);
       }
-      setLoading(false);
+
+      if (!cancelled) setLoading(false);
     })();
-  }, []);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [config]);
+
+  const visibleItems = useMemo(() => {
+    if (config.mode === 'daily') {
+      return items.filter((item) => item.reason === 'daily').slice(0, 1);
+    }
+
+    if (config.mode === 'recommendations') {
+      return items.filter((item) => item.reason !== 'daily').slice(0, config.count);
+    }
+
+    return items.slice(0, config.count);
+  }, [config, items]);
 
   if (loading) {
     return (
@@ -40,54 +95,56 @@ export default function EmbedPage() {
     );
   }
 
-  if (!verse) {
+  if (visibleItems.length === 0) {
     return (
       <div style={styles.container}>
-        <p style={{ color: '#999', textAlign: 'center' }}>Unable to load verse</p>
+        <p style={{ color: '#999', textAlign: 'center' }}>Unable to load recommendations</p>
       </div>
     );
   }
 
-  const topic = Object.values(TOPICS).find(t => t.color === verse.topic.color);
-
   return (
-    <div
-      style={{
-        ...styles.container,
-        background: `linear-gradient(135deg, ${topic?.hex || '#3498DB'}12, ${topic?.hex || '#3498DB'}06)`,
-        borderColor: `${topic?.hex || '#3498DB'}40`,
-      }}
-    >
-      {/* Header */}
+    <div style={{ ...styles.container, maxWidth: config.mode === 'daily' ? 500 : 620 }}>
       <div style={styles.header}>
-        <span style={{ fontSize: 18 }}>🌟</span>
-        <span style={{ ...styles.title, color: topic?.hex }}>آية اليوم</span>
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={styles.link}
-        >
+        <span style={{ fontSize: 18 }}>{config.mode === 'daily' ? '✦' : '▣'}</span>
+        <span style={styles.title}>
+          {config.mode === 'daily' ? 'آية اليوم' : 'توصيات قرآنية ذكية'}
+        </span>
+        <a href="/" target="_blank" rel="noopener noreferrer" style={styles.link}>
           المصحف المفهرس ↗
         </a>
       </div>
 
-      {/* Verse text */}
-      <p style={styles.verseText}>{verse.text}</p>
-
-      {/* Footer */}
-      <div style={styles.footer}>
-        <span
-          style={{
-            ...styles.topicBadge,
-            backgroundColor: topic?.hex,
-          }}
-        >
-          {topic?.name_ar}
-        </span>
-        <span style={styles.ref}>
-          {SURAH_NAMES[verse.surah]} : {verse.ayah}
-        </span>
+      <div style={{ display: 'grid', gap: 10 }}>
+        {visibleItems.map((item) => {
+          const topic = Object.values(TOPICS).find((entry) => entry.color === item.verse.topic.color);
+          return (
+            <div
+              key={item.verse.verse_key}
+              style={{
+                ...styles.card,
+                background: `linear-gradient(135deg, ${topic?.hex || '#3498DB'}12, ${topic?.hex || '#3498DB'}06)`,
+                borderColor: `${topic?.hex || '#3498DB'}35`,
+              }}
+            >
+              <div style={styles.cardHead}>
+                <span style={{ ...styles.reason, color: topic?.hex || '#b8860b' }}>
+                  {item.reason_ar}
+                </span>
+                <span style={styles.ref}>
+                  {SURAH_NAMES[item.verse.surah]} : {item.verse.ayah}
+                </span>
+              </div>
+              <p style={styles.verseText}>{item.verse.text}</p>
+              <div style={styles.footer}>
+                <span style={{ ...styles.topicBadge, backgroundColor: topic?.hex || '#3498DB' }}>
+                  {topic?.name_ar}
+                </span>
+                {item.verse.page && <span style={styles.ref}>ص {item.verse.page}</span>}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -97,7 +154,7 @@ const styles: Record<string, React.CSSProperties> = {
   container: {
     fontFamily: "'Amiri', 'IBM Plex Sans Arabic', serif",
     direction: 'rtl',
-    maxWidth: 500,
+    maxWidth: 620,
     margin: '0 auto',
     padding: '20px 24px',
     borderRadius: 16,
@@ -126,9 +183,25 @@ const styles: Record<string, React.CSSProperties> = {
     textDecoration: 'none',
     opacity: 0.7,
   },
+  card: {
+    border: '1px solid #e0d5c3',
+    borderRadius: 14,
+    padding: '14px 16px',
+  },
+  cardHead: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: 10,
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  reason: {
+    fontSize: 11,
+    fontWeight: 700,
+  },
   verseText: {
     fontSize: 20,
-    lineHeight: 2.4,
+    lineHeight: 2.2,
     color: '#2c1810',
     margin: '0 0 12px 0',
   },

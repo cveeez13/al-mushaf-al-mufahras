@@ -79,6 +79,20 @@ export function useOffline() {
       return;
     }
 
+    // In Next.js dev (Turbopack), SW-cached HTML/chunks can cause ChunkLoadError.
+    // Disable SW in development and unregister any existing registrations.
+    if (process.env.NODE_ENV !== 'production') {
+      try {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map((reg) => reg.unregister()));
+      } catch (err) {
+        console.warn('[useOffline] Failed to unregister SW in dev:', err);
+      }
+      setSwStatus('unsupported');
+      setCacheReady(false);
+      return;
+    }
+
     try {
       setSwStatus('installing');
       const reg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });

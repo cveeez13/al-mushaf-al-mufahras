@@ -6,7 +6,7 @@ export type Lang = 'ar' | 'en';
 
 const translations = {
   // TopBar
-  appTitle: { ar: 'المصحف المفهرس', en: 'Al-Mushaf Al-Mufahras' },
+  appTitle: { ar: 'المصحف المفهرس بالمواضيع', en: 'Al-Mushaf Al-Mufahras' },
   tabMushaf: { ar: 'المصحف', en: 'Mushaf' },
   tabIndex: { ar: 'الفهرس', en: 'Index' },
   tabSearch: { ar: 'البحث', en: 'Search' },

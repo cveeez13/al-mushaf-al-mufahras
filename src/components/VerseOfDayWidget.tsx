@@ -1,28 +1,47 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { SURAH_NAMES, TOPICS } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
-import { useVerseOfDay } from '@/lib/useVerseOfDay';
 import type { RecommendedVerse } from '@/lib/recommendations';
+import { useVerseOfDay } from '@/lib/useVerseOfDay';
 
 interface VerseOfDayWidgetProps {
   onGoToPage?: (page: number) => void;
-  compact?: boolean; // For embed mode
+  compact?: boolean;
 }
 
-export default function VerseOfDayWidget({ onGoToPage, compact = false }: VerseOfDayWidgetProps) {
+export default function VerseOfDayWidget({
+  onGoToPage,
+  compact = false,
+}: VerseOfDayWidgetProps) {
   const { lang } = useI18n();
-  const { dailyVerse, suggestions, loading, dismissed, dismiss } = useVerseOfDay();
+  const {
+    dailyVerse,
+    suggestions,
+    loading,
+    dismissed,
+    dismiss,
+    likeVerse,
+    skipVerse,
+    markOpened,
+    feedback,
+  } = useVerseOfDay();
   const [expanded, setExpanded] = useState(false);
+
   const ar = lang === 'ar';
+
+  const visibleSuggestions = useMemo(
+    () => suggestions.filter((item) => !feedback.skipped.includes(item.verse.verse_key)),
+    [feedback.skipped, suggestions]
+  );
 
   if (loading) {
     return (
-      <div className="page-frame rounded-2xl p-6 animate-pulse">
-        <div className="h-4 bg-[var(--color-mushaf-border)]/30 rounded w-1/3 mb-4" />
-        <div className="h-6 bg-[var(--color-mushaf-border)]/30 rounded w-full mb-2" />
-        <div className="h-6 bg-[var(--color-mushaf-border)]/30 rounded w-2/3" />
+      <div className="page-frame animate-pulse rounded-2xl p-6">
+        <div className="mb-4 h-4 w-1/3 rounded bg-[var(--color-mushaf-border)]/30" />
+        <div className="mb-2 h-6 w-full rounded bg-[var(--color-mushaf-border)]/30" />
+        <div className="h-6 w-2/3 rounded bg-[var(--color-mushaf-border)]/30" />
       </div>
     );
   }
@@ -31,51 +50,46 @@ export default function VerseOfDayWidget({ onGoToPage, compact = false }: VerseO
   if (dismissed && !compact) return null;
 
   const verse = dailyVerse.verse;
-  const topic = Object.values(TOPICS).find(t => t.color === verse.topic.color);
+  const topic = Object.values(TOPICS).find((item) => item.color === verse.topic.color);
 
   return (
     <div className={compact ? '' : 'mb-4'}>
-      {/* Featured Daily Verse */}
       <div
-        className="rounded-2xl overflow-hidden"
+        className="overflow-hidden rounded-2xl"
         style={{
           background: `linear-gradient(135deg, ${topic?.hex || '#3498DB'}15, ${topic?.hex || '#3498DB'}08)`,
           border: `1px solid ${topic?.hex || '#3498DB'}30`,
         }}
       >
-        {/* Header */}
-        <div className="px-5 pt-4 pb-2 flex items-center justify-between">
+        <div className="flex items-center justify-between px-5 pb-2 pt-4">
           <div className="flex items-center gap-2">
-            <span className="text-lg">🌟</span>
+            <span className="text-lg">✦</span>
             <h3 className="text-sm font-bold" style={{ color: topic?.hex }}>
               {ar ? 'آية اليوم' : 'Verse of the Day'}
             </h3>
           </div>
-          <div className="flex items-center gap-2">
-            {!compact && (
-              <button
-                onClick={dismiss}
-                className="text-xs text-[var(--color-mushaf-text)]/30 hover:text-[var(--color-mushaf-text)]/60 transition-colors"
-                title={ar ? 'إخفاء' : 'Dismiss'}
-              >
-                ✕
-              </button>
-            )}
-          </div>
+
+          {!compact && (
+            <button
+              onClick={dismiss}
+              className="text-xs text-[var(--color-mushaf-text)]/30 transition-colors hover:text-[var(--color-mushaf-text)]/60"
+              title={ar ? 'إخفاء' : 'Dismiss'}
+            >
+              ✕
+            </button>
+          )}
         </div>
 
-        {/* Verse text */}
         <div className="px-5 pb-3">
           <p className="font-[var(--font-arabic)] text-xl leading-[2.4] text-[var(--color-mushaf-text)]">
             {verse.text}
           </p>
         </div>
 
-        {/* Verse info bar */}
-        <div className="px-5 pb-4 flex items-center justify-between flex-wrap gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-5 pb-4">
           <div className="flex items-center gap-2">
             <span
-              className="px-2.5 py-1 rounded-lg text-white text-[11px] font-medium"
+              className="rounded-lg px-2.5 py-1 text-[11px] font-medium text-white"
               style={{ backgroundColor: topic?.hex }}
             >
               {ar ? topic?.name_ar : topic?.name_en}
@@ -84,10 +98,14 @@ export default function VerseOfDayWidget({ onGoToPage, compact = false }: VerseO
               {SURAH_NAMES[verse.surah]} : {verse.ayah}
             </span>
           </div>
+
           {onGoToPage && verse.page && (
             <button
-              onClick={() => onGoToPage(verse.page!)}
-              className="text-xs px-3 py-1.5 rounded-lg font-medium transition-colors hover:opacity-80"
+              onClick={() => {
+                markOpened(verse.verse_key);
+                if (verse.page != null) onGoToPage(verse.page);
+              }}
+              className="rounded-lg px-3 py-1.5 text-xs font-medium transition-colors hover:opacity-80"
               style={{ backgroundColor: topic?.hex, color: '#fff' }}
             >
               {ar ? 'اذهب للصفحة' : 'Go to page'} {verse.page}
@@ -96,25 +114,38 @@ export default function VerseOfDayWidget({ onGoToPage, compact = false }: VerseO
         </div>
       </div>
 
-      {/* Suggestions - expandable */}
-      {suggestions.length > 0 && !compact && (
+      {visibleSuggestions.length > 0 && !compact && (
         <div className="mt-3">
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-2 text-xs text-[var(--color-mushaf-text)]/50 hover:text-[var(--color-mushaf-gold)] transition-colors w-full"
-          >
-            <span>{expanded ? '▾' : '▸'}</span>
-            <span>{ar ? `${suggestions.length} آيات مقترحة لك` : `${suggestions.length} suggested verses for you`}</span>
-          </button>
+          <div className="mb-2 flex items-center justify-between gap-3">
+            <button
+              onClick={() => setExpanded((value) => !value)}
+              className="flex items-center gap-2 text-xs text-[var(--color-mushaf-text)]/50 transition-colors hover:text-[var(--color-mushaf-gold)]"
+            >
+              <span>{expanded ? '▾' : '▸'}</span>
+              <span>
+                {ar
+                  ? `${visibleSuggestions.length} توصيات ذكية لك`
+                  : `${visibleSuggestions.length} smart recommendations`}
+              </span>
+            </button>
+
+            <span className="rounded-full bg-[var(--color-mushaf-gold)]/10 px-2 py-1 text-[10px] text-[var(--color-mushaf-gold)]">
+              {ar ? 'تعلم من قراءتك' : 'Learns from your reading'}
+            </span>
+          </div>
 
           {expanded && (
-            <div className="mt-2 space-y-2">
-              {suggestions.map((rec) => (
+            <div className="space-y-2">
+              {visibleSuggestions.map((rec) => (
                 <SuggestionCard
                   key={rec.verse.verse_key}
                   rec={rec}
                   ar={ar}
                   onGoToPage={onGoToPage}
+                  onLike={() => likeVerse(rec.verse.verse_key)}
+                  onSkip={() => skipVerse(rec.verse.verse_key)}
+                  onOpen={() => markOpened(rec.verse.verse_key)}
+                  isLiked={feedback.liked.includes(rec.verse.verse_key)}
                 />
               ))}
             </div>
@@ -129,50 +160,84 @@ function SuggestionCard({
   rec,
   ar,
   onGoToPage,
+  onLike,
+  onSkip,
+  onOpen,
+  isLiked,
 }: {
   rec: RecommendedVerse;
   ar: boolean;
   onGoToPage?: (page: number) => void;
+  onLike: () => void;
+  onSkip: () => void;
+  onOpen: () => void;
+  isLiked: boolean;
 }) {
-  const topic = Object.values(TOPICS).find(t => t.color === rec.verse.topic.color);
+  const topic = Object.values(TOPICS).find((item) => item.color === rec.verse.topic.color);
 
   return (
-    <div className="page-frame rounded-xl p-3 flex items-start gap-3">
-      <div
-        className="w-1.5 self-stretch rounded-full shrink-0"
-        style={{ backgroundColor: topic?.hex || '#999' }}
-      />
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-[10px] text-[var(--color-mushaf-text)]/40">
-            {ar ? rec.reason_ar : rec.reason_en}
-          </span>
-        </div>
-        <p className="font-[var(--font-arabic)] text-sm leading-relaxed line-clamp-2">
-          {rec.verse.text}
-        </p>
-        <div className="flex items-center gap-2 mt-1.5">
-          <span className="text-[10px] text-[var(--color-mushaf-text)]/40">
-            {SURAH_NAMES[rec.verse.surah]} : {rec.verse.ayah}
-          </span>
-          {onGoToPage && rec.verse.page && (
+    <div className="page-frame rounded-xl p-3">
+      <div className="flex items-start gap-3">
+        <div
+          className="h-full min-h-12 w-1.5 shrink-0 self-stretch rounded-full"
+          style={{ backgroundColor: topic?.hex || '#999' }}
+        />
+
+        <div className="min-w-0 flex-1">
+          <div className="mb-1 flex items-center justify-between gap-3">
+            <span className="text-[10px] text-[var(--color-mushaf-text)]/45">
+              {ar ? rec.reason_ar : rec.reason_en}
+            </span>
+            <span className="text-[10px] text-[var(--color-mushaf-gold)]">
+              score {Math.round(rec.score)}
+            </span>
+          </div>
+
+          <p className="line-clamp-2 font-[var(--font-arabic)] text-sm leading-relaxed">
+            {rec.verse.text}
+          </p>
+
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <span className="text-[10px] text-[var(--color-mushaf-text)]/40">
+              {SURAH_NAMES[rec.verse.surah]} : {rec.verse.ayah}
+            </span>
+
+            {onGoToPage && rec.verse.page && (
+              <button
+                onClick={() => {
+                  onOpen();
+                  if (rec.verse.page != null) onGoToPage(rec.verse.page);
+                }}
+                className="text-[10px] text-[var(--color-mushaf-gold)] hover:underline"
+              >
+                {ar ? 'صفحة' : 'p.'} {rec.verse.page}
+              </button>
+            )}
+
             <button
-              onClick={() => onGoToPage(rec.verse.page!)}
-              className="text-[10px] text-[var(--color-mushaf-gold)] hover:underline"
+              onClick={onLike}
+              className={`rounded-full px-2 py-1 text-[10px] ${
+                isLiked
+                  ? 'bg-[var(--color-topic-green)]/15 text-[var(--color-topic-green)]'
+                  : 'bg-[var(--color-mushaf-border)]/25 text-[var(--color-mushaf-text)]/55'
+              }`}
             >
-              {ar ? 'صفحة' : 'p.'} {rec.verse.page}
+              {ar ? 'أعجبني' : 'Like'}
             </button>
-          )}
+
+            <button
+              onClick={onSkip}
+              className="rounded-full bg-[var(--color-mushaf-border)]/25 px-2 py-1 text-[10px] text-[var(--color-mushaf-text)]/55"
+            >
+              {ar ? 'تخطَّ' : 'Skip'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-/**
- * Standalone embeddable version (no hooks, self-contained).
- * Fetches data directly and renders without app context.
- */
 export function VerseOfDayEmbed() {
   return (
     <div
@@ -183,8 +248,6 @@ export function VerseOfDayEmbed() {
         maxWidth: '500px',
         margin: '0 auto',
       }}
-    >
-      {/* Rendered by the embed page with inline data */}
-    </div>
+    />
   );
 }

@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  /* Topic colors */
-  --color-topic-blue: #3498DB;
-  --color-topic-green: #27AE60;
-  --color-topic-brown: #8E6B3D;
-  --color-topic-yellow: #F1C40F;
-  --color-topic-purple: #8E44AD;
-  --color-topic-orange: #E67E22;
-  --color-topic-red: #E74C3C;
+  /* 7 Topic colors — olive, sky, gold, pink, purple, turquoise, orange */
+  --color-topic-olive: #7C8E3E;
+  --color-topic-sky: #5BA3CF;
+  --color-topic-gold: #C9A43E;
+  --color-topic-pink: #D4839B;
+  --color-topic-purple: #9B8EC4;
+  --color-topic-turquoise: #4DBDB5;
+  --color-topic-orange: #D4854A;
 
   /* Topic background - lighter variants */
-  --color-topic-blue-bg: #EBF5FB;
-  --color-topic-green-bg: #E8F8F0;
-  --color-topic-brown-bg: #F5EDE3;
-  --color-topic-yellow-bg: #FEF9E7;
-  --color-topic-purple-bg: #F4ECF7;
-  --color-topic-orange-bg: #FDF2E9;
-  --color-topic-red-bg: #FDEDEC;
+  --color-topic-olive-bg: #F0F3E3;
+  --color-topic-sky-bg: #E8F2FA;
+  --color-topic-gold-bg: #F9F3E1;
+  --color-topic-pink-bg: #FAEEF2;
+  --color-topic-purple-bg: #F0EDF7;
+  --color-topic-turquoise-bg: #E5F6F5;
+  --color-topic-orange-bg: #FAF0E8;
 
   /* Fonts */
   --font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
@@ -532,13 +532,13 @@ body {
 
 /* High contrast topic colors (WCAG AAA ≥7:1) */
 :root[data-high-contrast="true"] {
-  --color-topic-blue: #0B5394;
-  --color-topic-green: #0B6623;
-  --color-topic-brown: #5C3317;
-  --color-topic-yellow: #7A6200;
+  --color-topic-olive: #4A5A1E;
+  --color-topic-sky: #0B5394;
+  --color-topic-gold: #7A6200;
+  --color-topic-pink: #8B3A5A;
   --color-topic-purple: #4A0082;
+  --color-topic-turquoise: #1A6B63;
   --color-topic-orange: #8B4000;
-  --color-topic-red: #8B0000;
 }
 
 /* ─── Reduced Motion ─── */
@@ -575,5 +575,1181 @@ body {
   }
   button:focus-visible {
     outline: 2px solid Highlight;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCAN VIEWER
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer components {
+  .scan-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .scan-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    background: var(--color-mushaf-paper);
+    border: 1px solid var(--color-mushaf-border);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    flex-wrap: wrap;
+  }
+
+  .scan-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .scan-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-mushaf-border);
+    background: transparent;
+    color: var(--color-mushaf-text);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .scan-ctrl-btn:hover {
+    background: color-mix(in srgb, var(--color-mushaf-gold) 10%, transparent);
+  }
+  .scan-ctrl-btn.active {
+    background: var(--color-mushaf-gold);
+    color: white;
+    border-color: var(--color-mushaf-gold);
+  }
+
+  .scan-zoom-label {
+    font-size: 0.75rem;
+    min-width: 3rem;
+    text-align: center;
+    color: var(--color-mushaf-text);
+    opacity: 0.7;
+  }
+
+  /* ─── Scan Display Area ─── */
+  .scan-area {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2C2416 0%, #3A2E1D 50%, #2C2416 100%);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .scan-pages {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    transition: transform 0.1s ease;
+    direction: ltr; /* explicit LTR so DOM order = visual left→right */
+  }
+
+  .scan-single {
+    max-width: 520px;
+    width: 100%;
+  }
+  .scan-spread {
+    max-width: 1060px;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* ─── Individual Scan Page ─── */
+  .scan-page-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scan-page-img {
+    width: 100%;
+    height: auto;
+    max-height: 78vh;
+    object-fit: contain;
+    border: 6px solid #8B7355;
+    border-radius: 4px;
+    background: #F8F4EA;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /* Spine between spread pages */
+  .scan-spine {
+    width: 8px;
+    background: linear-gradient(to right,
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.35) 40%,
+      rgba(0,0,0,0.4) 50%,
+      rgba(0,0,0,0.35) 60%,
+      rgba(0,0,0,0.15)
+    );
+    border-radius: 2px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  /* ─── Navigation ─── */
+  .scan-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 1100px);
+  }
+  .scan-side-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-mushaf-border);
+    background: color-mix(in srgb, var(--color-mushaf-paper) 88%, black 12%);
+    color: var(--color-mushaf-gold);
+    font-size: 1.35rem;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s, opacity 0.15s;
+  }
+  .scan-side-nav-btn:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--color-mushaf-gold) 10%, transparent);
+    transform: scale(1.1);
+  }
+  .scan-side-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .scan-page-indicator {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-mushaf-text);
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  .scan-side-nav-btn-prev {
+    right: 0.7rem;
+  }
+
+  .scan-side-nav-btn-next {
+    left: 0.7rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOPIC TAB LABELS — Physical printed-mushaf index tabs
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer components {
+
+  /* ─── Tab Stack Container ─── */
+  .topic-tabs-stack {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    z-index: 10;
+  }
+
+  .topic-tabs-right {
+    right: -8px;
+  }
+  .topic-tabs-left {
+    left: -8px;
+  }
+
+  /* Place tabs inside the white page area (not on dark background). */
+  .topic-tabs-in-page.topic-tabs-left {
+    left: calc(50% - 260px + 8px);
+    z-index: 20;
+  }
+  .topic-tabs-in-page.topic-tabs-left.topic-tabs-spread {
+    left: calc(50% - 530px + 8px);
+  }
+
+  /* ─── Individual Tab Pill ─── */
+  .topic-tab-pill {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 1.5px solid var(--ttl-border, #D4C4A8);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--ttl-bg, #F5F0E6) 85%, white) 0%,
+        var(--ttl-bg, #F5F0E6) 40%,
+        color-mix(in srgb, var(--ttl-bg, #F5F0E6) 92%, #B8A88A) 100%
+      );
+    font-family: var(--font-arabic);
+    font-size: 0.65rem;
+    line-height: 1.3;
+    color: var(--color-mushaf-text);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 140px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.1),
+      inset 0 1px 0 rgba(255,255,255,0.65);
+    position: relative;
+  }
+
+  /* Right side: capsule rounded outward, flat inner edge */
+  .topic-tabs-right .topic-tab-pill {
+    border-radius: 0 16px 16px 0;
+    border-left: none;
+    padding-left: 6px;
+    padding-right: 12px;
+  }
+
+  /* Left side: capsule rounded outward, flat inner edge */
+  .topic-tabs-left .topic-tab-pill {
+    border-radius: 16px 0 0 16px;
+    border-right: none;
+    padding-left: 12px;
+    padding-right: 6px;
+  }
+
+  /* Slightly smaller tab size for in-page tabs */
+  .topic-tabs-in-page .topic-tab-pill {
+    padding: 1px 6px;
+    font-size: 0.54rem;
+    line-height: 1.05;
+    max-width: 84px;
+    gap: 4px;
+  }
+  .topic-tabs-in-page .topic-tab-dot {
+    width: 5px;
+    height: 5px;
+  }
+  .topic-tabs-in-page .topic-tab-name {
+    max-width: 50px;
+  }
+  .topic-tabs-in-page .topic-tab-dominant {
+    padding: 1px 6px;
+    font-size: 0.56rem;
+    line-height: 1.05;
+    max-width: 90px;
+  }
+  .topic-tabs-in-page .topic-tab-dominant .topic-tab-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .topic-tabs-in-page .topic-tab-dominant .topic-tab-name {
+    max-width: 54px;
+  }
+
+  /* Icon-only tongues (no visible text) */
+  .topic-tabs-icon-only .topic-tab-name,
+  .topic-tabs-icon-only .topic-tab-badge {
+    display: none;
+  }
+  .topic-tabs-icon-only .topic-tab-pill {
+    max-width: 26px;
+    min-width: 26px;
+    justify-content: center;
+    padding: 2px 4px;
+    gap: 0;
+  }
+  .topic-tabs-icon-only .topic-tab-dominant {
+    max-width: 28px;
+    min-width: 28px;
+    padding: 2px 4px;
+  }
+  .topic-tabs-icon-only .topic-tab-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .topic-tabs-icon-only .topic-tab-dominant .topic-tab-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Embossed inner highlight line along the flat edge */
+  .topic-tab-pill::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.5) 0%,
+      rgba(255,255,255,0.2) 100%
+    );
+    border-radius: 1px;
+  }
+  .topic-tabs-right .topic-tab-pill::before {
+    left: 0;
+  }
+  .topic-tabs-left .topic-tab-pill::before {
+    right: 0;
+  }
+
+  /* Hover lift — desktop only */
+  @media (hover: hover) {
+    .topic-tabs-right .topic-tab-pill:hover {
+      transform: translateX(4px);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.16),
+        inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+    .topic-tabs-left .topic-tab-pill:hover {
+      transform: translateX(-4px);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.16),
+        inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+  }
+
+  /* ─── Dominant Tab — larger & bolder ─── */
+  .topic-tab-dominant {
+    padding: 7px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    max-width: 170px;
+    box-shadow:
+      0 2px 6px rgba(0,0,0,0.14),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+  .topic-tabs-right .topic-tab-dominant {
+    padding-right: 14px;
+  }
+  .topic-tabs-left .topic-tab-dominant {
+    padding-left: 14px;
+  }
+
+  /* ─── Tab Inner Elements ─── */
+  .topic-tab-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ttl-hex, #999);
+    flex-shrink: 0;
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0.15);
+  }
+  .topic-tab-dominant .topic-tab-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .topic-tab-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
+  .topic-tab-dominant .topic-tab-name {
+    max-width: 125px;
+  }
+
+  .topic-tab-badge {
+    font-size: 0.55rem;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    color: var(--ttl-hex, #999);
+    opacity: 0.75;
+    flex-shrink: 0;
+    margin-inline-start: 2px;
+  }
+
+  /* ─── Staggered Slide-in Animation ─── */
+  .topic-tab-pill {
+    animation: tab-appear 0.3s ease-out both;
+  }
+  .topic-tab-pill:nth-child(1) { animation-delay: 0ms; }
+  .topic-tab-pill:nth-child(2) { animation-delay: 40ms; }
+  .topic-tab-pill:nth-child(3) { animation-delay: 80ms; }
+
+
+/* ─────────────────────────────────────────────────────────
+   🕌  MUSHAF VIEWER — Premium Printed Mushaf Layout
+   ───────────────────────────────────────────────────────── */
+
+.mushaf-viewer-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 3rem;
+  min-height: 70vh;
+}
+
+/* ─── Top bar: search + toggle ─── */
+.mushaf-top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 56rem;
+  padding: 0 0.5rem;
+}
+
+.mushaf-view-toggle {
+  display: flex;
+  gap: 2px;
+  background: var(--color-mushaf-paper);
+  border: 1px solid var(--color-mushaf-border);
+  border-radius: 12px;
+  padding: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+.mushaf-toggle-btn {
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-mushaf-text);
+  opacity: 0.6;
+  transition: all 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+.mushaf-toggle-btn.active {
+  background: var(--color-mushaf-gold);
+  color: #fff;
+  opacity: 1;
+  box-shadow: 0 2px 6px rgba(201,169,110,0.35);
+}
+.mushaf-toggle-btn:not(.active):hover {
+  opacity: 0.85;
+  background: var(--color-mushaf-border);
+}
+
+/* ─── Page container with tabs ─── */
+.mushaf-page-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  max-width: 56rem;
+}
+
+/* ─── Paper depth layers ─── */
+.mushaf-paper-layers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.mushaf-layer {
+  position: absolute;
+  border-radius: 6px;
+  background: var(--color-mushaf-paper);
+  border: 1px solid var(--color-mushaf-border);
+}
+.mushaf-layer-3 {
+  inset: 4px;
+  opacity: 0.3;
+  transform: translate(3px, 3px);
+}
+.mushaf-layer-2 {
+  inset: 2px;
+  opacity: 0.5;
+  transform: translate(1.5px, 1.5px);
+}
+.mushaf-layer-1 {
+  inset: 0;
+  opacity: 0.7;
+}
+
+/* ─── Main mushaf page ─── */
+.mushaf-page {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 60vh;
+  background: var(--color-mushaf-paper);
+  border: 2px solid var(--color-mushaf-gold);
+  border-radius: 6px;
+  padding: 2rem 2.5rem;
+  box-shadow:
+    0 4px 20px rgba(44,24,16,0.08),
+    inset 0 0 40px rgba(201,169,110,0.04);
+}
+
+/* Ornamental border inside page */
+.mushaf-ornament-border {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--color-mushaf-gold);
+  border-radius: 4px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ─── Bottom ornament ─── */
+.page-bottom-ornament {
+  text-align: center;
+  color: var(--color-mushaf-gold);
+  opacity: 0.5;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  letter-spacing: 0.4em;
+}
+
+/* ─── Corner widgets (Tafsir + Qiraat) ─── */
+.mushaf-corners {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-mushaf-border);
+}
+
+/* ─── Navigation ─── */
+.mushaf-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 28rem;
+}
+.mushaf-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: var(--color-mushaf-paper);
+  border: 1px solid var(--color-mushaf-border);
+  color: var(--color-mushaf-text);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mushaf-nav-btn:hover:not(:disabled) {
+  border-color: var(--color-mushaf-gold);
+  box-shadow: 0 2px 8px rgba(201,169,110,0.15);
+}
+.mushaf-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.mushaf-nav-arrow {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-mushaf-gold);
+}
+.mushaf-nav-label {
+  font-family: var(--font-ui);
+}
+.mushaf-nav-center {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.mushaf-nav-page {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-mushaf-gold);
+}
+.mushaf-nav-total {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-mushaf-text);
+  opacity: 0.4;
+}
+
+/* ─── Play page button ─── */
+.mushaf-play-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-mushaf-gold) 40%, transparent);
+  background: transparent;
+  color: var(--color-mushaf-gold);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mushaf-play-btn:hover {
+  background: color-mix(in srgb, var(--color-mushaf-gold) 10%, transparent);
+}
+
+/* ─────────────────────────────────────────────────────────
+   🔍  SEARCH BAR
+   ───────────────────────────────────────────────────────── */
+
+.mushaf-search {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+}
+.mushaf-search-input-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--color-mushaf-paper);
+  border: 1px solid var(--color-mushaf-border);
+  border-radius: 12px;
+  padding: 0 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.mushaf-search-input-wrap:focus-within {
+  border-color: var(--color-mushaf-gold);
+  box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
+}
+.mushaf-search-icon {
+  color: var(--color-mushaf-gold);
+  opacity: 0.6;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.mushaf-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px 8px;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-mushaf-text);
+  direction: rtl;
+}
+.mushaf-search-input::placeholder {
+  color: var(--color-mushaf-text);
+  opacity: 0.35;
+}
+
+/* Dropdown */
+.mushaf-search-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  inset-inline: 0;
+  background: var(--color-mushaf-paper);
+  border: 1px solid var(--color-mushaf-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(44,24,16,0.12);
+  z-index: 50;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 4px;
+}
+.mushaf-search-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--color-mushaf-text);
+  transition: background 0.15s;
+}
+.mushaf-search-result:hover {
+  background: color-mix(in srgb, var(--color-mushaf-gold) 8%, transparent);
+}
+.mushaf-search-badge {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--color-mushaf-gold) 15%, transparent);
+  color: var(--color-mushaf-gold);
+}
+.mushaf-search-topic-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ─────────────────────────────────────────────────────────
+   📑  TOPIC SIDE TABS  (physical tab feel)
+   ───────────────────────────────────────────────────────── */
+
+/* Dimmed mushaf page when topic panel is open */
+.mushaf-page-dimmed {
+  opacity: 0.15;
+  pointer-events: none;
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+/* ─── Topic Verses Panel ─── */
+/* نافذة تفاصيل الموضوع الموسعة */
+.topic-verses-panel {
+  position: fixed;
+  top: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96vw;
+  max-width: 900px;
+  height: 95vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-mushaf-paper);
+  border-radius: 18px;
+  border: 2.5px solid var(--color-mushaf-gold);
+  box-shadow: 0 12px 48px 0 rgba(0,0,0,0.22), 0 0 0 2px var(--color-mushaf-border);
+  overflow: hidden;
+  animation: topicPanelSlide 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .topic-verses-panel {
+    width: 99vw;
+    max-width: 99vw;
+    height: 98vh;
+    border-radius: 0;
+    left: 0;
+    transform: none;
+    top: 0;
+  }
+}
+@keyframes topicPanelSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.topic-verses-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 12px 16px;
+  flex-shrink: 0;
+}
+.topic-verses-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.topic-verses-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+}
+.topic-verses-surah-group {
+  margin-bottom: 16px;
+}
+.topic-verses-surah-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-mushaf-text);
+  border-bottom: 2px solid;
+  margin-bottom: 8px;
+}
+.topic-verses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.topic-verse-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.topic-verse-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateX(2px);
+}
+.topic-verse-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.topic-verse-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 2;
+  color: var(--color-mushaf-text);
+}
+.topic-verse-page {
+  font-size: 0.65rem;
+  color: var(--color-mushaf-text);
+  opacity: 0.4;
+  flex-shrink: 0;
+  margin-top: 4px;
+  font-family: var(--font-ui);
+}
+
+.topic-side-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 3rem;
+  flex-shrink: 0;
+  z-index: 2;
+  /* Overlap the page edge to look like physical tabs */
+  align-items: flex-start;
+  margin-left: -6px !important;
+  margin-right: 0 !important;
+  direction: ltr !important;
+}
+.topic-side-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 6px 14px;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--color-mushaf-border);
+  border-radius: 8px 0 0 8px;
+  border-inline-end: none;
+  background: var(--color-mushaf-paper);
+  color: var(--color-mushaf-text);
+  transition: all 0.2s;
+  white-space: nowrap;
+  min-width: 0;
+  position: relative;
+}
+[dir="rtl"] .topic-side-tab,
+.topic-side-tab {
+  border-radius: 0 8px 8px 0;
+}
+.topic-side-tab:hover {
+  transform: translateX(-4px);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.06);
+}
+[dir="rtl"] .topic-side-tab:hover,
+.topic-side-tab:hover {
+  transform: translateX(4px);
+}
+.topic-side-tab-dominant {
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 8px 12px 8px 16px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+.topic-side-tab-active {
+  border-color: var(--color-mushaf-gold);
+  box-shadow: 2px 0 12px rgba(201,169,110,0.2);
+}
+.topic-side-tab-faded {
+  opacity: 0.35;
+}
+.topic-side-tab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.topic-side-tab-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+}
+.topic-side-tab-count {
+  font-size: 0.6rem;
+  opacity: 0.5;
+  font-weight: 400;
+  margin-inline-start: auto;
+  padding-inline-start: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   📖  TAFSIR CORNER
+   ───────────────────────────────────────────────────────── */
+
+.tafsir-corner {
+  background: color-mix(in srgb, var(--color-mushaf-gold) 6%, var(--color-mushaf-paper));
+  border: 1px solid color-mix(in srgb, var(--color-mushaf-gold) 20%, transparent);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font-ui);
+  min-height: 80px;
+}
+.tafsir-corner-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-mushaf-gold);
+  margin-bottom: 8px;
+}
+.tafsir-corner-ref {
+  font-size: 0.65rem;
+  color: var(--color-mushaf-text);
+  opacity: 0.45;
+  margin-inline-start: auto;
+}
+.tafsir-corner-text {
+  font-family: var(--font-arabic);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--color-mushaf-text);
+  opacity: 0.85;
+}
+.tafsir-corner-empty {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-mushaf-text);
+  opacity: 0.35;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   📜  QIRAAT CORNER
+   ───────────────────────────────────────────────────────── */
+
+.qiraat-corner {
+  background: color-mix(in srgb, var(--color-topic-purple) 5%, var(--color-mushaf-paper));
+  border: 1px solid color-mix(in srgb, var(--color-topic-purple) 18%, transparent);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font-ui);
+  min-height: 80px;
+}
+.qiraat-corner-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-topic-purple);
+  margin-bottom: 8px;
+}
+.qiraat-corner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.qiraat-reading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.qiraat-reader-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-topic-purple);
+  opacity: 0.8;
+}
+.qiraat-reader-text {
+  font-family: var(--font-arabic);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-mushaf-text);
+  opacity: 0.8;
+}
+.qiraat-corner-note {
+  font-size: 0.65rem;
+  color: var(--color-mushaf-text);
+  opacity: 0.35;
+  text-align: center;
+  padding-top: 4px;
+}
+.qiraat-toggle {
+  display: inline-block;
+  font-size: 0.65rem;
+  color: var(--color-topic-purple);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 2px 0;
+  font-family: var(--font-ui);
+}
+.qiraat-toggle:hover {
+  text-decoration: underline;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .mushaf-page {
+    padding: 1.25rem 1rem;
+    margin-inline: 0.5rem;
+  }
+  .mushaf-ornament-border {
+    inset: 4px;
+  }
+  .topic-side-tabs {
+    display: none; /* hide tabs on mobile, use summary bar instead */
+  }
+  .mushaf-page-container {
+    padding: 0;
+  }
+  .mushaf-corners {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .mushaf-top-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .mushaf-search {
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mushaf-page {
+    padding: 1.5rem 1.75rem;
+  }
+  .topic-side-tab-name {
+    max-width: 65px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mushaf-page {
+    padding: 2.5rem 3rem;
+  }
+}
+  .topic-tab-pill:nth-child(4) { animation-delay: 120ms; }
+  .topic-tab-pill:nth-child(5) { animation-delay: 160ms; }
+  .topic-tab-pill:nth-child(6) { animation-delay: 200ms; }
+  .topic-tab-pill:nth-child(7) { animation-delay: 240ms; }
+
+  .topic-tabs-right .topic-tab-pill {
+    animation-name: tab-slide-right;
+  }
+  .topic-tabs-left .topic-tab-pill {
+    animation-name: tab-slide-left;
+  }
+
+  @keyframes tab-slide-right {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes tab-slide-left {
+    from { opacity: 0; transform: translateX(10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ─── Responsive: Tablet ─── */
+  @media (max-width: 768px) {
+    .topic-tabs-stack {
+      gap: 2px;
+    }
+    .topic-tab-pill {
+      padding: 4px 8px;
+      font-size: 0.58rem;
+      max-width: 110px;
+    }
+    .topic-tab-dominant {
+      padding: 5px 10px;
+      font-size: 0.65rem;
+      max-width: 130px;
+    }
+    .topic-tab-name {
+      max-width: 75px;
+    }
+    .topic-tab-dominant .topic-tab-name {
+      max-width: 95px;
+    }
+    .topic-tabs-right { right: -6px; }
+    .topic-tabs-left { left: -6px; }
+    .topic-tabs-in-page.topic-tabs-left {
+      left: calc(50% - 250px + 7px);
+    }
+    .topic-tabs-in-page.topic-tabs-left.topic-tabs-spread {
+      left: calc(50% - 505px + 7px);
+    }
+  }
+
+  /* ─── Responsive: Mobile ─── */
+  @media (max-width: 480px) {
+    .topic-tab-pill {
+      padding: 3px 6px;
+      font-size: 0.52rem;
+      max-width: 85px;
+      gap: 3px;
+    }
+    .topic-tab-dominant {
+      font-size: 0.58rem;
+      max-width: 105px;
+    }
+    .topic-tab-dot {
+      width: 5px;
+      height: 5px;
+    }
+    .topic-tab-dominant .topic-tab-dot {
+      width: 7px;
+      height: 7px;
+    }
+    .topic-tab-name {
+      max-width: 55px;
+    }
+    .topic-tab-badge {
+      display: none;
+    }
+    .topic-tabs-right { right: -4px; }
+    .topic-tabs-left { left: -4px; }
+    .topic-tabs-in-page.topic-tabs-left {
+      left: calc(50% - 170px + 6px);
+    }
+    .topic-tabs-in-page.topic-tabs-left.topic-tabs-spread {
+      left: calc(50% - 340px + 6px);
+    }
+
+    .scan-area { padding: 0.5rem; min-height: 40vh; }
+    .scan-spread { flex-direction: column; gap: 0.5rem; }
+    .scan-spread .scan-spine { display: none; }
   }
 }

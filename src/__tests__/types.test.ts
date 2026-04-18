@@ -37,36 +37,36 @@ describe('TOPICS constant', () => {
 
   it('should include all expected color names', () => {
     const colors = Object.values(TOPICS).map(t => t.color);
-    expect(colors).toEqual(expect.arrayContaining(['blue', 'green', 'brown', 'yellow', 'purple', 'orange', 'red']));
+    expect(colors).toEqual(expect.arrayContaining(['olive', 'sky', 'gold', 'pink', 'purple', 'turquoise', 'orange']));
   });
 
-  it('topic 1 should be blue (Signs of Allah)', () => {
-    expect(TOPICS[1].color).toBe('blue');
-    expect(TOPICS[1].hex).toBe('#3498DB');
+  it('topic 1 should be olive (Signs of Allah)', () => {
+    expect(TOPICS[1].color).toBe('olive');
+    expect(TOPICS[1].hex).toBe('#7C8E3E');
   });
 
-  it('topic 2 should be green (Believers/Paradise)', () => {
-    expect(TOPICS[2].color).toBe('green');
+  it('topic 2 should be sky (Believers/Paradise)', () => {
+    expect(TOPICS[2].color).toBe('sky');
   });
 
-  it('topic 3 should be brown (Fiqh)', () => {
-    expect(TOPICS[3].color).toBe('brown');
+  it('topic 3 should be gold (Fiqh)', () => {
+    expect(TOPICS[3].color).toBe('gold');
   });
 
-  it('topic 4 should be yellow (Stories)', () => {
-    expect(TOPICS[4].color).toBe('yellow');
+  it('topic 4 should be pink (Stories)', () => {
+    expect(TOPICS[4].color).toBe('pink');
   });
 
   it('topic 5 should be purple (Quran status)', () => {
     expect(TOPICS[5].color).toBe('purple');
   });
 
-  it('topic 6 should be orange (Afterlife)', () => {
-    expect(TOPICS[6].color).toBe('orange');
+  it('topic 6 should be turquoise (Afterlife)', () => {
+    expect(TOPICS[6].color).toBe('turquoise');
   });
 
-  it('topic 7 should be red (Hellfire)', () => {
-    expect(TOPICS[7].color).toBe('red');
+  it('topic 7 should be orange (Hellfire)', () => {
+    expect(TOPICS[7].color).toBe('orange');
   });
 });
 

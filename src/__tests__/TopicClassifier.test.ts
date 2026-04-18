@@ -6,7 +6,7 @@ describe('TopicClassifier static methods', () => {
   it('getTopicInfo should return topic by ID', () => {
     const topic = TopicClassifier.getTopicInfo(1);
     expect(topic).toBeDefined();
-    expect(topic!.color).toBe('blue');
+    expect(topic!.color).toBe('olive');
     expect(topic!.id).toBe(1);
   });
 

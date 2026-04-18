@@ -3,6 +3,22 @@ import { TopicsMaster, SurahInfo, Verse } from './types';
 let cachedData: TopicsMaster | null = null;
 let cachedSurahs: { surahs: SurahInfo[] } | null = null;
 
+// Supports both legacy topic colors in dataset and current UI colors.
+const TOPIC_COLOR_TO_ID: Record<string, number> = {
+  olive: 1,
+  sky: 2,
+  gold: 3,
+  pink: 4,
+  purple: 5,
+  turquoise: 6,
+  orange: 7,
+  blue: 1,
+  green: 2,
+  brown: 3,
+  yellow: 4,
+  red: 7,
+};
+
 export async function getTopicsMaster(): Promise<TopicsMaster> {
   if (cachedData) return cachedData;
   const res = await fetch('/data/topics_master.json');
@@ -22,9 +38,23 @@ export async function getVersesForPage(page: number): Promise<Verse[]> {
   return data.verses.filter(v => v.page === page);
 }
 
+export async function getAllVerses(): Promise<Verse[]> {
+  const data = await getTopicsMaster();
+  return data.verses;
+}
+
 export async function getVersesForSurah(surahNum: number): Promise<Verse[]> {
   const data = await getTopicsMaster();
   return data.verses.filter(v => v.surah === surahNum);
+}
+
+export async function getVersesByTopicColor(color: string): Promise<Verse[]> {
+  const data = await getTopicsMaster();
+  const topicId = TOPIC_COLOR_TO_ID[color];
+  if (topicId) {
+    return data.verses.filter(v => v.topic.id === topicId);
+  }
+  return data.verses.filter(v => v.topic.color === color);
 }
 
 export async function searchVerses(query: string): Promise<Verse[]> {

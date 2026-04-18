@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { I18nProvider } from '@/lib/i18n';
+import AuthProviders from '@/components/AuthProviders';
 
 export const viewport: Viewport = {
   themeColor: '#C9A351',
@@ -10,13 +10,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'المصحف المفهرس',
-  description: 'المصحف المفهرس بالألوان حسب الموضوعات',
+  title: 'المصحف المفهرس بالمواضيع',
+  description: 'المصحف المفهرس بالمواضيع بالألوان حسب الموضوعات',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'المصحف المفهرس',
+    title: 'المصحف المفهرس بالمواضيع',
   },
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-link">
           تخطي إلى المحتوى — Skip to content
         </a>
-        <I18nProvider>{children}</I18nProvider>
+        <AuthProviders>{children}</AuthProviders>
       </body>
     </html>
   );

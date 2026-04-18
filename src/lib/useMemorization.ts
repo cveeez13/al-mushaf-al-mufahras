@@ -113,6 +113,29 @@ export function useMemorization() {
     });
   }, [persist, dailyReviews]);
 
+  const addCards = useCallback((verses: Array<{
+    verse_key: string; surah: number; ayah: number; text: string; topic_color: string;
+  }>) => {
+    if (verses.length === 0) return 0;
+
+    let added = 0;
+    setCards(prev => {
+      const existing = new Set(prev.map(card => card.verse_key));
+      const fresh = verses
+        .filter(verse => !existing.has(verse.verse_key))
+        .map(createCard);
+
+      added = fresh.length;
+      if (fresh.length === 0) return prev;
+
+      const updated = [...prev, ...fresh];
+      persist(updated, dailyReviews);
+      return updated;
+    });
+
+    return added;
+  }, [persist, dailyReviews]);
+
   const removeCard = useCallback((verseKey: string) => {
     setCards(prev => {
       const updated = prev.filter(c => c.verse_key !== verseKey);
@@ -167,6 +190,7 @@ export function useMemorization() {
     cards,
     stats,
     addCard,
+    addCards,
     removeCard,
     isInDeck,
     reviewCard,

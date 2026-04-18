@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { dbGet, dbPut, STORES } from './offlineDB';
 
 export interface ReadingStats {
   pages_visited: number[];
@@ -10,6 +11,7 @@ export interface ReadingStats {
   streak_days: number;
   daily_history: Record<string, number[]>; // date -> pages visited
   page_visit_counts: Record<number, number>; // page -> total visit count
+  daily_visit_counts: Record<string, number>; // date -> total visits
 }
 
 const STORAGE_KEY = 'mushaf-reading-stats';
@@ -20,19 +22,36 @@ function today(): string {
 
 const DEFAULT_STATS: ReadingStats = {
   pages_visited: [], total_pages_read: 0, last_page: 1,
-  last_read_date: '', streak_days: 0, daily_history: {}, page_visit_counts: {},
+  last_read_date: '', streak_days: 0, daily_history: {}, page_visit_counts: {}, daily_visit_counts: {},
 };
 
-function loadStats(): ReadingStats {
+function normalizeStats(raw: Partial<ReadingStats> | null | undefined): ReadingStats {
+  if (!raw) return { ...DEFAULT_STATS };
+  const pages_visited = Array.isArray(raw.pages_visited) ? raw.pages_visited : [];
+  const page_visit_counts = raw.page_visit_counts || {};
+  const daily_history = raw.daily_history || {};
+  const daily_visit_counts = raw.daily_visit_counts || {};
+  return {
+    pages_visited,
+    total_pages_read: raw.total_pages_read ?? pages_visited.length,
+    last_page: raw.last_page ?? 1,
+    last_read_date: raw.last_read_date ?? '',
+    streak_days: raw.streak_days ?? 0,
+    daily_history,
+    page_visit_counts,
+    daily_visit_counts,
+  };
+}
+
+function loadStatsFromLocalStorage(): ReadingStats {
   if (typeof window === 'undefined') return { ...DEFAULT_STATS };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
-      const parsed = JSON.parse(raw);
-      // Migrate old data without page_visit_counts
-      if (!parsed.page_visit_counts) {
-        parsed.page_visit_counts = {};
-        for (const p of parsed.pages_visited || []) parsed.page_visit_counts[p] = 1;
+      const parsed = normalizeStats(JSON.parse(raw));
+      // Backfill page visit counts for legacy data
+      if (!Object.keys(parsed.page_visit_counts).length && parsed.pages_visited.length) {
+        for (const p of parsed.pages_visited) parsed.page_visit_counts[p] = 1;
       }
       return parsed;
     }
@@ -40,15 +59,44 @@ function loadStats(): ReadingStats {
   return { ...DEFAULT_STATS };
 }
 
-function saveStats(stats: ReadingStats) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+async function saveStats(stats: ReadingStats) {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+  }
+  try {
+    await dbPut(STORES.READING_STATS, {
+      id: 'stats',
+      ...stats,
+      _updatedAt: new Date().toISOString(),
+    });
+  } catch {
+    // IndexedDB might be unavailable in private mode; localStorage is enough fallback.
+  }
 }
 
 export function useReadingStats() {
-  const [stats, setStats] = useState<ReadingStats>(loadStats);
+  const [stats, setStats] = useState<ReadingStats>(loadStatsFromLocalStorage);
 
   useEffect(() => {
-    setStats(loadStats());
+    let mounted = true;
+    const localStats = loadStatsFromLocalStorage();
+    setStats(localStats);
+
+    (async () => {
+      try {
+        const persisted = await dbGet<ReadingStats & { id: string }>(STORES.READING_STATS, 'stats');
+        if (!mounted || !persisted) return;
+        const normalized = normalizeStats(persisted);
+        setStats(normalized);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(normalized));
+      } catch {
+        // ignore
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const recordPageVisit = useCallback((page: number) => {
@@ -65,6 +113,10 @@ export function useReadingStats() {
       const page_visit_counts = {
         ...prev.page_visit_counts,
         [page]: (prev.page_visit_counts[page] || 0) + 1,
+      };
+      const daily_visit_counts = {
+        ...prev.daily_visit_counts,
+        [d]: (prev.daily_visit_counts[d] || 0) + 1,
       };
 
       // Calculate streak
@@ -86,8 +138,9 @@ export function useReadingStats() {
         streak_days: streak,
         daily_history,
         page_visit_counts,
+        daily_visit_counts,
       };
-      saveStats(updated);
+      void saveStats(updated);
       return updated;
     });
   }, []);
