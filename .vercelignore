@@ -2,6 +2,7 @@ node_modules
 phase0-data
 .next
 out
+tsconfig.tsbuildinfo
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
