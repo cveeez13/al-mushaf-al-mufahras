@@ -6,6 +6,7 @@ import { getSurahsData, searchVerses, getVersesForSurah } from '@/lib/data';
 import type { SurahInfo, Verse } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
 import TopicLegend from './TopicLegend';
+import VerseBookmarkButton from './VerseBookmarkButton';
 
 interface SidebarProps {
   open: boolean;
@@ -160,27 +161,40 @@ export default function Sidebar({
 
             {searchResults.length > 0 && (
               <div className="mt-3 space-y-2 max-h-64 overflow-y-auto">
-                {searchResults.map(v => (
-                  <button
-                    key={v.verse_key}
-                    onClick={() => {
-                      if (v.page) onGoToPage(v.page);
-                      onClose();
-                    }}
-                    className="w-full text-start p-2 rounded-lg hover:bg-[var(--color-mushaf-border)]/30 transition-colors"
-                  >
-                    <div className="flex items-center gap-2 text-xs text-[var(--color-mushaf-text)]/60 mb-1">
-                      <span
-                        className="topic-dot"
-                        style={{ backgroundColor: v.topic.hex }}
-                      />
-                      <span>{SURAH_NAMES[v.surah]} : {v.ayah}</span>
+                {searchResults.map(v => {
+                  const openResult = () => {
+                    if (v.page) onGoToPage(v.page);
+                    onClose();
+                  };
+
+                  return (
+                    <div
+                      key={v.verse_key}
+                      role="button"
+                      tabIndex={0}
+                      onClick={openResult}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault();
+                          openResult();
+                        }
+                      }}
+                      className="w-full cursor-pointer rounded-lg p-2 text-start transition-colors hover:bg-[var(--color-mushaf-border)]/30"
+                    >
+                      <div className="mb-1 flex items-center gap-2 text-xs text-[var(--color-mushaf-text)]/60">
+                        <span
+                          className="topic-dot"
+                          style={{ backgroundColor: v.topic.hex }}
+                        />
+                        <span className="flex-1">{SURAH_NAMES[v.surah]} : {v.ayah}</span>
+                        <VerseBookmarkButton verse={v} compact />
+                      </div>
+                      <div className="line-clamp-2 font-[var(--font-arabic)] text-sm leading-relaxed">
+                        {v.text}
+                      </div>
                     </div>
-                    <div className="text-sm font-[var(--font-arabic)] line-clamp-2 leading-relaxed">
-                      {v.text}
-                    </div>
-                  </button>
-                ))}
+                  );
+                })}
                 {searchResults.length >= 100 && (
                   <div className="text-xs text-center text-[var(--color-mushaf-text)]/40 py-1">
                     {t('first100')}

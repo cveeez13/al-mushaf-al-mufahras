@@ -6,6 +6,7 @@ export type TtsProvider = 'web-speech';
 
 export interface TtsVoiceOption {
   id: string;
+  voiceURI: string;
   name: string;
   lang: string;
   localService: boolean;
@@ -55,19 +56,28 @@ export function useTafsirTts() {
 
     const applyVoices = () => {
       const speechVoices = sortVoices(synth.getVoices());
-      const mapped = speechVoices.map((voice) => ({
-        id: voice.voiceURI,
-        name: voice.name,
-        lang: voice.lang,
-        localService: voice.localService,
-        defaultVoice: voice.default,
-      }));
+      const duplicateCounter = new Map<string, number>();
+      const mapped = speechVoices.map((voice) => {
+        const baseId = `${voice.voiceURI}::${voice.name}::${voice.lang}`;
+        const seen = duplicateCounter.get(baseId) ?? 0;
+        duplicateCounter.set(baseId, seen + 1);
+
+        return {
+          id: `${baseId}::${seen}`,
+          voiceURI: voice.voiceURI,
+          name: voice.name,
+          lang: voice.lang,
+          localService: voice.localService,
+          defaultVoice: voice.default,
+        };
+      });
 
       setVoices(mapped);
 
       const stored = window.localStorage.getItem(VOICE_STORAGE_KEY);
       const chosen =
         mapped.find((voice) => voice.id === stored) ||
+        mapped.find((voice) => voice.voiceURI === stored) ||
         mapped.find((voice) => voice.lang.toLowerCase().startsWith('ar')) ||
         mapped[0];
 
@@ -116,7 +126,8 @@ export function useTafsirTts() {
     const utterance = new SpeechSynthesisUtterance(text);
     const synth = window.speechSynthesis;
     const availableVoices = synth.getVoices();
-    const voice = availableVoices.find((item) => item.voiceURI === selectedVoiceId);
+    const voiceUri = selectedVoice?.voiceURI || selectedVoiceId;
+    const voice = availableVoices.find((item) => item.voiceURI === voiceUri);
 
     if (voice) utterance.voice = voice;
     utterance.lang = voice?.lang || selectedVoice?.lang || 'ar-SA';

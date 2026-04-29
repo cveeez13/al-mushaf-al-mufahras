@@ -5,17 +5,22 @@ import { getVersesByTopicColor } from '@/lib/data';
 import { useI18n } from '@/lib/i18n';
 import { TOPICS, SURAH_NAMES, TOPIC_HEX_BG, type Verse } from '@/lib/types';
 import { useMemorization } from '@/lib/useMemorization';
+import VerseBookmarkButton from './VerseBookmarkButton';
 
 interface TopicVersesPanelProps {
   topicColor: string;
   onClose: () => void;
   onGoToPage: (page: number) => void;
+  onOpenTafsir?: (surah: number, ayah: number, text: string) => void;
+  onOpenAiTafsir?: (surah: number, ayah: number, text: string, topicColor: string, topicId: number) => void;
 }
 
 export default function TopicVersesPanel({
   topicColor,
   onClose,
   onGoToPage,
+  onOpenTafsir,
+  onOpenAiTafsir,
 }: TopicVersesPanelProps) {
   const { topicName, lang } = useI18n();
   const { addCard, removeCard, isInDeck } = useMemorization();
@@ -59,6 +64,11 @@ export default function TopicVersesPanel({
   if (!topic) return null;
 
   const bgColor = TOPIC_HEX_BG[topicColor] || '#F5F0E6';
+  const verseInkColor = '#24150E';
+  const verseMetaColor = '#5A3A22';
+  const accentTextColor = `color-mix(in srgb, ${topic.hex} 38%, ${verseInkColor} 62%)`;
+  const accentSoftBg = `color-mix(in srgb, ${topic.hex} 16%, #FFF8EF 84%)`;
+  const accentBorder = `color-mix(in srgb, ${topic.hex} 34%, #D8C4A8 66%)`;
 
   return (
     <div
@@ -70,7 +80,7 @@ export default function TopicVersesPanel({
           <span className="topic-verses-dot" style={{ backgroundColor: '#fff' }} />
           <div className="min-w-0">
             <h2 className="truncate text-base font-bold text-white">{topicName(topic.id)}</h2>
-            <p className="mt-0.5 text-xs text-white/70">
+            <p className="mt-0.5 text-xs text-white/90">
               {loading ? '...' : `${verses.length} ${lang === 'ar' ? 'آية' : 'verses'}`}
             </p>
           </div>
@@ -93,7 +103,12 @@ export default function TopicVersesPanel({
           {surahGroups.map((group) => (
             <button
               key={group.surah}
-              className="rounded bg-[var(--color-mushaf-gold)]/10 px-2 py-1 text-xs font-bold text-[var(--color-mushaf-gold)] hover:bg-[var(--color-mushaf-gold)]/30"
+              className="rounded px-2 py-1 text-xs font-bold transition-colors hover:brightness-95"
+              style={{
+                backgroundColor: accentSoftBg,
+                color: accentTextColor,
+                border: `1px solid ${accentBorder}`,
+              }}
               onClick={() => surahRefs.current[group.surah]?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
               type="button"
             >
@@ -121,7 +136,7 @@ export default function TopicVersesPanel({
                 <span>
                   {lang === 'ar' ? 'سورة' : 'Surah'} {group.name}
                 </span>
-                <span className="text-xs opacity-60">
+                <span className="text-xs" style={{ color: accentTextColor, opacity: 0.9 }}>
                   {group.verses.length} {lang === 'ar' ? 'آية' : 'verses'}
                 </span>
               </div>
@@ -129,12 +144,19 @@ export default function TopicVersesPanel({
               <div className="topic-verses-list">
                 {group.verses.map((verse) => {
                   const inDeck = isInDeck(verse.verse_key);
+                  const openTafsir = () => onOpenTafsir?.(verse.surah, verse.ayah, verse.text);
+                  const openAiTafsir = () =>
+                    onOpenAiTafsir?.(verse.surah, verse.ayah, verse.text, verse.topic.color, verse.topic.id);
 
                   return (
                     <div
                       key={verse.verse_key}
                       className="topic-verse-item gap-2"
-                      style={{ backgroundColor: bgColor }}
+                      style={{
+                        backgroundColor: bgColor,
+                        border: `1px solid ${accentBorder}`,
+                        boxShadow: '0 1px 0 rgba(255,255,255,0.35) inset',
+                      }}
                       onClick={() => verse.page && onGoToPage(verse.page)}
                       role="button"
                       tabIndex={0}
@@ -142,18 +164,75 @@ export default function TopicVersesPanel({
                         if (event.key === 'Enter' && verse.page) onGoToPage(verse.page);
                       }}
                     >
-                      <span className="topic-verse-number" style={{ backgroundColor: topic.hex }}>
+                      <button
+                        type="button"
+                        className="topic-verse-number"
+                        style={{ backgroundColor: topic.hex }}
+                        title={
+                          lang === 'ar'
+                            ? 'اضغط لفتح التفسير، أو Shift+Click لفتح شرح AI'
+                            : 'Click for Tafsir, or Shift+Click for AI Tafsir'
+                        }
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          if (event.shiftKey) {
+                            openAiTafsir();
+                            return;
+                          }
+                          openTafsir();
+                        }}
+                      >
                         {verse.ayah}
-                      </span>
+                      </button>
 
-                      <span className="topic-verse-text font-[var(--font-arabic)]" dir="rtl">
+                      <span
+                        className="topic-verse-text font-[var(--font-arabic)]"
+                        dir="rtl"
+                        style={{ color: verseInkColor, opacity: 1 }}
+                      >
                         {verse.text}
                       </span>
 
                       {verse.page && (
-                        <span className="topic-verse-page">
+                        <span className="topic-verse-page" style={{ color: verseMetaColor, opacity: 1 }}>
                           {lang === 'ar' ? 'ص' : 'p'} {verse.page}
                         </span>
+                      )}
+
+                      {onOpenTafsir && (
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            openTafsir();
+                          }}
+                          className="rounded-lg px-2 py-1 text-xs font-semibold transition-colors hover:brightness-95"
+                          style={{
+                            backgroundColor: '#E8E1D3',
+                            color: verseInkColor,
+                            border: `1px solid ${accentBorder}`,
+                          }}
+                        >
+                          {lang === 'ar' ? 'تفسير' : 'Tafsir'}
+                        </button>
+                      )}
+
+                      {onOpenAiTafsir && (
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            openAiTafsir();
+                          }}
+                          className="rounded-lg px-2 py-1 text-xs font-semibold transition-colors hover:brightness-95"
+                          style={{
+                            backgroundColor: accentSoftBg,
+                            color: accentTextColor,
+                            border: `1px solid ${accentBorder}`,
+                          }}
+                        >
+                          {lang === 'ar' ? 'اشرحلي AI' : 'AI Tafsir'}
+                        </button>
                       )}
 
                       <button
@@ -172,14 +251,25 @@ export default function TopicVersesPanel({
                             });
                           }
                         }}
-                        className={`rounded-lg px-2 py-1 text-xs font-medium transition-colors ${
+                        className="rounded-lg px-2 py-1 text-xs font-semibold transition-colors hover:brightness-95"
+                        style={
                           inDeck
-                            ? 'bg-[var(--color-topic-green)]/15 text-[var(--color-topic-green)]'
-                            : 'bg-[var(--color-mushaf-gold)]/15 text-[var(--color-mushaf-gold)]'
-                        }`}
+                            ? {
+                                backgroundColor: 'color-mix(in srgb, var(--color-topic-green) 16%, var(--color-mushaf-paper) 84%)',
+                                color: 'color-mix(in srgb, var(--color-topic-green) 78%, #1f3d28 22%)',
+                                border: '1px solid color-mix(in srgb, var(--color-topic-green) 30%, var(--color-mushaf-border) 70%)',
+                              }
+                            : {
+                                backgroundColor: accentSoftBg,
+                                color: accentTextColor,
+                                border: `1px solid ${accentBorder}`,
+                              }
+                        }
                       >
                         {inDeck ? (lang === 'ar' ? 'في الحفظ' : 'In Deck') : (lang === 'ar' ? 'أضف للحفظ' : 'Add')}
                       </button>
+
+                      <VerseBookmarkButton verse={verse} compact />
                     </div>
                   );
                 })}

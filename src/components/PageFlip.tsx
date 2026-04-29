@@ -1,23 +1,22 @@
 // @ts-nocheck
 'use client';
 
-/**
- * Page Flip Component
- *
- * Standalone 3D page flip animation component
- * Can be used for individual pages or double-page spreads
- */
+import React, { useEffect, useRef, useCallback } from 'react';
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import {
-  createFlipAnimation,
-  PageFlipConfig,
-  DEFAULT_FLIP_CONFIG,
-  getPageFlipCSS,
-  getHorizontalFlipCSS,
-  cancelFlipAnimation,
-} from '@/lib/pageFlipAnimation';
-import { SwipeDetector, SwipeEvent } from '@/lib/swipeDetector';
+// ─── Types ───────────────────────────────────────
+export interface PageFlipConfig {
+  duration?: number;
+  perspective?: number;
+  thickness?: number;
+  autoFlipDuration?: number;
+}
+
+export const DEFAULT_FLIP_CONFIG: PageFlipConfig = {
+  duration: 1000,
+  perspective: 1000,
+  thickness: 4,
+  autoFlipDuration: 3000,
+};
 
 export interface PageFlipProps {
   frontContent: React.ReactNode;
@@ -30,177 +29,174 @@ export interface PageFlipProps {
   className?: string;
 }
 
+// ─── CSS الحركة ───────────────────────────────────
+const FLIP_CSS = `
+  .pfb-wrapper {
+    perspective: var(--flip-perspective, 1000px);
+  }
+
+  .pfb-book {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    transition: translate var(--flip-dur, 1000ms);
+    translate: calc(min(var(--c, 0), 1) * 50%) 0%;
+  }
+
+  .pfb-page {
+    flex: none;
+    display: flex;
+    width: 100%;
+    pointer-events: all;
+    user-select: none;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transition:
+      transform var(--flip-dur, 1000ms),
+      rotate var(--flip-dur, 1000ms) ease-in
+        calc((min(var(--i,0),var(--c,0)) - max(var(--i,0),var(--c,0))) * 50ms);
+    translate: calc(var(--i,0) * -100%) 0px 0px;
+    transform: translateZ(
+      calc((var(--c,0) - var(--i,0) - 0.5) * calc(var(--thickness,4) * 1px))
+    );
+    rotate: 0 1 0 calc(clamp(0, var(--c,0) - var(--i,0), 1) * -180deg);
+  }
+
+  .pfb-book.rtl .pfb-page {
+    transform-origin: right center;
+    rotate: 0 1 0 calc(clamp(0, var(--c,0) - var(--i,0), 1) * 180deg);
+  }
+
+  .pfb-front,
+  .pfb-back {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    translate: 0px;
+  }
+
+  .pfb-back {
+    translate: -100% 0;
+    rotate: 0 1 0 180deg;
+  }
+
+  .pfb-book.rtl .pfb-back {
+    rotate: 0 1 0 -180deg;
+  }
+`;
+
+let cssInjected = false;
+function injectCSS() {
+  if (cssInjected || typeof document === 'undefined') return;
+  const el = document.createElement('style');
+  el.id = 'pfb-styles';
+  el.textContent = FLIP_CSS;
+  document.head.appendChild(el);
+  cssInjected = true;
+}
+
+// ─── Component ───────────────────────────────────
 export const PageFlip: React.FC<PageFlipProps> = ({
   frontContent,
   backContent,
   onFlip,
   flipConfig: customConfig,
   enableSwipe = true,
-  enableAutoFlip = false,
   isRTL = false,
   className = '',
 }) => {
-  const config: PageFlipConfig = { ...DEFAULT_FLIP_CONFIG, ...customConfig };
-  const sceneRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const swipeDetectorRef = useRef<SwipeDetector | null>(null);
+  const config = { ...DEFAULT_FLIP_CONFIG, ...customConfig };
+  const bookRef = useRef<HTMLDivElement>(null);
+  const currentRef = useRef(0);
+  const touchStartX = useRef<number | null>(null);
 
-  // Inject CSS
+  useEffect(() => { injectCSS(); }, []);
+
   useEffect(() => {
-    const styleId = `page-flip-styles-${Math.random()}`;
-    const style = document.createElement('style');
-    style.id = styleId;
-    style.textContent = isRTL
-      ? getHorizontalFlipCSS(config, true)
-      : getHorizontalFlipCSS(config, false);
-    document.head.appendChild(style);
-
-    return () => {
-      document.getElementById(styleId)?.remove();
-    };
-  }, [config, isRTL]);
-
-  // Setup swipe detector
-  useEffect(() => {
-    if (!enableSwipe || !containerRef.current) return;
-
-    swipeDetectorRef.current = new SwipeDetector(containerRef.current);
-
-    swipeDetectorRef.current.on('swipe-left', () => {
-      if (isRTL) {
-        handleFlip('backward');
-      } else {
-        handleFlip('forward');
-      }
+    const book = bookRef.current;
+    if (!book) return;
+    book.style.setProperty('--flip-dur', `${config.duration}ms`);
+    book.style.setProperty('--flip-perspective', `${config.perspective}px`);
+    book.style.setProperty('--thickness', `${config.thickness}`);
+    book.style.setProperty('--c', '0');
+    book.querySelectorAll<HTMLElement>('.pfb-page').forEach((page, idx) => {
+      page.style.setProperty('--i', String(idx));
     });
+  }, []);
 
-    swipeDetectorRef.current.on('swipe-right', () => {
-      if (isRTL) {
-        handleFlip('forward');
-      } else {
-        handleFlip('backward');
-      }
-    });
+  const setC = useCallback((val: number) => {
+    currentRef.current = val;
+    bookRef.current?.style.setProperty('--c', String(val));
+  }, []);
 
-    return () => {
-      if (swipeDetectorRef.current) {
-        // Cleanup
-      }
-    };
-  }, [enableSwipe, isRTL]);
-
-  // Auto-flip
-  useEffect(() => {
-    if (!enableAutoFlip || isAnimating) return;
-
-    const timer = setTimeout(() => {
-      handleFlip(isFlipped ? 'backward' : 'forward');
-    }, config.autoFlipDuration);
-
-    return () => clearTimeout(timer);
-  }, [enableAutoFlip, isAnimating, isFlipped, config.autoFlipDuration]);
-
-  const handleFlip = useCallback(
-    async (direction: 'forward' | 'backward') => {
-      if (isAnimating || !sceneRef.current) return;
-
-      setIsAnimating(true);
-
-      try {
-        await createFlipAnimation(sceneRef.current, direction, config);
-        setIsFlipped(direction === 'forward' ? !isFlipped : isFlipped);
-        onFlip?.(direction);
-      } catch (error) {
-        console.error('Flip animation error:', error);
-      } finally {
-        setIsAnimating(false);
-      }
+  // ─── Click على الصفحة ─────────────────────────
+  const handlePageClick = useCallback(
+    (e: React.MouseEvent, idx: number) => {
+      if ((e.target as HTMLElement).closest('a')) return;
+      const onBack = (e.target as HTMLElement).closest('.pfb-back');
+      const next = onBack ? idx : idx + 1;
+      const maxC = backContent ? 2 : 1;
+      const clamped = Math.min(Math.max(next, 0), maxC);
+      const direction = clamped > currentRef.current ? 'forward' : 'backward';
+      setC(clamped);
+      onFlip?.(direction);
     },
-    [isAnimating, config, isFlipped, onFlip]
+    [backContent, onFlip, setC]
   );
 
-  const handleClickFlip = () => {
-    handleFlip(isFlipped ? 'backward' : 'forward');
+  // ─── Swipe ────────────────────────────────────
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
   };
 
-  const handleCancelFlip = () => {
-    if (sceneRef.current && isAnimating) {
-      cancelFlipAnimation(sceneRef.current);
-      setIsAnimating(false);
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) < 50) return;
+    const goForward = isRTL ? diff < 0 : diff > 0;
+    const maxC = backContent ? 2 : 1;
+    if (goForward && currentRef.current < maxC) {
+      setC(currentRef.current + 1);
+      onFlip?.('forward');
+    } else if (!goForward && currentRef.current > 0) {
+      setC(currentRef.current - 1);
+      onFlip?.('backward');
     }
+    touchStartX.current = null;
   };
 
   return (
     <div
-      ref={containerRef}
-      className={`page-flip-wrapper cursor-pointer select-none ${className}`}
-      onClick={handleClickFlip}
-      style={{
-        perspective: `${config.perspective}px`,
-          perspectiveOrigin: isRTL ? 'right center' : 'left center',
-      }}
+      className={`pfb-wrapper ${className}`}
+      style={{ perspective: `${config.perspective}px` }}
+      onTouchStart={enableSwipe ? handleTouchStart : undefined}
+      onTouchEnd={enableSwipe ? handleTouchEnd : undefined}
     >
       <div
-        ref={sceneRef}
-        className="page-flip-scene"
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
-          transformStyle: 'preserve-3d',
-          transition: `transform ${config.duration}ms cubic-bezier(0.645, 0.045, 0.355, 1)`,
-        }}
+        ref={bookRef}
+        className={`pfb-book ${isRTL ? 'rtl' : ''}`}
       >
-        {/* Front side */}
+        {/* الصفحة 0: الأمامية + الخلفية */}
         <div
-          className="page-flip-front"
-          style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-            transform: 'rotateY(0deg)',
-            zIndex: 2,
-          }}
+          className="pfb-page"
+          onClick={(e) => handlePageClick(e, 0)}
         >
-          {frontContent}
+          <div className="pfb-front">{frontContent}</div>
+          {backContent && (
+            <div className="pfb-back">{backContent}</div>
+          )}
         </div>
-
-        {/* Back side */}
-        {backContent && (
-          <div
-            className="page-flip-back"
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden',
-              transform: isRTL ? 'rotateY(-180deg)' : 'rotateY(180deg)',
-              zIndex: 1,
-            }}
-          >
-            {backContent}
-          </div>
-        )}
       </div>
-
-      {/* Loading indicator */}
-      {isAnimating && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/10 rounded">
-          <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
-        </div>
-      )}
     </div>
   );
 };
 
-/**
- * Double-page spread component
- */
+// ─── DoublePageSpread (لا تحذفه) ─────────────────
 export const DoublePageSpread: React.FC<{
   leftPage: React.ReactNode;
   rightPage: React.ReactNode;

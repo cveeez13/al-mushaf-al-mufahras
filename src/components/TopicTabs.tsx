@@ -80,11 +80,7 @@ export default function TopicTabs({ verses, filterTopic, onFilterTopic }: TopicT
             aria-pressed={isActive}
             type="button"
           >
-            <span className="topic-side-tab-dot" aria-hidden="true" />
             <span className="topic-side-tab-name">{tab.shortName}</span>
-            {tab.isDominant && tab.count > 0 && (
-              <span className="topic-side-tab-count">{tab.count}</span>
-            )}
           </button>
         );
       })}

@@ -13,6 +13,7 @@ import {
 import type { SM2Card } from '@/lib/sm2';
 import { TOPICS, SURAH_NAMES, type Verse } from '@/lib/types';
 import { useMemorization } from '@/lib/useMemorization';
+import VerseBookmarkButton from './VerseBookmarkButton';
 
 type QuizMode = 'complete' | 'topic' | 'recall';
 type QuizState = 'idle' | 'question' | 'answer' | 'finished';
@@ -421,30 +422,33 @@ export default function QuizPanel({ onGoToPage, currentPage = 1 }: QuizPanelProp
                       {verse.text}
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (inDeck) {
-                          removeCard(verse.verse_key);
-                          return;
-                        }
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (inDeck) {
+                            removeCard(verse.verse_key);
+                            return;
+                          }
 
-                        addCard({
-                          verse_key: verse.verse_key,
-                          surah: verse.surah,
-                          ayah: verse.ayah,
-                          text: verse.text,
-                          topic_color: verse.topic.color,
-                        });
-                      }}
-                      className={`rounded-xl px-3 py-2 text-sm font-medium ${
-                        inDeck
-                          ? 'bg-[var(--color-topic-green)]/10 text-[var(--color-topic-green)]'
-                          : 'bg-[var(--color-mushaf-gold)] text-white'
-                      }`}
-                    >
-                      {inDeck ? (ar ? 'مضافة للحفظ' : 'In Deck') : (ar ? 'أضف للحفظ' : 'Add to Deck')}
-                    </button>
+                          addCard({
+                            verse_key: verse.verse_key,
+                            surah: verse.surah,
+                            ayah: verse.ayah,
+                            text: verse.text,
+                            topic_color: verse.topic.color,
+                          });
+                        }}
+                        className={`rounded-xl px-3 py-2 text-sm font-medium ${
+                          inDeck
+                            ? 'bg-[var(--color-topic-green)]/10 text-[var(--color-topic-green)]'
+                            : 'bg-[var(--color-mushaf-gold)] text-white'
+                        }`}
+                      >
+                        {inDeck ? (ar ? 'مضافة للحفظ' : 'In Deck') : (ar ? 'أضف للحفظ' : 'Add to Deck')}
+                      </button>
+                      <VerseBookmarkButton verse={verse} />
+                    </div>
                   </div>
                 );
               })}

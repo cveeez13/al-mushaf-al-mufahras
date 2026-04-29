@@ -307,6 +307,8 @@ export function createSpeechRecognition(options: SpeechRecognitionOptions): Spee
       'no-speech': 'No speech detected',
       'network': 'Network error',
       'audio-capture': 'No microphone found',
+      'service-not-allowed': 'Speech service not allowed',
+      'language-not-supported': 'Language not supported',
       'aborted': 'Recognition aborted',
     };
     options.onError(errorMessages[event.error] || event.error);

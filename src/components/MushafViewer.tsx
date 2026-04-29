@@ -111,16 +111,6 @@ export default function MushafViewer({ currentPage, onPageChange, filterTopic, o
     return groups;
   }, [verses]);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-full min-h-[60vh]">
-        <div className="animate-pulse text-[var(--color-mushaf-gold)] text-xl font-[var(--font-arabic)]">
-          {t('loading')}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div
       ref={containerRef}
@@ -141,6 +131,8 @@ export default function MushafViewer({ currentPage, onPageChange, filterTopic, o
           onPageChange={onPageChange}
           filterTopic={filterTopic}
           onFilterTopic={onFilterTopic}
+          onVerseClick={onVerseClick}
+          onAiTafsir={onAiTafsir}
         />
       </div>
       {/* تمت إزالة كل الشروط والتكرار، يبقى عرض واحد فقط */}

@@ -29,6 +29,36 @@ function tabLabel(tab: (typeof TABS)[number], lang: Lang): string {
   return `${tab.prefix ?? ''}${lang === 'ar' ? tab.ar : tab.en}`;
 }
 
+function SunIcon() {
+  return (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" strokeWidth="2" />
+      <path strokeLinecap="round" strokeWidth="2" d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"
+      />
+    </svg>
+  );
+}
+
+function NightIcon() {
+  return (
+    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m12 2 1.85 5.7h5.99l-4.84 3.52 1.85 5.7L12 13.4l-4.85 3.52 1.85-5.7L4.16 7.7h5.99L12 2Z" />
+    </svg>
+  );
+}
+
 interface TopBarProps {
   currentPage: number;
   onMenuClick: () => void;
@@ -39,15 +69,27 @@ interface TopBarProps {
 
 export default function TopBar({ currentPage, onMenuClick, onPageChange, activeTab, onTabChange }: TopBarProps) {
   const { t, lang, toggleLang } = useI18n();
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const { nightState, setState: setNight } = useSmartNightMode();
+  const isNight = nightState === 'on';
+  const isDark = resolvedTheme === 'dark';
+  const themeLabel = isNight
+    ? (lang === 'ar' ? 'الوضع الليلي' : 'Night mode')
+    : isDark
+      ? (lang === 'ar' ? 'الوضع الداكن' : 'Dark mode')
+      : (lang === 'ar' ? 'الوضع الفاتح' : 'Light mode');
+  const themeButtonClass = isNight
+    ? 'border-[var(--color-mushaf-gold)] bg-[color-mix(in_srgb,var(--color-mushaf-gold)_18%,var(--color-mushaf-paper))] text-[var(--color-mushaf-gold)] shadow-[0_0_0_1px_color-mix(in_srgb,var(--color-mushaf-gold)_22%,transparent)]'
+    : isDark
+      ? 'border-[var(--color-mushaf-border)] bg-[color-mix(in_srgb,var(--color-mushaf-paper)_88%,black_12%)] text-[var(--color-mushaf-text)] hover:border-[var(--color-mushaf-gold)] hover:text-[var(--color-mushaf-gold)]'
+      : 'border-[var(--color-mushaf-border)] bg-[var(--color-mushaf-paper)] text-[var(--color-mushaf-text)] hover:border-[var(--color-mushaf-gold)] hover:text-[var(--color-mushaf-gold)]';
 
   return (
     <header className="bg-[var(--color-mushaf-paper)] border-b border-[var(--color-mushaf-border)] shrink-0">
       <div className="px-3 sm:px-4 py-2 flex items-center gap-2 sm:gap-3">
         <button
           onClick={onMenuClick}
-          className="p-2.5 rounded-lg hover:bg-[var(--color-mushaf-border)]/30 transition-colors shrink-0"
+          className="p-2.5 rounded-lg text-[var(--color-mushaf-text)] hover:bg-[var(--color-mushaf-border)]/30 transition-colors shrink-0"
           aria-label={t('menu')}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,25 +119,18 @@ export default function TopBar({ currentPage, onMenuClick, onPageChange, activeT
               setNight('off');
             }
           }}
-          className={`p-2.5 rounded-lg text-sm border transition-colors shrink-0 ${
-            nightState === 'on'
-              ? 'border-[var(--color-mushaf-gold)] bg-[var(--color-mushaf-gold)]/20 text-[var(--color-mushaf-gold)]'
-              : 'border-[var(--color-mushaf-border)] hover:border-[var(--color-mushaf-gold)]'
-          }`}
-          aria-label={
-            nightState === 'on'
-              ? (lang === 'ar' ? 'الوضع الليلي' : 'Night mode')
-              : theme === 'dark'
-                ? (lang === 'ar' ? 'الوضع الداكن' : 'Dark mode')
-                : (lang === 'ar' ? 'الوضع الفاتح' : 'Light mode')
-          }
+          className={`p-2.5 rounded-lg text-sm border transition-colors shrink-0 ${themeButtonClass}`}
+          aria-label={themeLabel}
+          title={themeLabel}
         >
-          <span aria-hidden="true">{nightState === 'on' ? '⭐' : theme === 'dark' ? '🌙' : '☀️'}</span>
+          <span className="flex items-center justify-center" aria-hidden="true">
+            {isNight ? <NightIcon /> : isDark ? <MoonIcon /> : <SunIcon />}
+          </span>
         </button>
 
         <button
           onClick={toggleLang}
-          className="p-2.5 rounded-lg text-xs font-bold border border-[var(--color-mushaf-border)] hover:border-[var(--color-mushaf-gold)] transition-colors shrink-0"
+          className="p-2.5 rounded-lg text-xs font-bold text-[var(--color-mushaf-text)] border border-[var(--color-mushaf-border)] hover:border-[var(--color-mushaf-gold)] hover:text-[var(--color-mushaf-gold)] transition-colors shrink-0"
           aria-label={lang === 'ar' ? 'Switch to English' : 'التحويل إلى العربية'}
         >
           {lang === 'ar' ? 'EN' : 'AR'}
@@ -105,7 +140,7 @@ export default function TopBar({ currentPage, onMenuClick, onPageChange, activeT
           <button
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
             disabled={currentPage <= 1}
-            className="p-2.5 rounded hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30 transition-colors"
+            className="p-2.5 rounded text-[var(--color-mushaf-text)] hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30 transition-colors"
             aria-label={lang === 'ar' ? 'الصفحة السابقة' : 'Previous page'}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -131,7 +166,7 @@ export default function TopBar({ currentPage, onMenuClick, onPageChange, activeT
           <button
             onClick={() => onPageChange(Math.min(604, currentPage + 1))}
             disabled={currentPage >= 604}
-            className="p-2.5 rounded hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30 transition-colors"
+            className="p-2.5 rounded text-[var(--color-mushaf-text)] hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30 transition-colors"
             aria-label={lang === 'ar' ? 'الصفحة التالية' : 'Next page'}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -172,7 +207,7 @@ export default function TopBar({ currentPage, onMenuClick, onPageChange, activeT
               className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap shrink-0 ${
                 activeTab === tab.key
                   ? 'bg-[var(--color-mushaf-gold)] text-white'
-                  : 'hover:bg-[var(--color-mushaf-border)]/30'
+                  : 'text-[var(--color-mushaf-text)] hover:bg-[var(--color-mushaf-border)]/30'
               }`}
             >
               {tabLabel(tab, lang)}
@@ -184,7 +219,7 @@ export default function TopBar({ currentPage, onMenuClick, onPageChange, activeT
           <button
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
             disabled={currentPage <= 1}
-            className="p-2 rounded hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30"
+            className="p-2 rounded text-[var(--color-mushaf-text)] hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30"
             aria-label={lang === 'ar' ? 'الصفحة السابقة' : 'Previous page'}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,7 +230,7 @@ export default function TopBar({ currentPage, onMenuClick, onPageChange, activeT
           <button
             onClick={() => onPageChange(Math.min(604, currentPage + 1))}
             disabled={currentPage >= 604}
-            className="p-2 rounded hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30"
+            className="p-2 rounded text-[var(--color-mushaf-text)] hover:bg-[var(--color-mushaf-border)]/30 disabled:opacity-30"
             aria-label={lang === 'ar' ? 'الصفحة التالية' : 'Next page'}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

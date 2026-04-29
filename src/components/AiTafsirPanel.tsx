@@ -410,8 +410,8 @@ export default function AiTafsirPanel({ verseContext }: AiTafsirPanelProps) {
                     {voices.length === 0 ? (
                       <option value="">{ar ? 'لا توجد أصوات متاحة' : 'No voices available'}</option>
                     ) : (
-                      voices.map((voice) => (
-                        <option key={voice.id} value={voice.id}>
+                      voices.map((voice, index) => (
+                        <option key={`${voice.id}-${index}`} value={voice.id}>
                           {voice.name} ({voice.lang})
                         </option>
                       ))

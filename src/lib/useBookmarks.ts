@@ -13,6 +13,7 @@ export interface Bookmark {
 }
 
 const STORAGE_KEY = 'mushaf-bookmarks';
+const BOOKMARKS_CHANGED_EVENT = 'mushaf-bookmarks-change';
 
 function loadBookmarks(): Bookmark[] {
   if (typeof window === 'undefined') return [];
@@ -25,14 +26,27 @@ function loadBookmarks(): Bookmark[] {
 }
 
 function saveBookmarks(bookmarks: Bookmark[]) {
+  if (typeof window === 'undefined') return;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks));
+  window.setTimeout(() => {
+    window.dispatchEvent(new Event(BOOKMARKS_CHANGED_EVENT));
+  }, 0);
 }
 
 export function useBookmarks() {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
   useEffect(() => {
-    setBookmarks(loadBookmarks());
+    const syncBookmarks = () => setBookmarks(loadBookmarks());
+
+    syncBookmarks();
+    window.addEventListener('storage', syncBookmarks);
+    window.addEventListener(BOOKMARKS_CHANGED_EVENT, syncBookmarks);
+
+    return () => {
+      window.removeEventListener('storage', syncBookmarks);
+      window.removeEventListener(BOOKMARKS_CHANGED_EVENT, syncBookmarks);
+    };
   }, []);
 
   const addBookmark = useCallback((bm: Omit<Bookmark, 'created_at'>) => {

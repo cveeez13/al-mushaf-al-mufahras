@@ -5,6 +5,7 @@ import { SURAH_NAMES, TOPICS } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
 import type { RecommendedVerse } from '@/lib/recommendations';
 import { useVerseOfDay } from '@/lib/useVerseOfDay';
+import VerseBookmarkButton from './VerseBookmarkButton';
 
 interface VerseOfDayWidgetProps {
   onGoToPage?: (page: number) => void;
@@ -51,20 +52,21 @@ export default function VerseOfDayWidget({
 
   const verse = dailyVerse.verse;
   const topic = Object.values(TOPICS).find((item) => item.color === verse.topic.color);
+  const accentColor = topic?.hex ?? '#C9A96E';
 
   return (
     <div className={compact ? '' : 'mb-4'}>
       <div
         className="overflow-hidden rounded-2xl"
         style={{
-          background: `linear-gradient(135deg, ${topic?.hex || '#3498DB'}15, ${topic?.hex || '#3498DB'}08)`,
-          border: `1px solid ${topic?.hex || '#3498DB'}30`,
+          background: `linear-gradient(135deg, ${accentColor}18, ${accentColor}0D)`,
+          border: `1px solid ${accentColor}40`,
         }}
       >
         <div className="flex items-center justify-between px-5 pb-2 pt-4">
           <div className="flex items-center gap-2">
             <span className="text-lg">✦</span>
-            <h3 className="text-sm font-bold" style={{ color: topic?.hex }}>
+            <h3 className="text-sm font-bold" style={{ color: accentColor }}>
               {ar ? 'آية اليوم' : 'Verse of the Day'}
             </h3>
           </div>
@@ -90,7 +92,7 @@ export default function VerseOfDayWidget({
           <div className="flex items-center gap-2">
             <span
               className="rounded-lg px-2.5 py-1 text-[11px] font-medium text-white"
-              style={{ backgroundColor: topic?.hex }}
+              style={{ backgroundColor: accentColor }}
             >
               {ar ? topic?.name_ar : topic?.name_en}
             </span>
@@ -99,18 +101,21 @@ export default function VerseOfDayWidget({
             </span>
           </div>
 
-          {onGoToPage && verse.page && (
-            <button
-              onClick={() => {
-                markOpened(verse.verse_key);
-                if (verse.page != null) onGoToPage(verse.page);
-              }}
-              className="rounded-lg px-3 py-1.5 text-xs font-medium transition-colors hover:opacity-80"
-              style={{ backgroundColor: topic?.hex, color: '#fff' }}
-            >
-              {ar ? 'اذهب للصفحة' : 'Go to page'} {verse.page}
-            </button>
-          )}
+          <div className="flex flex-wrap items-center gap-2">
+            {onGoToPage && verse.page && (
+              <button
+                onClick={() => {
+                  markOpened(verse.verse_key);
+                  if (verse.page != null) onGoToPage(verse.page);
+                }}
+                className="rounded-lg px-3 py-1.5 text-xs font-semibold shadow-sm transition-all hover:brightness-95"
+                style={{ backgroundColor: accentColor, color: '#fff' }}
+              >
+                {ar ? 'اذهب للصفحة' : 'Go to page'} {verse.page}
+              </button>
+            )}
+            <VerseBookmarkButton verse={verse} compact />
+          </div>
         </div>
       </div>
 
@@ -129,7 +134,7 @@ export default function VerseOfDayWidget({
               </span>
             </button>
 
-            <span className="rounded-full bg-[var(--color-mushaf-gold)]/10 px-2 py-1 text-[10px] text-[var(--color-mushaf-gold)]">
+            <span className="rounded-full border border-[var(--color-mushaf-gold)]/35 bg-[color-mix(in_srgb,var(--color-mushaf-gold)_16%,var(--color-mushaf-paper))] px-2 py-1 text-[10px] font-medium text-[color-mix(in_srgb,var(--color-mushaf-gold)_78%,#4A3120)]">
               {ar ? 'تعلم من قراءتك' : 'Learns from your reading'}
             </span>
           </div>
@@ -174,13 +179,14 @@ function SuggestionCard({
   isLiked: boolean;
 }) {
   const topic = Object.values(TOPICS).find((item) => item.color === rec.verse.topic.color);
+  const accentColor = topic?.hex ?? '#C9A96E';
 
   return (
     <div className="page-frame rounded-xl p-3">
       <div className="flex items-start gap-3">
         <div
           className="h-full min-h-12 w-1.5 shrink-0 self-stretch rounded-full"
-          style={{ backgroundColor: topic?.hex || '#999' }}
+          style={{ backgroundColor: accentColor }}
         />
 
         <div className="min-w-0 flex-1">
@@ -208,26 +214,34 @@ function SuggestionCard({
                   onOpen();
                   if (rec.verse.page != null) onGoToPage(rec.verse.page);
                 }}
-                className="text-[10px] text-[var(--color-mushaf-gold)] hover:underline"
+                className="rounded-full border px-2 py-1 text-[10px] font-medium hover:brightness-95"
+                style={{
+                  color: accentColor,
+                  borderColor: `${accentColor}50`,
+                  backgroundColor: `${accentColor}14`,
+                }}
               >
                 {ar ? 'صفحة' : 'p.'} {rec.verse.page}
               </button>
             )}
 
+            <VerseBookmarkButton verse={rec.verse} compact />
+
             <button
               onClick={onLike}
-              className={`rounded-full px-2 py-1 text-[10px] ${
+              className={`rounded-full px-2 py-1 text-[10px] font-medium ${
                 isLiked
-                  ? 'bg-[var(--color-topic-green)]/15 text-[var(--color-topic-green)]'
-                  : 'bg-[var(--color-mushaf-border)]/25 text-[var(--color-mushaf-text)]/55'
+                  ? 'text-white'
+                  : 'bg-[var(--color-mushaf-border)]/30 text-[var(--color-mushaf-text)]/75'
               }`}
+              style={isLiked ? { backgroundColor: accentColor } : undefined}
             >
               {ar ? 'أعجبني' : 'Like'}
             </button>
 
             <button
               onClick={onSkip}
-              className="rounded-full bg-[var(--color-mushaf-border)]/25 px-2 py-1 text-[10px] text-[var(--color-mushaf-text)]/55"
+              className="rounded-full bg-[var(--color-mushaf-border)]/30 px-2 py-1 text-[10px] font-medium text-[var(--color-mushaf-text)]/75"
             >
               {ar ? 'تخطَّ' : 'Skip'}
             </button>
