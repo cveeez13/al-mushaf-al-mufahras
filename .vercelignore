@@ -1,5 +1,8 @@
 node_modules
 phase0-data
+phase0-data/**
+phase0-data/raw/scans
+phase0-data/raw/scans/**
 .next
 out
 tsconfig.tsbuildinfo
