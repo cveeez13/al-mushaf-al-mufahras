@@ -50,10 +50,10 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
       const matches = await searchByVoiceText(text, 8);
       setResults(matches);
       if (matches.length === 0) {
-        setErrorMsg(isAr ? 'Ù„Ù… ÙŠØªÙ… Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ Ù†ØªØ§Ø¦Ø¬. Ø­Ø§ÙˆÙ„ Ù…Ø±Ø© Ø£Ø®Ø±Ù‰.' : 'No matches found. Try again.');
+        setErrorMsg(isAr ? 'لم يتم العثور على نتائج. حاول مرة أخرى.' : 'No matches found. Try again.');
       }
     } catch {
-      setErrorMsg(isAr ? 'Ø­Ø¯Ø« Ø®Ø·Ø£ Ø£Ø«Ù†Ø§Ø¡ Ø§Ù„Ø¨Ø­Ø«' : 'Search error occurred');
+      setErrorMsg(isAr ? 'حدث خطأ أثناء البحث' : 'Search error occurred');
     } finally {
       setIsSearching(false);
     }
@@ -165,11 +165,11 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
       {/* Header */}
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold">
-          ðŸŽ™ï¸ {isAr ? 'Ø§Ù„Ø¨Ø­Ø« Ø§Ù„ØµÙˆØªÙŠ' : 'Voice Search'}
+          🎙️ {isAr ? 'البحث الصوتي' : 'Voice Search'}
         </h2>
         <p className="text-sm opacity-60">
           {isAr
-            ? 'Ø§Ù‚Ø±Ø£ Ø¬Ø²Ø¡Ø§Ù‹ Ù…Ù† Ø¢ÙŠØ© ÙˆØ³ÙŠØªØ¹Ø±Ù Ø§Ù„ØªØ·Ø¨ÙŠÙ‚ Ø¹Ù„ÙŠÙ‡Ø§ ÙÙˆØ±Ø§Ù‹'
+            ? 'اقرأ جزءاً من آية وسيتعرف التطبيق عليها فوراً'
             : 'Read part of a verse and the app will recognize it instantly'}
         </p>
       </div>
@@ -205,17 +205,17 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
 
         <p className="text-sm font-medium">
           {isListening
-            ? (isAr ? 'ðŸ”´ Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø§Ø³ØªÙ…Ø§Ø¹... Ø§Ù‚Ø±Ø£ Ø§Ù„Ø¢ÙŠØ©' : 'ðŸ”´ Listening... read the verse')
+            ? (isAr ? '🔴 جاري الاستماع... اقرأ الآية' : '🔴 Listening... read the verse')
             : status === 'processing'
-              ? (isAr ? 'â³ Ø¬Ø§Ø±ÙŠ Ø§Ù„Ù…Ø¹Ø§Ù„Ø¬Ø©...' : 'â³ Processing...')
-              : (isAr ? 'Ø§Ø¶ØºØ· Ù„Ù„ØªØ­Ø¯Ø«' : 'Tap to speak')}
+              ? (isAr ? '⏳ جاري المعالجة...' : '⏳ Processing...')
+              : (isAr ? 'اضغط للتحدث' : 'Tap to speak')}
         </p>
 
         {!supported && (
           <p className="text-xs text-orange-500 text-center">
             {isAr
-              ? 'âš ï¸ Ø§Ù„Ù…ØªØµÙØ­ Ù„Ø§ ÙŠØ¯Ø¹Ù… Ø§Ù„ØªØ¹Ø±Ù Ø¹Ù„Ù‰ Ø§Ù„ØµÙˆØª. Ø§Ø³ØªØ®Ø¯Ù… Ø§Ù„Ø¨Ø­Ø« Ø§Ù„ÙŠØ¯ÙˆÙŠ.'
-              : 'âš ï¸ Browser does not support speech recognition. Use manual search.'}
+              ? '⚠️ المتصفح لا يدعم التعرف على الصوت. استخدم البحث اليدوي.'
+              : '⚠️ Browser does not support speech recognition. Use manual search.'}
           </p>
         )}
       </div>
@@ -223,7 +223,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
       {/* Live Transcript */}
       {(transcript || interimText) && (
         <div className="bg-[var(--color-mushaf-paper)] border border-[var(--color-mushaf-border)] rounded-xl p-4 text-center">
-          <p className="text-xs opacity-50 mb-1">{isAr ? 'Ø§Ù„Ù†Øµ Ø§Ù„Ù…Ø³Ù…ÙˆØ¹:' : 'Heard:'}</p>
+          <p className="text-xs opacity-50 mb-1">{isAr ? 'النص المسموع:' : 'Heard:'}</p>
           <p className="text-lg font-[var(--font-arabic)] leading-relaxed" dir="rtl">
             {transcript || <span className="opacity-50 animate-pulse">{interimText}</span>}
           </p>
@@ -238,7 +238,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
               onClick={() => setShowManual(true)}
               className="text-xs text-[var(--color-mushaf-gold)] hover:underline"
             >
-              {isAr ? 'âŒ¨ï¸ Ø£Ùˆ Ø§Ø¨Ø­Ø« ÙŠØ¯ÙˆÙŠØ§Ù‹ Ø¨ÙƒØªØ§Ø¨Ø© Ø§Ù„Ù†Øµ' : 'âŒ¨ï¸ Or search manually by typing'}
+              {isAr ? '⌨️ أو ابحث يدوياً بكتابة النص' : '⌨️ Or search manually by typing'}
             </button>
           </div>
         )}
@@ -247,7 +247,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
           <div className="space-y-2">
             {hasNetworkError && (
               <p className="text-center text-sm font-medium">
-                {isAr ? 'âŒ¨ï¸ Ø§Ø¨Ø­Ø« Ø¨ÙƒØªØ§Ø¨Ø© Ø¬Ø²Ø¡ Ù…Ù† Ø§Ù„Ø¢ÙŠØ©:' : 'âŒ¨ï¸ Search by typing part of a verse:'}
+                {isAr ? '⌨️ ابحث بكتابة جزء من الآية:' : '⌨️ Search by typing part of a verse:'}
               </p>
             )}
             <div className="flex gap-2">
@@ -256,7 +256,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
                 value={manualInput}
                 onChange={e => setManualInput(e.target.value)}
                 onKeyDown={e => { if (e.key === 'Enter') handleManualSearch(); }}
-                placeholder={isAr ? 'Ø§ÙƒØªØ¨ Ø¬Ø²Ø¡Ø§Ù‹ Ù…Ù† Ø¢ÙŠØ©... Ù…Ø«Ø§Ù„: Ø¨Ø³Ù… Ø§Ù„Ù„Ù‡ Ø§Ù„Ø±Ø­Ù…Ù†' : 'Type part of a verse...'}
+                placeholder={isAr ? 'اكتب جزءاً من آية... مثال: بسم الله الرحمن' : 'Type part of a verse...'}
                 className="flex-1 px-4 py-3 rounded-xl border-2 border-[var(--color-mushaf-gold)]/40 bg-transparent text-base font-[var(--font-arabic)] focus:border-[var(--color-mushaf-gold)] focus:outline-none transition-colors"
                 dir="rtl"
                 autoFocus={hasNetworkError}
@@ -266,7 +266,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
                 disabled={!manualInput.trim() || isSearching}
                 className="px-6 py-3 rounded-xl bg-[var(--color-mushaf-gold)] text-white font-medium hover:opacity-90 disabled:opacity-50 transition-opacity"
               >
-                {isAr ? 'Ø¨Ø­Ø«' : 'Search'}
+                {isAr ? 'بحث' : 'Search'}
               </button>
             </div>
           </div>
@@ -281,7 +281,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
             onClick={() => { setErrorMsg(''); startListening(); }}
             className="text-xs text-[var(--color-mushaf-gold)] hover:underline"
           >
-            {isAr ? 'ðŸ”„ Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„Ù…Ø­Ø§ÙˆÙ„Ø©' : 'ðŸ”„ Retry'}
+            {isAr ? '🔄 إعادة المحاولة' : '🔄 Retry'}
           </button>
         </div>
       )}
@@ -290,7 +290,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
       {isSearching && (
         <div className="flex items-center justify-center gap-2 p-4">
           <div className="w-5 h-5 border-2 border-[var(--color-mushaf-gold)] border-t-transparent rounded-full animate-spin" />
-          <span className="text-sm">{isAr ? 'Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¨Ø­Ø« ÙÙŠ Ø§Ù„Ù‚Ø±Ø¢Ù†...' : 'Searching the Quran...'}</span>
+          <span className="text-sm">{isAr ? 'جاري البحث في القرآن...' : 'Searching the Quran...'}</span>
         </div>
       )}
 
@@ -298,7 +298,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
       {results.length > 0 && (
         <div className="space-y-3">
           <h3 className="font-bold text-sm">
-            {isAr ? `âœ… ØªÙ… Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ ${results.length} Ù†ØªØ§Ø¦Ø¬:` : `âœ… Found ${results.length} results:`}
+            {isAr ? `✅ تم العثور على ${results.length} نتائج:` : `✅ Found ${results.length} results:`}
           </h3>
 
           {results.map((r, i) => (
@@ -316,13 +316,13 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
       {/* Tips */}
       {results.length === 0 && !isSearching && !transcript && (
         <div className="bg-[var(--color-mushaf-paper)] border border-[var(--color-mushaf-border)] rounded-xl p-4 space-y-3">
-          <h3 className="font-bold text-sm">{isAr ? 'ðŸ’¡ Ù†ØµØ§Ø¦Ø­ Ù„Ù„Ù†ØªØ§Ø¦Ø¬ Ø§Ù„Ø£ÙØ¶Ù„:' : 'ðŸ’¡ Tips for best results:'}</h3>
+          <h3 className="font-bold text-sm">{isAr ? '💡 نصائح للنتائج الأفضل:' : '💡 Tips for best results:'}</h3>
           <ul className="text-sm space-y-2 opacity-70" dir={isAr ? 'rtl' : 'ltr'}>
-            <li>{isAr ? 'â€¢ Ø§Ù‚Ø±Ø£ 3 ÙƒÙ„Ù…Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„Ø£Ù‚Ù„ Ù…Ù† Ø§Ù„Ø¢ÙŠØ©' : 'â€¢ Read at least 3 words from the verse'}</li>
-            <li>{isAr ? 'â€¢ ØªØ­Ø¯Ø« Ø¨ÙˆØ¶ÙˆØ­ ÙˆØ¨ØµÙˆØª Ù…Ø³Ù…ÙˆØ¹' : 'â€¢ Speak clearly and audibly'}</li>
-            <li>{isAr ? 'â€¢ ÙŠÙ…ÙƒÙ†Ùƒ Ù‚Ø±Ø§Ø¡Ø© Ù…Ù† Ø£ÙŠ Ù…ÙˆØ¶Ø¹ ÙÙŠ Ø§Ù„Ø¢ÙŠØ©' : 'â€¢ You can read from any position in the verse'}</li>
-            <li>{isAr ? 'â€¢ Ø§Ù„ØªØ·Ø¨ÙŠÙ‚ ÙŠØªØ¹Ø±Ù Ø¹Ù„Ù‰ Ø§Ù„Ù†Øµ Ø­ØªÙ‰ Ø¨Ø¯ÙˆÙ† ØªØ´ÙƒÙŠÙ„' : 'â€¢ The app recognizes text even without diacritics'}</li>
-            <li>{isAr ? 'â€¢ ÙŠÙ…ÙƒÙ†Ùƒ Ø£ÙŠØ¶Ø§Ù‹ Ø§Ù„ÙƒØªØ§Ø¨Ø© ÙŠØ¯ÙˆÙŠØ§Ù‹ Ø¹Ø¨Ø± Ø§Ù„Ø­Ù‚Ù„ Ø£Ø¯Ù†Ø§Ù‡' : 'â€¢ You can also type manually using the field below'}</li>
+            <li>{isAr ? '• اقرأ 3 كلمات على الأقل من الآية' : '• Read at least 3 words from the verse'}</li>
+            <li>{isAr ? '• تحدث بوضوح وبصوت مسموع' : '• Speak clearly and audibly'}</li>
+            <li>{isAr ? '• يمكنك القراءة من أي موضع في الآية' : '• You can read from any position in the verse'}</li>
+            <li>{isAr ? '• التطبيق يتعرف على النص حتى بدون تشكيل' : '• The app recognizes text even without diacritics'}</li>
+            <li>{isAr ? '• يمكنك أيضاً الكتابة يدوياً عبر الحقل أدناه' : '• You can also type manually using the field below'}</li>
           </ul>
         </div>
       )}
@@ -330,9 +330,7 @@ export default function VoiceSearchPanel({ onGoToPage }: VoiceSearchPanelProps) 
   );
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // Result Card Component
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 function ResultCard({ result, rank, isAr, onGoToPage }: {
   result: VoiceSearchResult;
@@ -348,10 +346,10 @@ function ResultCard({ result, rank, isAr, onGoToPage }: {
   };
 
   const matchLabel = matchType === 'exact'
-    ? (isAr ? 'Ù…Ø·Ø§Ø¨Ù‚Ø© ØªØ§Ù…Ø©' : 'Exact match')
+    ? (isAr ? 'مطابقة تامة' : 'Exact match')
     : matchType === 'substring'
-      ? (isAr ? 'ØªØ·Ø§Ø¨Ù‚ Ø¬Ø²Ø¦ÙŠ' : 'Partial match')
-      : (isAr ? 'ØªØ·Ø§Ø¨Ù‚ ØªÙ‚Ø±ÙŠØ¨ÙŠ' : 'Fuzzy match');
+      ? (isAr ? 'تطابق جزئي' : 'Partial match')
+      : (isAr ? 'تطابق تقريبي' : 'Fuzzy match');
 
   const matchColor = matchType === 'exact' ? '#27AE60' : matchType === 'substring' ? '#3498DB' : '#E67E22';
 
@@ -385,14 +383,14 @@ function ResultCard({ result, rank, isAr, onGoToPage }: {
           {/* Verse info row */}
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-medium text-sm">
-              {isAr ? `Ø³ÙˆØ±Ø© ${SURAH_NAMES[verse.surah]}` : `Surah ${SURAH_NAMES[verse.surah]}`} â€” {isAr ? `Ø¢ÙŠØ© ${verse.ayah}` : `Verse ${verse.ayah}`}
+              {isAr ? `سورة ${SURAH_NAMES[verse.surah]}` : `Surah ${SURAH_NAMES[verse.surah]}`} — {isAr ? `آية ${verse.ayah}` : `Verse ${verse.ayah}`}
             </span>
             <span className="px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: matchColor }}>
               {matchLabel} {scorePercent}%
             </span>
             {verse.page && (
               <span className="text-xs opacity-50">
-                {isAr ? `Øµ${verse.page}` : `p.${verse.page}`}
+                {isAr ? `ص${verse.page}` : `p.${verse.page}`}
               </span>
             )}
             <VerseBookmarkButton verse={verse} compact />

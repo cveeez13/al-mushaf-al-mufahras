@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { MushafCover } from '@/components/MushafCover';
 import MushafViewer from '@/components/MushafViewer';
 import Sidebar from '@/components/Sidebar';
 import TopBar from '@/components/TopBar';
@@ -48,6 +50,7 @@ export type TabKey =
   | 'admin';
 
 export default function Home() {
+  const [showSplash, setShowSplash] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<TabKey>('mushaf');
@@ -86,8 +89,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-dvh overflow-hidden">
-      <Sidebar
+    <>
+      <AnimatePresence>
+        {showSplash && (
+          <MushafCover key="splash" onEnter={() => setShowSplash(false)} />
+        )}
+      </AnimatePresence>
+
+      <div className="flex h-dvh overflow-hidden">
+        <Sidebar
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         onGoToPage={(page: number) => {
@@ -224,5 +234,6 @@ export default function Home() {
         />
       )}
     </div>
+    </>
   );
 }

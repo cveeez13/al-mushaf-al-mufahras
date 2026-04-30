@@ -12,7 +12,7 @@ export interface PageFlipConfig {
 }
 
 export const DEFAULT_FLIP_CONFIG: PageFlipConfig = {
-  duration: 1000,
+  duration: 800,
   perspective: 1000,
   thickness: 4,
   autoFlipDuration: 3000,
@@ -52,9 +52,10 @@ const FLIP_CSS = `
     user-select: none;
     transform-style: preserve-3d;
     transform-origin: left center;
+    box-shadow: 0em 0.5em 1em -0.2em rgba(0,0,0,0.2);
     transition:
-      transform var(--flip-dur, 1000ms),
-      rotate var(--flip-dur, 1000ms) ease-in
+      transform var(--flip-dur, 800ms) cubic-bezier(0.645, 0.045, 0.355, 1),
+      rotate var(--flip-dur, 800ms) cubic-bezier(0.645, 0.045, 0.355, 1)
         calc((min(var(--i,0),var(--c,0)) - max(var(--i,0),var(--c,0))) * 50ms);
     translate: calc(var(--i,0) * -100%) 0px 0px;
     transform: translateZ(
@@ -98,6 +99,16 @@ function injectCSS() {
   el.textContent = FLIP_CSS;
   document.head.appendChild(el);
   cssInjected = true;
+}
+
+function preloadImages(currentPage: number, total: number) {
+  const toLoad = [currentPage + 1, currentPage + 2, currentPage - 1];
+  toLoad.forEach((p) => {
+    if (p >= 1 && p <= total) {
+      const img = new Image();
+      img.src = `/scans/${p - 1}.jpg`;
+    }
+  });
 }
 
 // ─── Component ───────────────────────────────────
@@ -144,6 +155,7 @@ export const PageFlip: React.FC<PageFlipProps> = ({
       const clamped = Math.min(Math.max(next, 0), maxC);
       const direction = clamped > currentRef.current ? 'forward' : 'backward';
       setC(clamped);
+      preloadImages(clamped, 604);
       onFlip?.(direction);
     },
     [backContent, onFlip, setC]

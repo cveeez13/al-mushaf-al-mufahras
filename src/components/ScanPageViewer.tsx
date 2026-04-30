@@ -32,6 +32,67 @@ const SCAN_FLIP_EFFECT_KEY = 'mushaf-scan-flip-effect';
 const FLIP_DURATION_MS = 620;
 type FlipDirection = 'next' | 'prev';
 
+const SCAN_FLIP_CSS = `
+  .scan-flip-book {
+    position: relative;
+    display: flex;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    transition: translate 700ms cubic-bezier(0.645,0.045,0.355,1);
+    translate: calc(min(var(--c,0),1) * 50%) 0%;
+  }
+  .scan-flip-page {
+    flex: none;
+    display: flex;
+    width: 100%;
+    pointer-events: all;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    translate: calc(var(--i,0) * -100%) 0px 0px;
+    transform: translateZ(
+      calc((var(--c,0) - var(--i,0) - 0.5) * 2px)
+    );
+    rotate: 0 1 0 calc(clamp(0, var(--c,0) - var(--i,0), 1) * -180deg);
+    transition:
+      transform 700ms cubic-bezier(0.645,0.045,0.355,1),
+      rotate 700ms cubic-bezier(0.645,0.045,0.355,1)
+        calc((min(var(--i,0),var(--c,0)) - max(var(--i,0),var(--c,0))) * 50ms);
+  }
+  .scan-flip-front,
+  .scan-flip-back {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    translate: 0px;
+  }
+  .scan-flip-back {
+    translate: -100% 0;
+    rotate: 0 1 0 180deg;
+  }
+  .scan-flip-front img,
+  .scan-flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    draggable: false;
+  }
+`;
+
+let scanFlipCSSInjected = false;
+function injectScanFlipCSS() {
+  if (scanFlipCSSInjected || typeof document === 'undefined') return;
+  const el = document.createElement('style');
+  el.id = 'scan-flip-css';
+  el.textContent = SCAN_FLIP_CSS;
+  document.head.appendChild(el);
+  scanFlipCSSInjected = true;
+}
+
 export default function ScanPageViewer({
   currentPage,
   onPageChange,
@@ -56,6 +117,8 @@ export default function ScanPageViewer({
   const readingLayoutRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
   const flipTimeoutRef = useRef<number | null>(null);
+  const flipBookRef = useRef<HTMLDivElement>(null);
+  const flipCRef = useRef(0);
   const [readingLayoutHeight, setReadingLayoutHeight] = useState(0);
 
   useEffect(() => {
@@ -64,6 +127,8 @@ export default function ScanPageViewer({
       setFlipEffectEnabled(localStorage.getItem(SCAN_FLIP_EFFECT_KEY) !== 'off');
     } catch {}
   }, []);
+
+  useEffect(() => { injectScanFlipCSS(); }, []);
 
   useEffect(() => {
     return () => {
@@ -149,21 +214,45 @@ export default function ScanPageViewer({
   const turnPage = useCallback((direction: FlipDirection) => {
     if (flipping) return;
     const step = spreadMode ? 2 : 1;
-    const target = clamp(currentPage + (direction === 'next' ? step : -step), 1, 604);
+    const target = clamp(
+      currentPage + (direction === 'next' ? step : -step),
+      1,
+      604
+    );
     if (target === currentPage) return;
 
+    const book = flipBookRef.current;
+    if (!book) {
+      onPageChange(target);
+      return;
+    }
+
+    setFlipping(true);
+    setFlipDirection(direction);
+
+    // تحديث --i على كل صفحة
+    book.querySelectorAll<HTMLElement>('.scan-flip-page')
+      .forEach((page, idx) => {
+        page.style.setProperty('--i', String(idx));
+      });
+
+    // تشغيل الحركة
+    const newC = flipCRef.current + 1;
+    flipCRef.current = newC;
+    book.style.setProperty('--c', String(newC));
+
+    // بعد انتهاء الحركة غيّر الصفحة
     if (flipTimeoutRef.current != null) {
       window.clearTimeout(flipTimeoutRef.current);
     }
-
-    setFlipDirection(direction);
-    setFlipping(true);
     flipTimeoutRef.current = window.setTimeout(() => {
       onPageChange(target);
+      flipCRef.current = 0;
+      book.style.setProperty('--c', '0');
       setFlipping(false);
       flipTimeoutRef.current = null;
-    }, flipEffectEnabled && !prefersReducedMotion() ? FLIP_DURATION_MS : 160);
-  }, [currentPage, flipEffectEnabled, flipping, onPageChange, spreadMode]);
+    }, 750);
+  }, [currentPage, flipping, onPageChange, spreadMode]);
 
   const goNext = useCallback(() => {
     turnPage('next');
@@ -275,16 +364,39 @@ export default function ScanPageViewer({
     [isDragging, onAiTafsir, onVerseClick, versesByPage, zoom]
   );
 
-  const renderPage = (page: number, side: 'left' | 'right' | 'single') => (
-    <div className={`scan-page-wrapper scan-page-${side} ${flipping ? 'flipping' : ''}`} key={page}>
-      <img
-        src={`/scans/${page - 1}.jpg`}
-        alt={`صفحة ${page}`}
-        className="scan-page-img"
-        draggable={false}
-        onClick={(event) => handleScanClick(page, event)}
-        title="اضغط على رقم الآية لفتح التفسير - Shift+Click لشرح AI"
-      />
+  const renderPage = (
+    page: number,
+    nextPage: number | null,
+    side: 'left' | 'right' | 'single'
+  ) => (
+    <div
+      ref={side === 'right' || side === 'single' ? flipBookRef : undefined}
+      className="scan-flip-book"
+      style={{ perspective: '1000px', width: '100%', height: '100%' }}
+      key={page}
+    >
+      <div className="scan-flip-page" style={{ '--i': '0' } as React.CSSProperties}>
+        {/* الوجه الأمامي: الصفحة الحالية */}
+        <div className="scan-flip-front">
+          <img
+            src={`/scans/${page - 1}.jpg`}
+            alt={`صفحة ${page}`}
+            draggable={false}
+            onClick={(event) => handleScanClick(page, event)}
+            title="اضغط على رقم الآية لفتح التفسير - Shift+Click لشرح AI"
+          />
+        </div>
+        {/* الوجه الخلفي: الصفحة التالية */}
+        {nextPage && (
+          <div className="scan-flip-back">
+            <img
+              src={`/scans/${nextPage - 1}.jpg`}
+              alt={`صفحة ${nextPage}`}
+              draggable={false}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 
@@ -381,12 +493,16 @@ export default function ScanPageViewer({
           <div className={`scan-pages ${spreadMode ? 'scan-spread' : 'scan-single'} ${selectedTopic ? 'mushaf-page-dimmed' : ''} ${flipEffectEnabled && flipping ? `scan-flip-active scan-flip-${flipDirection}` : ''}`}>
             {spreadMode && safeLeft && safeLeft <= 604 ? (
               <>
-                {renderPage(safeLeft, 'left')}
+                {renderPage(safeLeft, safeLeft + 1, 'left')}
                 <div className="scan-spine" aria-hidden="true" />
-                {renderPage(safeRight, 'right')}
+                {renderPage(safeRight, safeRight + 1, 'right')}
               </>
             ) : (
-              renderPage(safeRight, 'single')
+              renderPage(
+                safeRight,
+                safeRight + 1 <= 604 ? safeRight + 1 : null,
+                'single'
+              )
             )}
           </div>
         </div>

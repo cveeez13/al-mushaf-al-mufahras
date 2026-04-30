@@ -3,7 +3,7 @@
 */
 
 .scan-viewer {
-  background: #f8f7f3 !important; /* لطيف وفاتح، يزيل البني الغامق */
+  background: transparent !important; /* لطيف وفاتح، يزيل البني الغامق */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
 }
 
 .scan-page-wrapper {
-  background: #fff;
+  background: transparent;
   border-radius: 18px;
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
   padding: 0;
